@@ -1,0 +1,18 @@
+[
+  {
+    "id": "concept",
+    "title": "捕词蛙是什么",
+    "type": "placeholder",
+    "src": "",
+    "cover": "",
+    "default": true
+  },
+  {
+    "id": "demo",
+    "title": "功能演示",
+    "type": "placeholder",
+    "src": "",
+    "cover": "",
+    "default": false
+  }
+]
