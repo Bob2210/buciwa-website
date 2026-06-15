@@ -16,7 +16,7 @@
       <a class="hover:text-bcw-ink" href="#endorsement">背书</a>
     </nav>
     <div class="flex items-center gap-3">
-      <a href="#feedback" class="btn3d btn-white btn-sm">查看反馈</a>
+      <a href="#feedback-show" class="btn3d btn-white btn-sm">查看反馈</a>
       <a href="#cta" class="btn3d btn-green btn-sm">投资咨询</a>
     </div>
   </div>
@@ -30,27 +30,27 @@
     <!-- 左 55% -->
     <div class="col-span-7">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bcw-green-soft border border-bcw-green/30 text-bcw-green-deep text-sm font-bold mb-7">
-        <img src="/buciwa-logo.png" alt="" class="h-5 w-auto inline-block -mt-0.5" /><span>清华团队 · 用 AI 把单词变成图像</span>
+        <img src="/buciwa-logo.png" alt="" class="h-5 w-auto inline-block -mt-0.5" /><span>{{hero.badge}}</span>
       </div>
       <h1 class="font-black text-[78px] leading-[1.05] tracking-tight mb-6">
-        从看懂英语，<br/>
+        {{hero.titleLine1}}<br/>
         <span class="relative inline-block">
-          到看见<span class="text-bcw-green">世界</span>
+          {{hero.titleLine2Prefix}}<span class="text-bcw-green">{{hero.titleHighlight}}</span>
           <span class="absolute -bottom-2 left-0 right-0 h-3 bg-bcw-yellow/40 -z-10 rounded"></span>
         </span>
       </h1>
       <p class="text-[20px] text-bcw-ink-soft leading-relaxed mb-8 max-w-[560px]">
-        捕词蛙把单词串成有故事的画面，从 0 帮你构建记忆。
+        {{hero.subtitle}}
       </p>
       <!-- 信任三件套 -->
       <div class="flex flex-wrap gap-x-7 gap-y-3 mb-10 text-[15px] font-medium text-bcw-ink">
-        <span class="flex items-center gap-2">📚 中国水利水电出版社签约</span>
-        <span class="flex items-center gap-2">🔬 清华团队</span>
-        <span class="flex items-center gap-2">📈 10日留存 <b class="text-bcw-green-deep">48.72%</b></span>
+        <span class="flex items-center gap-2">{{hero.trust1}}</span>
+        <span class="flex items-center gap-2">{{hero.trust2}}</span>
+        <span class="flex items-center gap-2">{{hero.trust3Prefix}}<b class="text-bcw-green-deep">{{hero.trust3Number}}</b></span>
       </div>
       <div class="flex items-center gap-4">
-        <a href="#demo-video" class="btn3d btn-green">▶ 观看 60 秒演示</a>
-        <a href="#feedback" class="btn3d btn-white">查看用户反馈 →</a>
+        <a href="#demo-video" class="btn3d btn-green">{{hero.primaryCtaText}}</a>
+        <a href="#feedback-show" class="btn3d btn-white">{{hero.secondaryCtaText}}</a>
       </div>
     </div>
 
@@ -73,7 +73,7 @@
       <!-- 角落徽章 -->
       <div class="absolute -bottom-2 right-4 bg-white rounded-2xl border-2 border-bcw-yellow px-4 py-2 shadow-[0_4px_0_#FFB800] flex items-center gap-2">
         <span class="text-bcw-yellow">⭐</span>
-        <span class="text-sm font-bold">用户好评率 90.9%</span>
+        <span class="text-sm font-bold">{{hero.rightBadgeText}}</span>
       </div>
     </div>
   </div>
@@ -345,7 +345,7 @@
       </div>
     </div>
     <div class="mt-10 text-center">
-      <a href="#" class="text-bcw-green-deep font-bold text-lg hover:underline">更多功能欢迎体验 →</a>
+      <a href="#cta" class="text-bcw-green-deep font-bold text-lg hover:underline">更多功能欢迎体验 →</a>
     </div>
   </div>
 </section>
@@ -357,8 +357,8 @@
   <div class="max-w-[1280px] mx-auto px-8 py-24">
     <div class="text-center mb-14">
       <div class="ch-num mb-3" style="color:var(--bcw-green-deep);">DEMO VIDEO</div>
-      <h2 class="text-[44px] font-black tracking-tight">30 秒看懂捕词蛙</h2>
-      <p class="text-bcw-ink-soft mt-3">B 站嵌入 · 后续支持后台上传</p>
+      <h2 class="text-[44px] font-black tracking-tight">{{demoVideo.sectionTitle}}</h2>
+      <p class="text-bcw-ink-soft mt-3">{{demoVideo.sectionDesc}}</p>
     </div>
 
     <!-- 主视频 + 3 备选 -->
@@ -374,10 +374,10 @@
           </div>
           <div class="absolute bottom-6 left-6 text-white">
             <div class="text-xs uppercase tracking-widest opacity-80 mb-1">主视频</div>
-            <div class="font-black text-2xl">捕词蛙是什么 · 60 秒</div>
-            <div class="text-xs opacity-80 mt-1">B 站视频占位（待 Jalin 上传）</div>
+            <div class="font-black text-2xl">{{demoVideo.mainTitle}}</div>
+            <div class="text-xs opacity-80 mt-1">{{demoVideo.mainNote}}</div>
           </div>
-          <div class="absolute top-6 right-6 px-3 py-1 rounded-full bg-black/50 text-white text-xs font-bold">01:00</div>
+          <div class="absolute top-6 right-6 px-3 py-1 rounded-full bg-black/50 text-white text-xs font-bold">{{demoVideo.mainDuration}}</div>
         </div>
       </div>
 
@@ -386,25 +386,25 @@
         <div class="card-3d p-3 flex gap-3 items-center cursor-pointer hover:translate-y-[-2px] transition">
           <div class="w-28 h-20 rounded-2xl ph-green flex items-center justify-center text-white text-xl flex-shrink-0">▶</div>
           <div class="min-w-0">
-            <div class="text-xs text-bcw-green-deep font-bold mb-1">功能演示</div>
-            <div class="font-bold text-sm leading-snug truncate">视觉化记忆 · 一组词成画</div>
-            <div class="text-xs text-bcw-ink-soft mt-1">02:14</div>
+            <div class="text-xs text-bcw-green-deep font-bold mb-1">{{demoVideo.alt1Tag}}</div>
+            <div class="font-bold text-sm leading-snug truncate">{{demoVideo.alt1Title}}</div>
+            <div class="text-xs text-bcw-ink-soft mt-1">{{demoVideo.alt1Duration}}</div>
           </div>
         </div>
         <div class="card-3d p-3 flex gap-3 items-center cursor-pointer hover:translate-y-[-2px] transition">
           <div class="w-28 h-20 rounded-2xl ph-green flex items-center justify-center text-white text-xl flex-shrink-0">▶</div>
           <div class="min-w-0">
-            <div class="text-xs text-bcw-green-deep font-bold mb-1">真实学员</div>
-            <div class="font-bold text-sm leading-snug truncate">考研党的 14 天</div>
-            <div class="text-xs text-bcw-ink-soft mt-1">03:42</div>
+            <div class="text-xs text-bcw-green-deep font-bold mb-1">{{demoVideo.alt2Tag}}</div>
+            <div class="font-bold text-sm leading-snug truncate">{{demoVideo.alt2Title}}</div>
+            <div class="text-xs text-bcw-ink-soft mt-1">{{demoVideo.alt2Duration}}</div>
           </div>
         </div>
         <div class="card-3d p-3 flex gap-3 items-center cursor-pointer hover:translate-y-[-2px] transition">
           <div class="w-28 h-20 rounded-2xl ph-green flex items-center justify-center text-white text-xl flex-shrink-0">▶</div>
           <div class="min-w-0">
-            <div class="text-xs text-bcw-green-deep font-bold mb-1">创始人 1 分钟</div>
-            <div class="font-bold text-sm leading-snug truncate">为什么做捕词蛙</div>
-            <div class="text-xs text-bcw-ink-soft mt-1">01:08</div>
+            <div class="text-xs text-bcw-green-deep font-bold mb-1">{{demoVideo.alt3Tag}}</div>
+            <div class="font-bold text-sm leading-snug truncate">{{demoVideo.alt3Title}}</div>
+            <div class="text-xs text-bcw-ink-soft mt-1">{{demoVideo.alt3Duration}}</div>
           </div>
         </div>
       </div>
@@ -419,63 +419,63 @@
   <div class="max-w-[1280px] mx-auto px-8 py-24">
     <div class="text-center mb-14">
       <div class="ch-num mb-3">REAL DATA</div>
-      <h2 class="text-[44px] font-black tracking-tight">不画饼，直接看 <span class="text-bcw-purple">63 人</span>内测真实数据</h2>
-      <p class="text-bcw-ink-soft mt-3">5 月 12 日开启首轮内测，5 月 27 日两周时点收官</p>
+      <h2 class="text-[44px] font-black tracking-tight">{{metrics.sectionTitle1}}<span class="text-bcw-purple">{{metrics.sectionTitleHighlight}}</span>{{metrics.sectionTitle2}}</h2>
+      <p class="text-bcw-ink-soft mt-3">{{metrics.sectionDesc}}</p>
     </div>
 
     <div class="grid grid-cols-3 gap-6">
       <!-- 1 绿 63 -->
       <div class="card-3d-green p-8 relative overflow-hidden">
         <div class="text-bcw-green-deep text-xs font-bold uppercase tracking-widest mb-2">USERS</div>
-        <div class="font-num font-extrabold text-[88px] leading-none text-bcw-green-deep">63</div>
-        <div class="mt-3 text-bcw-ink font-bold text-lg">内测参与用户</div>
-        <div class="text-bcw-ink-soft text-sm mt-1">两周内累计内测人数</div>
+        <div class="font-num font-extrabold text-[88px] leading-none text-bcw-green-deep">{{metrics.card1Number}}</div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">{{metrics.card1Label}}</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">{{metrics.card1Sub}}</div>
         <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-green-soft"></div>
       </div>
       <!-- 2 紫 107 -->
       <div class="card-3d-purple p-8 relative overflow-hidden">
         <div class="text-bcw-purple-deep text-xs font-bold uppercase tracking-widest mb-2">FEEDBACK</div>
-        <div class="font-num font-extrabold text-[88px] leading-none text-bcw-purple-deep">107</div>
-        <div class="mt-3 text-bcw-ink font-bold text-lg">反馈意见</div>
-        <div class="text-bcw-ink-soft text-sm mt-1">每位用户平均反馈 1.7 条</div>
+        <div class="font-num font-extrabold text-[88px] leading-none text-bcw-purple-deep">{{metrics.card2Number}}</div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">{{metrics.card2Label}}</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">{{metrics.card2Sub}}</div>
         <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-purple-soft"></div>
       </div>
       <!-- 3 绿（高亮）48.72% -->
       <div class="card-3d-green p-8 relative overflow-hidden bg-bcw-green-soft">
         <div class="absolute top-4 right-4 px-2 py-1 rounded-full bg-bcw-yellow text-bcw-ink text-[10px] font-black tracking-widest">⭐ HIGHLIGHT</div>
         <div class="text-bcw-green-deep text-xs font-bold uppercase tracking-widest mb-2">DAY-10 RETENTION</div>
-        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-green-deep">48.72<span class="text-5xl">%</span></div>
-        <div class="mt-3 text-bcw-ink font-bold text-lg">10 日留存</div>
-        <div class="text-bcw-ink-soft text-sm mt-1">同类基准 5–15% · 是行业 3–10 倍</div>
+        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-green-deep">{{metrics.card3Number}}<span class="text-5xl">%</span></div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">{{metrics.card3Label}}</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">{{metrics.card3Sub}}</div>
       </div>
       <!-- 4 紫 90.9% -->
       <div class="card-3d-purple p-8 relative overflow-hidden">
         <div class="text-bcw-purple-deep text-xs font-bold uppercase tracking-widest mb-2">POSITIVE RATE</div>
-        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-purple-deep">90.9<span class="text-5xl">%</span></div>
-        <div class="mt-3 text-bcw-ink font-bold text-lg">用户好评率</div>
-        <div class="text-bcw-ink-soft text-sm mt-1">4 星及以上占比</div>
+        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-purple-deep">{{metrics.card4Number}}<span class="text-5xl">%</span></div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">{{metrics.card4Label}}</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">{{metrics.card4Sub}}</div>
         <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-purple-soft"></div>
       </div>
       <!-- 5 绿 50% -->
       <div class="card-3d-green p-8 relative overflow-hidden">
         <div class="text-bcw-green-deep text-xs font-bold uppercase tracking-widest mb-2">5-STAR</div>
-        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-green-deep">50<span class="text-5xl">%</span></div>
-        <div class="mt-3 text-bcw-ink font-bold text-lg">五星好评</div>
-        <div class="text-bcw-ink-soft text-sm mt-1">两个用户里就有一个给满分</div>
+        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-green-deep">{{metrics.card5Number}}<span class="text-5xl">%</span></div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">{{metrics.card5Label}}</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">{{metrics.card5Sub}}</div>
         <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-green-soft"></div>
       </div>
       <!-- 6 紫 86.4% -->
       <div class="card-3d-purple p-8 relative overflow-hidden">
         <div class="text-bcw-purple-deep text-xs font-bold uppercase tracking-widest mb-2">VS COMPETITORS</div>
-        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-purple-deep">86.4<span class="text-5xl">%</span></div>
-        <div class="mt-3 text-bcw-ink font-bold text-lg">认为优于同类产品</div>
-        <div class="text-bcw-ink-soft text-sm mt-1">对比墨墨、不背、扇贝等</div>
+        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-purple-deep">{{metrics.card6Number}}<span class="text-5xl">%</span></div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">{{metrics.card6Label}}</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">{{metrics.card6Sub}}</div>
         <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-purple-soft"></div>
       </div>
     </div>
 
     <div class="text-center mt-10 text-bcw-ink-soft text-sm">
-      已完成 <b class="text-bcw-purple">12 处</b>细节优化 · 仍在持续迭代
+      {{metrics.footnote1}}<b class="text-bcw-purple">{{metrics.footnoteOptCount}}</b>{{metrics.footnote2}}
     </div>
   </div>
 </section>
@@ -488,8 +488,8 @@
     <!-- 区块顶部 -->
     <div class="text-center mb-16 relative">
       <div class="ch-num mb-3">FEEDBACK SHOWCASE</div>
-      <h2 class="text-[48px] font-black tracking-tight">我们与 <span class="text-bcw-purple">63 位</span>共创伙伴</h2>
-      <p class="text-bcw-ink-soft mt-3 text-lg">完全对应公众号 5/27 致谢推文 · "4 个我们"</p>
+      <h2 class="text-[48px] font-black tracking-tight">{{feedbacks.sectionTitle1}}<span class="text-bcw-purple">{{feedbacks.sectionTitleHighlight}}</span>{{feedbacks.sectionTitle2}}</h2>
+      <p class="text-bcw-ink-soft mt-3 text-lg">{{feedbacks.sectionDesc}}</p>
 
       <!-- 角落吉祥物正面装饰 -->
       <div class="absolute -top-4 right-0 w-[120px] h-[120px] mascot-window">
@@ -502,10 +502,10 @@
       <div class="flex items-end justify-between mb-8">
         <div>
           <div class="ch-num mb-2">01</div>
-          <h3 class="text-[32px] font-black">我们收集了很多反馈</h3>
-          <p class="text-bcw-ink-soft mt-1">107 条反馈 · 精选 6 条原话展示</p>
+          <h3 class="text-[32px] font-black">{{feedbacks.block1Title}}</h3>
+          <p class="text-bcw-ink-soft mt-1">{{feedbacks.block1Desc}}</p>
         </div>
-        <a href="#" class="text-bcw-purple-deep font-bold text-sm hover:underline">查看完整 107 条 →</a>
+        <a href="#feedback-show" class="text-bcw-purple-deep font-bold text-sm hover:underline">查看更多反馈 →</a>
       </div>
 
       <div class="grid grid-cols-3 gap-5">
@@ -514,72 +514,72 @@
           <div class="flex items-center gap-3 mb-4">
             <div class="avatar" style="background:#A98BE0;">L</div>
             <div>
-              <div class="font-bold text-sm">L 同学</div>
-              <div class="text-xs text-bcw-ink-soft">学生 · 考研党</div>
+              <div class="font-bold text-sm">{{feedbacks.f1Name}}</div>
+              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f1Role}}</div>
             </div>
-            <div class="ml-auto stars text-sm">★★★★★</div>
+            <div class="ml-auto stars text-sm">{{feedbacks.f1Stars}}</div>
           </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"原来以为又是个普通背单词软件，画面感太强了，背完一组词就像看了段动画。"</p>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f1Content}}"</p>
         </div>
 
         <div class="card-3d p-6 -translate-y-3">
           <div class="flex items-center gap-3 mb-4">
             <div class="avatar" style="background:#58CC02;">W</div>
             <div>
-              <div class="font-bold text-sm">W 同学</div>
-              <div class="text-xs text-bcw-ink-soft">学生 · 四六级</div>
+              <div class="font-bold text-sm">{{feedbacks.f2Name}}</div>
+              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f2Role}}</div>
             </div>
-            <div class="ml-auto stars text-sm">★★★★★</div>
+            <div class="ml-auto stars text-sm">{{feedbacks.f2Stars}}</div>
           </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"用了一周朋友圈打卡的人都来问我用的什么 App。"</p>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f2Content}}"</p>
         </div>
 
         <div class="card-3d p-6">
           <div class="flex items-center gap-3 mb-4">
             <div class="avatar" style="background:#7C5BC9;">Z</div>
             <div>
-              <div class="font-bold text-sm">Z 同学</div>
-              <div class="text-xs text-bcw-ink-soft">学生 · 高三</div>
+              <div class="font-bold text-sm">{{feedbacks.f3Name}}</div>
+              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f3Role}}</div>
             </div>
-            <div class="ml-auto stars text-sm">★★★★★</div>
+            <div class="ml-auto stars text-sm">{{feedbacks.f3Stars}}</div>
           </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"AI 出题真的会根据我做错的地方调整，不是固定题库感。"</p>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f3Content}}"</p>
         </div>
 
         <div class="card-3d p-6 -translate-y-3">
           <div class="flex items-center gap-3 mb-4">
             <div class="avatar" style="background:#46A302;">M</div>
             <div>
-              <div class="font-bold text-sm">M 老师</div>
-              <div class="text-xs text-bcw-ink-soft">老师 · 英语</div>
+              <div class="font-bold text-sm">{{feedbacks.f4Name}}</div>
+              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f4Role}}</div>
             </div>
-            <div class="ml-auto stars text-sm">★★★★★</div>
+            <div class="ml-auto stars text-sm">{{feedbacks.f4Stars}}</div>
           </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"把单词记成画面这件事我以前从没想过。"</p>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f4Content}}"</p>
         </div>
 
         <div class="card-3d p-6">
           <div class="flex items-center gap-3 mb-4">
             <div class="avatar" style="background:#A98BE0;">Y</div>
             <div>
-              <div class="font-bold text-sm">Y 同学</div>
-              <div class="text-xs text-bcw-ink-soft">学生 · 大一</div>
+              <div class="font-bold text-sm">{{feedbacks.f5Name}}</div>
+              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f5Role}}</div>
             </div>
-            <div class="ml-auto stars text-sm">★★★★☆</div>
+            <div class="ml-auto stars text-sm">{{feedbacks.f5Stars}}</div>
           </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"abandon 终于不再是我能想起来的唯一一个单词了哈哈。"</p>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f5Content}}"</p>
         </div>
 
         <div class="card-3d p-6 -translate-y-3">
           <div class="flex items-center gap-3 mb-4">
             <div class="avatar" style="background:#58CC02;">H</div>
             <div>
-              <div class="font-bold text-sm">H 同学</div>
-              <div class="text-xs text-bcw-ink-soft">学生 · 考研党</div>
+              <div class="font-bold text-sm">{{feedbacks.f6Name}}</div>
+              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f6Role}}</div>
             </div>
-            <div class="ml-auto stars text-sm">★★★★★</div>
+            <div class="ml-auto stars text-sm">{{feedbacks.f6Stars}}</div>
           </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"界面可爱不会让人有学习压力。"</p>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f6Content}}"</p>
         </div>
       </div>
     </div>
@@ -1056,11 +1056,11 @@
           <div class="card-3d-purple p-6 bg-bcw-purple-soft flex-1 relative overflow-hidden">
             <div class="text-7xl absolute -top-4 left-4 text-bcw-purple/30 font-black leading-none">"</div>
             <p class="text-[18px] leading-relaxed text-bcw-ink pl-8 mt-2 font-medium">
-              感谢各位内测伙伴，<br/>
-              和捕词蛙一起，<br/>
-              迈出了它最重要的<b class="text-bcw-purple">第一步</b>。
+              {{feedbacks.thankQuoteLine1}}<br/>
+              {{feedbacks.thankQuoteLine2}}<br/>
+              {{feedbacks.thankQuoteLine3Prefix}}<b class="text-bcw-purple">{{feedbacks.thankQuoteLine3Highlight}}</b>。
             </p>
-            <div class="text-right text-sm text-bcw-ink-soft mt-4">—— 捕词蛙团队 · 2026.05.27</div>
+            <div class="text-right text-sm text-bcw-ink-soft mt-4">{{feedbacks.thankQuoteSign}}</div>
           </div>
           <div class="rounded-card ph-purple h-[160px] relative overflow-hidden">
             <div class="absolute inset-0 flex items-center justify-center text-white">
@@ -1083,7 +1083,7 @@
   <div class="max-w-[1280px] mx-auto px-8 py-20">
     <div class="text-center mb-12">
       <div class="ch-num mb-3" style="color:var(--bcw-green-deep);">ENDORSEMENT</div>
-      <h2 class="text-[36px] font-black tracking-tight">出版社 · 学术 · 技术栈</h2>
+      <h2 class="text-[36px] font-black tracking-tight">{{endorsement.sectionTitle}}</h2>
     </div>
 
     <!-- logo 横向墙 -->
@@ -1091,31 +1091,31 @@
       <div class="card-3d py-7 flex items-center justify-center text-center px-3">
         <div>
           <div class="text-2xl mb-1">📚</div>
-          <div class="text-xs font-bold text-bcw-ink-soft">中国水利水电出版社</div>
+          <div class="text-xs font-bold text-bcw-ink-soft">{{endorsement.logo1}}</div>
         </div>
       </div>
       <div class="card-3d py-7 flex items-center justify-center text-center px-3">
         <div>
           <div class="text-2xl mb-1">🏛️</div>
-          <div class="text-xs font-bold text-bcw-ink-soft">清华大学</div>
+          <div class="text-xs font-bold text-bcw-ink-soft">{{endorsement.logo2}}</div>
         </div>
       </div>
       <div class="card-3d py-7 flex items-center justify-center text-center px-3">
         <div>
           <div class="text-2xl mb-1">🤖</div>
-          <div class="text-xs font-bold text-bcw-ink-soft">豆包 Doubao-Seed</div>
+          <div class="text-xs font-bold text-bcw-ink-soft">{{endorsement.logo3}}</div>
         </div>
       </div>
       <div class="card-3d py-7 flex items-center justify-center text-center px-3">
         <div>
           <div class="text-2xl mb-1">🎨</div>
-          <div class="text-xs font-bold text-bcw-ink-soft">Stable Diffusion</div>
+          <div class="text-xs font-bold text-bcw-ink-soft">{{endorsement.logo4}}</div>
         </div>
       </div>
       <div class="card-3d py-7 flex items-center justify-center text-center px-3">
         <div>
           <div class="text-2xl mb-1">⚡</div>
-          <div class="text-xs font-bold text-bcw-ink-soft">Supabase</div>
+          <div class="text-xs font-bold text-bcw-ink-soft">{{endorsement.logo5}}</div>
         </div>
       </div>
     </div>
@@ -1123,7 +1123,7 @@
     <!-- 引语 -->
     <div class="max-w-[760px] mx-auto card-3d-green bg-bcw-green-soft p-8 text-center">
       <p class="text-[18px] leading-relaxed text-bcw-ink">
-        首本视觉化考研词书已由<b class="text-bcw-green-deep">中国水利水电出版社</b>签约免费出版，<br/>预计 <b>2026 Q3</b> 上市。
+        {{endorsement.quote1Prefix}}<b class="text-bcw-green-deep">{{endorsement.quote1Highlight}}</b>{{endorsement.quote1Suffix}}<br/>{{endorsement.quote2Prefix}}<b>{{endorsement.quote2Date}}</b>{{endorsement.quote2Suffix}}
       </p>
     </div>
   </div>
@@ -1135,8 +1135,8 @@
 <section id="cta" class="bg-bcw-cream">
   <div class="max-w-[1280px] mx-auto px-8 py-24">
     <div class="text-center mb-14">
-      <h2 class="text-[44px] font-black tracking-tight">想和我们聊聊？</h2>
-      <p class="text-bcw-ink-soft mt-3 text-lg">三个入口 · 任你选</p>
+      <h2 class="text-[44px] font-black tracking-tight">{{cta.sectionTitle}}</h2>
+      <p class="text-bcw-ink-soft mt-3 text-lg">{{cta.sectionDesc}}</p>
     </div>
 
     <div class="grid grid-cols-3 gap-6">
@@ -1144,30 +1144,34 @@
       <div class="card-3d-purple p-8 bg-white relative overflow-hidden">
         <div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-bcw-purple-soft"></div>
         <div class="text-3xl mb-4">💼</div>
-        <h3 class="text-2xl font-black mb-2">投资 / 媒体咨询</h3>
-        <p class="text-bcw-ink-soft mb-6 leading-relaxed">早期投资人、媒体记者欢迎邮件联系，我们会在 24h 内回复。</p>
-        <a href="mailto:bd@buciwa.com?subject=投资%2F媒体咨询&body=您好，我们对捕词蛙感兴趣，请回复方便沟通的时间。" class="btn3d btn-purple w-full">📧 邮件联系</a>
-        <div class="mt-3 text-center text-xs text-bcw-ink-soft">bd@buciwa.com</div>
+        <h3 class="text-2xl font-black mb-2">{{cta.card1Title}}</h3>
+        <p class="text-bcw-ink-soft mb-6 leading-relaxed">{{cta.card1Desc}}</p>
+        <a href="mailto:{{cta.card1Email}}?subject=投资%2F媒体咨询&body=您好，我们对捕词蛙感兴趣，请回复方便沟通的时间。" class="btn3d btn-purple w-full">📧 邮件联系</a>
+        <div class="mt-3 text-center text-xs text-bcw-ink-soft">{{cta.card1Email}} · 微信 catchword</div>
       </div>
 
       <!-- 绿 · 商务合作 -->
       <div class="card-3d-green p-8 bg-white relative overflow-hidden">
         <div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-bcw-green-soft"></div>
         <div class="text-3xl mb-4">🤝</div>
-        <h3 class="text-2xl font-black mb-2">商务合作</h3>
-        <p class="text-bcw-ink-soft mb-6 leading-relaxed">出版社 / 教育机构 / K12 / 高校合作渠道，欢迎填写表单。</p>
-        <a href="mailto:partnership@buciwa.com?subject=合作意向&body=合作机构%2F单位：%0A联系人：%0A联系方式：%0A合作方向：" class="btn3d btn-green w-full">📋 填写合作表单</a>
-        <div class="mt-3 text-center text-xs text-bcw-ink-soft">partnership@buciwa.com</div>
+        <h3 class="text-2xl font-black mb-2">{{cta.card2Title}}</h3>
+        <p class="text-bcw-ink-soft mb-6 leading-relaxed">{{cta.card2Desc}}</p>
+        <a href="/partnership" class="btn3d btn-green w-full">📋 填写合作表单</a>
+        <div class="mt-3 text-center text-xs text-bcw-ink-soft">填写表单 · 24h 内回复</div>
       </div>
 
       <!-- 紫浅 · 内测申请 -->
       <div class="card-3d p-8 relative overflow-hidden border-2 border-bcw-purple-soft" style="box-shadow:0 6px 0 #C9B6E8;">
         <div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-bcw-purple-soft/60"></div>
         <img src="/buciwa-logo.png" alt="捕词蛙" class="h-14 w-auto mb-4" />
-        <h3 class="text-2xl font-black mb-2">内测申请 / 反馈</h3>
-        <p class="text-bcw-ink-soft mb-6 leading-relaxed">扫码进入内测群，或留下你的邮箱，我们会第一时间发邀请码。</p>
-        <a href="mailto:feedback@buciwa.com?subject=申请内测&body=申请人：%0A联系方式：%0A英语水平%2F学习场景：" class="btn3d btn-white w-full">📱 扫码进群 / 留邮箱</a>
-        <div class="mt-3 text-center text-xs text-bcw-ink-soft">feedback@buciwa.com</div>
+        <h3 class="text-2xl font-black mb-2">{{cta.card3Title}}</h3>
+        <p class="text-bcw-ink-soft mb-6 leading-relaxed">{{cta.card3Desc}}</p>
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-28 h-28 rounded-2xl border-2 border-bcw-line bg-bcw-cream flex items-center justify-center text-bcw-ink-soft text-xs text-center">微信群<br/>二维码<br/>占位</div>
+          <div class="flex-1 text-xs text-bcw-ink-soft leading-relaxed">扫码加入内测群，第一时间获得邀请码和最新功能体验</div>
+        </div>
+        <a href="mailto:{{cta.card3Email}}?subject=申请内测&body=申请人：%0A联系方式：%0A英语水平%2F学习场景：" class="btn3d btn-white w-full">📧 或留下邮箱获取邀请码</a>
+        <div class="mt-3 text-center text-xs text-bcw-ink-soft">{{cta.card3Email}}</div>
       </div>
     </div>
   </div>
@@ -1185,9 +1189,9 @@
           <img src="/buciwa-logo.png" alt="捕词蛙" class="h-10 w-auto" />
           <span class="font-black text-2xl tracking-tight">捕词蛙</span>
         </div>
-        <p class="text-[18px] font-bold text-bcw-ink mb-2">从看懂英语，到看见世界</p>
+        <p class="text-[18px] font-bold text-bcw-ink mb-2">{{footer.tagline}}</p>
         <p class="text-sm text-bcw-ink-soft leading-relaxed">
-          一款由清华团队打造，用 AI 把单词变成图像，从 0 帮你构建记忆的英语学习软件。
+          {{footer.intro}}
         </p>
       </div>
 
@@ -1198,15 +1202,15 @@
           <li><a class="hover:text-bcw-ink" href="#features">4 大功能</a></li>
           <li><a class="hover:text-bcw-ink" href="#demo-video">视频演示</a></li>
           <li><a class="hover:text-bcw-ink" href="#cta">内测申请</a></li>
-          <li><a class="hover:text-bcw-ink" href="#">价格 (即将)</a></li>
+          <li><span class="text-bcw-ink-soft">价格 (即将上线)</span></li>
         </ul>
       </div>
       <div class="col-span-2">
         <h4 class="text-bcw-ink font-bold mb-4 text-sm uppercase tracking-widest">公司</h4>
         <ul class="space-y-2 text-sm text-bcw-ink-soft">
-          <li><a class="hover:text-bcw-ink" href="#">关于我们</a></li>
-          <li><a class="hover:text-bcw-ink" href="#">团队</a></li>
-          <li><a class="hover:text-bcw-ink" href="#">加入我们</a></li>
+          <li><span class="text-bcw-ink-soft">关于我们</span></li>
+          <li><span class="text-bcw-ink-soft">团队</span></li>
+          <li><span class="text-bcw-ink-soft">加入我们</span></li>
           <li><a class="hover:text-bcw-ink" href="#endorsement">背书与媒体</a></li>
         </ul>
       </div>
@@ -1214,8 +1218,8 @@
         <h4 class="text-bcw-ink font-bold mb-4 text-sm uppercase tracking-widest">资源</h4>
         <ul class="space-y-2 text-sm text-bcw-ink-soft">
           <li><a class="hover:text-bcw-ink" href="#feedback-show">用户反馈</a></li>
-          <li><a class="hover:text-bcw-ink" href="#">博客 (即将)</a></li>
-          <li><a class="hover:text-bcw-ink" href="#">帮助中心</a></li>
+          <li><span class="text-bcw-ink-soft">博客 (即将上线)</span></li>
+          <li><span class="text-bcw-ink-soft">帮助中心</span></li>
           <li><a class="hover:text-bcw-ink" href="#cta">媒体咨询</a></li>
         </ul>
       </div>
@@ -1237,12 +1241,12 @@
     <!-- 法律 / 备案 -->
     <div class="mt-12 pt-8 border-t border-bcw-line flex items-center justify-between text-xs text-bcw-ink-soft">
       <div>
-        © 2026 言启教育科技（东莞）有限责任公司 · <a href="#" class="hover:text-bcw-ink">粤 ICP 备 xxxx 号</a>
+        {{footer.copyright}} · <span class="text-bcw-ink-soft">{{footer.icp}}</span>
       </div>
       <div class="flex gap-5">
-        <a href="#" class="hover:text-bcw-ink">隐私政策</a>
-        <a href="#" class="hover:text-bcw-ink">服务条款</a>
-        <a href="#" class="hover:text-bcw-ink">Cookie</a>
+        <span class="text-bcw-ink-soft">隐私政策</span>
+        <span class="text-bcw-ink-soft">服务条款</span>
+        <span class="text-bcw-ink-soft">Cookie</span>
         <a href="https://www.buciwa.com" class="hover:text-bcw-ink font-bold">www.buciwa.com</a>
       </div>
     </div>
