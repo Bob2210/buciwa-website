@@ -5,7 +5,8 @@ import AdminNav from "../_components/AdminNav"
 type SiteData = Record<string, Record<string, string>>
 
 // 各分组的中文标题与排序
-const SECTION_META: { key: string; title: string; desc?: string }[] = [
+type SectionMeta = { key: string; title: string; desc?: string }
+const SECTION_META: SectionMeta[] = [
   { key: "hero", title: "首屏 Hero", desc: "网站最顶部的主标语区" },
   { key: "demoVideo", title: "Demo 视频区", desc: "产品演示视频文案" },
   { key: "metrics", title: "数据指标", desc: "首页 6 大数据卡片" },
@@ -115,7 +116,7 @@ export default function TextEditPage() {
   // 把 SECTION_META 没列出的 section 也补到末尾（兜底）
   const knownKeys = SECTION_META.map((s) => s.key)
   const extraKeys = Object.keys(data).filter((k) => !knownKeys.includes(k))
-  const allSections = [
+  const allSections: SectionMeta[] = [
     ...SECTION_META,
     ...extraKeys.map((k) => ({ key: k, title: k })),
   ]
