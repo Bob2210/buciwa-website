@@ -4,7 +4,7 @@
 <header class="sticky top-0 z-40 backdrop-blur bg-bcw-cream/85 border-b border-bcw-line">
   <div class="max-w-[1280px] mx-auto px-8 h-[68px] flex items-center justify-between">
     <a href="#hero" class="flex items-center gap-2">
-      <img src="/buciwa-logo.png" alt="捕词蛙" class="h-9 w-auto" />
+      <img src="{{media.logo}}" alt="捕词蛙" class="h-9 w-auto" />
       <span class="font-bold text-[20px] tracking-tight">捕词蛙</span>
       <span class="text-bcw-ink-soft text-sm font-medium ml-1">BUCIWA</span>
     </a>
@@ -30,7 +30,7 @@
     <!-- 左 55% -->
     <div class="col-span-7">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bcw-green-soft border border-bcw-green/30 text-bcw-green-deep text-sm font-bold mb-7">
-        <img src="/buciwa-logo.png" alt="" class="h-5 w-auto inline-block -mt-0.5" /><span>{{hero.badge}}</span>
+        <img src="{{media.logo}}" alt="" class="h-5 w-auto inline-block -mt-0.5" /><span>{{hero.badge}}</span>
       </div>
       <h1 class="font-black text-[78px] leading-[1.05] tracking-tight mb-6">
         {{hero.titleLine1}}<br/>
@@ -66,7 +66,7 @@
       <!-- 主吉祥物（举剑战斗版）：从 battle 图中"开窗"显示左侧大青蛙 -->
       <div class="absolute inset-0 flex items-center justify-center">
         <div class="battle-window mascot-float" style="width:540px; height:420px;">
-          <img src="/mascot-orig/hero-battle.png" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
+          <img src="{{media.heroImage}}" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
         </div>
       </div>
 
@@ -191,7 +191,7 @@
 
         <!-- 角落吉祥物正面 -->
         <div class="absolute -left-8 -bottom-10 w-[180px] h-[180px] mascot-window bg-white rounded-full border-2 border-bcw-green shadow-[0_4px_0_#46A302]">
-          <img src="/mascot-orig/mascot-front.png" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
+          <img src="{{media.feature1Image}}" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
         </div>
       </div>
     </div>
@@ -227,7 +227,7 @@
 
         <!-- 角落吉祥物侧身 -->
         <div class="absolute -right-8 -bottom-10 w-[180px] h-[180px] mascot-window bg-white rounded-full border-2 border-bcw-green shadow-[0_4px_0_#46A302]">
-          <img src="/mascot-orig/mascot-side.png" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
+          <img src="{{media.feature2Image}}" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
         </div>
       </div>
     </div>
@@ -313,7 +313,7 @@
 
         <!-- 角落吉祥物侧后 -->
         <div class="absolute -left-8 -bottom-10 w-[180px] h-[180px] mascot-window bg-white rounded-full border-2 border-bcw-green shadow-[0_4px_0_#46A302]">
-          <img src="/mascot-orig/mascot-back.png" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
+          <img src="{{media.feature3Image}}" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
         </div>
       </div>
     </div>
@@ -493,7 +493,7 @@
 
       <!-- 角落吉祥物正面装饰 -->
       <div class="absolute -top-4 right-0 w-[120px] h-[120px] mascot-window">
-        <img src="/mascot-orig/mascot-coffee.png" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
+        <img src="{{media.ctaImage}}" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
       </div>
     </div>
 
@@ -1163,7 +1163,7 @@
       <!-- 紫浅 · 内测申请 -->
       <div class="card-3d p-8 relative overflow-hidden border-2 border-bcw-purple-soft" style="box-shadow:0 6px 0 #C9B6E8;">
         <div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-bcw-purple-soft/60"></div>
-        <img src="/buciwa-logo.png" alt="捕词蛙" class="h-14 w-auto mb-4" />
+        <img src="{{media.logo}}" alt="捕词蛙" class="h-14 w-auto mb-4" />
         <h3 class="text-2xl font-black mb-2">{{cta.card3Title}}</h3>
         <p class="text-bcw-ink-soft mb-6 leading-relaxed">{{cta.card3Desc}}</p>
         <div class="flex items-center gap-4 mb-4">
@@ -1186,7 +1186,7 @@
       <!-- 左：品牌 -->
       <div class="col-span-4">
         <div class="flex items-center gap-2 mb-4">
-          <img src="/buciwa-logo.png" alt="捕词蛙" class="h-10 w-auto" />
+          <img src="{{media.logo}}" alt="捕词蛙" class="h-10 w-auto" />
           <span class="font-black text-2xl tracking-tight">捕词蛙</span>
         </div>
         <p class="text-[18px] font-bold text-bcw-ink mb-2">{{footer.tagline}}</p>
