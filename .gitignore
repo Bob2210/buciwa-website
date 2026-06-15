@@ -33,3 +33,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 用户上传的临时截图（不应进 repo）
+image_*.png
+微信图片*.jpg
+微信图片*.jpeg
+*.tmp.png
