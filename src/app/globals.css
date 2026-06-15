@@ -20,6 +20,7 @@ body{ min-width:1280px; }
 .btn3d{
   display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
   border-radius:14px; padding:14px 28px; font-weight:700; font-size:16px;
+  text-decoration:none; cursor:pointer;
   transition: transform .08s ease, box-shadow .08s ease;
   user-select:none; cursor:pointer; border:0;
 }
