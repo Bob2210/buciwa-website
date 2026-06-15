@@ -2,17 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Nunito:wght@700;800;900&display=swap');
+/* ===== 原型 CSS（来自 prototype.html 的 <style>） ===== */
+:root{
+  --bcw-green:#58CC02; --bcw-green-deep:#46A302; --bcw-green-soft:#E5F8D5;
+  --bcw-purple:#A98BE0; --bcw-purple-deep:#7C5BC9; --bcw-purple-soft:#F4EEFC;
+  --bcw-yellow:#FFB800; --bcw-cream:#FFFFFF;
+  --bcw-ink:#1A1F1A; --bcw-ink-soft:#5C6360; --bcw-line:#E8EAE7;
+}
+html,body{
+  background:var(--bcw-cream);
+  color:var(--bcw-ink);
+  font-family:"Noto Sans SC", Inter, system-ui, sans-serif;
+}
+body{ min-width:1280px; }
 
-html {
-  scroll-behavior: smooth;
+/* ===== 多邻国 3D 按钮 ===== */
+.btn3d{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  border-radius:14px; padding:14px 28px; font-weight:700; font-size:16px;
+  transition: transform .08s ease, box-shadow .08s ease;
+  user-select:none; cursor:pointer; border:0;
+}
+.btn-green{ background:var(--bcw-green); color:#fff; box-shadow:0 4px 0 var(--bcw-green-deep); }
+.btn-green:hover{ filter:brightness(1.05); }
+.btn-green:active{ transform:translateY(2px); box-shadow:0 2px 0 var(--bcw-green-deep); }
+
+.btn-purple{ background:var(--bcw-purple); color:#fff; box-shadow:0 4px 0 var(--bcw-purple-deep); }
+.btn-purple:hover{ filter:brightness(1.05); }
+.btn-purple:active{ transform:translateY(2px); box-shadow:0 2px 0 var(--bcw-purple-deep); }
+
+.btn-white{ background:#fff; color:var(--bcw-ink); border:2px solid var(--bcw-ink); box-shadow:0 4px 0 var(--bcw-ink); }
+.btn-white:active{ transform:translateY(2px); box-shadow:0 2px 0 var(--bcw-ink); }
+
+.btn-sm{ padding:10px 18px; font-size:14px; }
+
+/* ===== 卡片实色阴影 ===== */
+.card-3d{
+  background:#fff; border-radius:24px; border:1px solid var(--bcw-line);
+  box-shadow:0 6px 0 #E1E5DC;
+}
+.card-3d-green{ background:#fff; border-radius:24px; border:2px solid var(--bcw-green); box-shadow:0 6px 0 var(--bcw-green-deep); }
+.card-3d-purple{ background:#fff; border-radius:24px; border:2px solid var(--bcw-purple); box-shadow:0 6px 0 var(--bcw-purple-deep); }
+
+/* ===== Hero 浮动动画 ===== */
+@keyframes mascotFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-12px); }
+}
+.mascot-float{ animation: mascotFloat 4s ease-in-out infinite; }
+
+@keyframes wordDrift {
+  0%,100% { transform: translate(0,0) rotate(var(--rot,0deg)); }
+  50%     { transform: translate(8px,-8px) rotate(calc(var(--rot,0deg) + 3deg)); }
+}
+.word-drift{ animation: wordDrift 6s ease-in-out infinite; }
+
+/* ===== 吉祥物图片切片显示 ===== */
+.mascot-window{ position:relative; overflow:hidden; }
+.mascot-window img{ width:100% !important; height:100% !important; object-fit:cover !important; object-position:center !important; user-select:none; pointer-events:none; }
+
+/* 战斗版整张图：左大青蛙 / 右小生气脸 */
+.battle-window{ position:relative; overflow:hidden; }
+.battle-window img{ width:100% !important; height:100% !important; object-fit:contain !important; object-position:center !important; user-select:none; pointer-events:none; }
+
+/* ===== 装饰线 ===== */
+.section-divider{ height:1px; background:linear-gradient(90deg,transparent,var(--bcw-line),transparent); }
+
+/* ===== 紫色斜条带（反馈区入口） ===== */
+.purple-band{
+  background:var(--bcw-purple-soft);
+  position:relative;
+}
+.purple-band::before, .purple-band::after{
+  content:''; position:absolute; left:0; right:0; height:30px;
+  background:var(--bcw-purple-soft);
+}
+.purple-band::before{ top:-15px; transform: skewY(-1.2deg); }
+.purple-band::after { bottom:-15px; transform: skewY(-1.2deg); }
+
+/* ===== 圆环数据 ===== */
+.ring-svg{ transform: rotate(-90deg); }
+
+/* ===== 评分柱状图 ===== */
+.bar{ background:var(--bcw-purple-soft); border-radius:8px; overflow:hidden; height:18px; }
+.bar > div{ height:100%; background:var(--bcw-purple); border-radius:8px; }
+
+/* ===== 评分星星 ===== */
+.stars{ color:var(--bcw-yellow); letter-spacing:1px; }
+
+/* ===== 头像 initials ===== */
+.avatar{
+  width:40px; height:40px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  color:#fff; font-weight:700; font-size:14px; flex-shrink:0;
 }
 
-body {
-  font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ===== Section 章节序号 ===== */
+.ch-num{
+  font-family:Inter, system-ui, sans-serif;
+  font-weight:800; font-size:14px; letter-spacing:.2em;
+  color:var(--bcw-purple); text-transform:uppercase;
 }
+
+/* ===== 装饰单词卡 ===== */
+.word-card{
+  background:#fff; border:1.5px solid var(--bcw-purple);
+  border-radius:14px; padding:8px 14px; font-family:Inter;
+  font-weight:700; color:var(--bcw-purple); font-size:14px;
+  box-shadow:0 3px 0 var(--bcw-purple-soft);
+  position:absolute;
+}
+
+/* ===== before/after 占位条 ===== */
+.ba-row{ display:flex; gap:12px; align-items:center; }
+.ba-bar{ flex:1; height:80px; border-radius:14px; }
+
+/* ===== 渐变方块 (产品截图占位) ===== */
+.ph-green{ background:linear-gradient(135deg, #89E219 0%, #46A302 100%); }
+.ph-purple{ background:linear-gradient(135deg, #C0A8EC 0%, #7C5BC9 100%); }
 
 ::selection {
   background-color: #58CC02;

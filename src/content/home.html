@@ -1,0 +1,1254 @@
+<!-- ============================================================
+     NAV
+============================================================ -->
+<header class="sticky top-0 z-40 backdrop-blur bg-bcw-cream/85 border-b border-bcw-line">
+  <div class="max-w-[1280px] mx-auto px-8 h-[68px] flex items-center justify-between">
+    <a href="#hero" class="flex items-center gap-2">
+      <div class="w-9 h-9 rounded-2xl bg-bcw-green flex items-center justify-center shadow-[0_3px_0_#46A302]">
+        <span class="text-white text-lg">🐸</span>
+      </div>
+      <span class="font-bold text-[20px] tracking-tight">捕词蛙</span>
+      <span class="text-bcw-ink-soft text-sm font-medium ml-1">BUCIWA</span>
+    </a>
+    <nav class="flex items-center gap-7 text-[15px] font-medium text-bcw-ink-soft">
+      <a class="hover:text-bcw-ink" href="#features">产品</a>
+      <a class="hover:text-bcw-ink" href="#demo-video">视频演示</a>
+      <a class="hover:text-bcw-ink" href="#data">内测数据</a>
+      <a class="hover:text-bcw-ink" href="#feedback-show">用户反馈</a>
+      <a class="hover:text-bcw-ink" href="#endorsement">背书</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button class="btn3d btn-white btn-sm">查看反馈</button>
+      <button class="btn3d btn-green btn-sm">投资咨询</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     SECTION 1：HERO
+============================================================ -->
+<section id="hero" class="relative overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-8 pt-20 pb-28 grid grid-cols-12 gap-8 items-center">
+    <!-- 左 55% -->
+    <div class="col-span-7">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bcw-green-soft border border-bcw-green/30 text-bcw-green-deep text-sm font-bold mb-7">
+        <span>🐸</span><span>清华团队 · 用 AI 把单词变成图像</span>
+      </div>
+      <h1 class="font-black text-[78px] leading-[1.05] tracking-tight mb-6">
+        从看懂英语，<br/>
+        <span class="relative inline-block">
+          到看见<span class="text-bcw-green">世界</span>
+          <span class="absolute -bottom-2 left-0 right-0 h-3 bg-bcw-yellow/40 -z-10 rounded"></span>
+        </span>
+      </h1>
+      <p class="text-[20px] text-bcw-ink-soft leading-relaxed mb-8 max-w-[560px]">
+        捕词蛙把单词串成有故事的画面，从 0 帮你构建记忆。
+      </p>
+      <!-- 信任三件套 -->
+      <div class="flex flex-wrap gap-x-7 gap-y-3 mb-10 text-[15px] font-medium text-bcw-ink">
+        <span class="flex items-center gap-2">📚 中国水利水电出版社签约</span>
+        <span class="flex items-center gap-2">🔬 清华团队</span>
+        <span class="flex items-center gap-2">📈 10日留存 <b class="text-bcw-green-deep">48.72%</b></span>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="btn3d btn-green">▶ 观看 60 秒演示</button>
+        <button class="btn3d btn-white">查看用户反馈 →</button>
+      </div>
+    </div>
+
+    <!-- 右 45% -->
+    <div class="col-span-5 relative h-[520px]">
+      <!-- 飘浮单词卡装饰 -->
+      <div class="word-card word-drift" style="--rot:-6deg; left:-20px; top:30px;">vocabulary</div>
+      <div class="word-card word-drift" style="--rot:5deg;  right:-10px; top:80px; animation-delay:.6s;">memory</div>
+      <div class="word-card word-drift" style="--rot:-3deg; left:40px;  bottom:60px; animation-delay:1.2s;">imagine</div>
+      <div class="word-card word-drift" style="--rot:8deg;  right:30px; bottom:100px; animation-delay:1.8s;">picture</div>
+      <div class="word-card word-drift" style="--rot:-10deg;left:120px; top:0;       animation-delay:2.4s;">story</div>
+
+      <!-- 主吉祥物（举剑战斗版）：从 battle 图中"开窗"显示左侧大青蛙 -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="battle-window mascot-float" style="width:540px; height:420px;">
+          <img src="/mascot-orig/hero-battle.png" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
+        </div>
+      </div>
+
+      <!-- 角落徽章 -->
+      <div class="absolute -bottom-2 right-4 bg-white rounded-2xl border-2 border-bcw-yellow px-4 py-2 shadow-[0_4px_0_#FFB800] flex items-center gap-2">
+        <span class="text-bcw-yellow">⭐</span>
+        <span class="text-sm font-bold">用户好评率 90.9%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 滚动提示 -->
+  <div class="absolute left-1/2 -translate-x-1/2 bottom-6 text-bcw-ink-soft text-xs animate-bounce">向下滚动 ↓</div>
+</section>
+
+<!-- ============================================================
+     SECTION 2：痛点引入
+============================================================ -->
+<section id="pain" class="bg-white border-y border-bcw-line">
+  <div class="max-w-[1280px] mx-auto px-8 py-24">
+    <div class="text-center mb-14">
+      <div class="ch-num mb-3">PAIN POINT</div>
+      <h2 class="text-[44px] font-black tracking-tight">你以为你在记单词，<br/>其实你在记"乱码"</h2>
+    </div>
+
+    <div class="grid grid-cols-12 gap-8 items-center">
+      <!-- 左：乱码堆叠 -->
+      <div class="col-span-5 relative h-[360px] bg-bcw-cream rounded-card border border-bcw-line p-6 overflow-hidden">
+        <div class="text-bcw-ink-soft text-xs mb-3 uppercase tracking-widest">背了那么久…</div>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-lg bg-bcw-line text-bcw-ink-soft text-sm font-medium">abandon</span>
+          <span class="px-3 py-1.5 rounded-lg bg-bcw-line text-bcw-ink-soft text-sm font-medium opacity-60">abate</span>
+          <span class="px-3 py-1.5 rounded-lg bg-bcw-line text-bcw-ink-soft text-sm font-medium opacity-40">abdicate</span>
+          <span class="px-3 py-1.5 rounded-lg bg-bcw-line text-bcw-ink-soft text-sm font-medium opacity-30">aberration</span>
+          <span class="px-3 py-1.5 rounded-lg bg-bcw-line text-bcw-ink-soft text-sm font-medium opacity-50">abet</span>
+          <span class="px-3 py-1.5 rounded-lg bg-bcw-line text-bcw-ink-soft text-sm font-medium opacity-40">abeyance</span>
+          <span class="px-3 py-1.5 rounded-lg bg-bcw-line text-bcw-ink-soft text-sm font-medium opacity-30">abhor</span>
+          <span class="px-3 py-1.5 rounded-lg bg-bcw-line text-bcw-ink-soft text-sm font-medium opacity-30">abide</span>
+          <span class="px-3 py-1.5 rounded-lg bg-bcw-line text-bcw-ink-soft text-sm font-medium opacity-25">abject</span>
+          <span class="px-3 py-1.5 rounded-lg bg-bcw-line text-bcw-ink-soft text-sm font-medium opacity-25">abjure</span>
+          <span class="px-3 py-1.5 rounded-lg bg-bcw-line text-bcw-ink-soft text-sm font-medium opacity-20">ablaze</span>
+        </div>
+        <div class="absolute right-6 bottom-6 text-bcw-ink/80 font-bold text-2xl">？？？</div>
+      </div>
+
+      <!-- 中：箭头 -->
+      <div class="col-span-2 flex items-center justify-center">
+        <div class="text-5xl text-bcw-purple">→</div>
+      </div>
+
+      <!-- 右：完整画面（紫色 placeholder） -->
+      <div class="col-span-5 relative h-[360px] rounded-card overflow-hidden ph-purple flex items-center justify-center">
+        <div class="text-center text-white">
+          <div class="text-5xl mb-3">🎬</div>
+          <div class="font-bold text-lg mb-1">一张有故事的画面</div>
+          <div class="text-white/80 text-sm">产品截图占位（待 Jalin 上传）</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 引语卡 -->
+    <div class="mt-14 max-w-[860px] mx-auto card-3d p-8 relative">
+      <div class="text-7xl absolute -top-4 left-6 text-bcw-purple/20 font-black leading-none">"</div>
+      <p class="text-[19px] leading-relaxed text-bcw-ink pl-8">
+        每天打卡 Day 23，朋友圈截图张张满分，但一周后一测，正确率不到 40%。我背了那么久，脑子里还是只有 <b class="text-bcw-purple">abandon</b>。
+      </p>
+      <div class="mt-4 pl-8 text-sm text-bcw-ink-soft">—— 内测用户·考研党</div>
+    </div>
+
+    <!-- 反共识金句 -->
+    <div class="mt-12 text-center">
+      <p class="text-[40px] font-black tracking-tight">
+        问题不在你，<span class="text-bcw-purple">在方法。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3：4 大功能（每个一整屏 / 左右交错）
+============================================================ -->
+<section id="features" class="relative">
+
+  <!-- ----- 3.1 语义网络 & 视觉化（图右文左） ----- -->
+  <div class="max-w-[1280px] mx-auto px-8 py-28 grid grid-cols-12 gap-10 items-center">
+    <div class="col-span-5">
+      <div class="ch-num mb-4">01 / 04</div>
+      <h2 class="text-[52px] font-black leading-[1.1] tracking-tight mb-6">
+        数个词，一个故事，<br/>一张图。
+      </h2>
+      <p class="text-[18px] text-bcw-ink-soft leading-relaxed mb-6">
+        把单词串联在有故事的画面中，让单词在大脑里不再是散落的孤岛，而是绑在一起的<b class="text-bcw-ink">一张网</b>。下次随便触发其中一个词，整张画面、整组单词都会被激活。
+      </p>
+      <div class="inline-flex items-center gap-2 bg-bcw-yellow/15 border border-bcw-yellow/50 rounded-full px-4 py-2 text-sm font-bold text-bcw-ink mb-6">
+        <span>🆕</span><span>预习功能 · 真正从 0 开始构建记忆</span>
+      </div>
+      <div>
+        <button class="btn3d btn-green btn-sm">了解视觉化原理 →</button>
+      </div>
+    </div>
+
+    <div class="col-span-7">
+      <div class="relative">
+        <!-- 主截图占位（绿色） -->
+        <div class="rounded-card ph-green h-[440px] relative overflow-hidden border-2 border-bcw-green-deep shadow-[0_8px_0_#46A302]">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,.18),transparent_60%)]"></div>
+          <div class="absolute top-6 left-6 text-white/90 text-xs uppercase tracking-widest font-bold">Visual Network</div>
+          <div class="absolute bottom-8 left-8 right-8">
+            <div class="text-white/80 text-xs mb-2">产品截图占位（待 Jalin 上传）</div>
+            <div class="bg-white/95 rounded-2xl p-4 shadow-lg">
+              <div class="text-bcw-ink-soft text-xs uppercase tracking-widest mb-2">画面记忆</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-lg bg-bcw-green-soft text-bcw-green-deep text-sm font-bold">abandon</span>
+                <span class="px-3 py-1 rounded-lg bg-bcw-green-soft text-bcw-green-deep text-sm font-bold">desert</span>
+                <span class="px-3 py-1 rounded-lg bg-bcw-green-soft text-bcw-green-deep text-sm font-bold">forsake</span>
+                <span class="px-3 py-1 rounded-lg bg-bcw-green-soft text-bcw-green-deep text-sm font-bold">relinquish</span>
+                <span class="px-3 py-1 rounded-lg bg-bcw-green-soft text-bcw-green-deep text-sm font-bold">depart</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 角落吉祥物正面 -->
+        <div class="absolute -left-8 -bottom-10 w-[180px] h-[180px] mascot-window bg-white rounded-full border-2 border-bcw-green shadow-[0_4px_0_#46A302]">
+          <img src="/mascot-orig/mascot-front.png" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ----- 3.2 场景化（图左文右） ----- -->
+  <div class="max-w-[1280px] mx-auto px-8 py-28 grid grid-cols-12 gap-10 items-center">
+    <div class="col-span-7 order-2 md:order-1">
+      <div class="relative">
+        <div class="rounded-card ph-green h-[440px] relative overflow-hidden border-2 border-bcw-green-deep shadow-[0_8px_0_#46A302]">
+          <div class="absolute top-6 left-6 text-white/90 text-xs uppercase tracking-widest font-bold">Scenario Quiz</div>
+          <div class="absolute inset-0 flex items-center justify-center px-12 gap-4">
+            <div class="bg-white/95 rounded-2xl p-4 w-[180px] shadow-lg">
+              <div class="text-bcw-ink-soft text-xs mb-2">题型 · 完形填空</div>
+              <div class="text-bcw-ink text-sm leading-relaxed">She decided to <span class="bg-bcw-yellow/40 rounded px-1">___</span> her old job.</div>
+              <div class="mt-2 text-[11px] text-bcw-green-deep font-bold">A. abandon &nbsp; B. depart</div>
+            </div>
+            <div class="bg-white/95 rounded-2xl p-4 w-[180px] shadow-lg -translate-y-4">
+              <div class="text-bcw-ink-soft text-xs mb-2">题型 · 单词语音</div>
+              <div class="flex items-center gap-2 text-sm">🔊 <b>abandon</b></div>
+              <div class="mt-2 text-[11px] text-bcw-green-deep font-bold">/əˈbændən/</div>
+            </div>
+            <div class="bg-white/95 rounded-2xl p-4 w-[180px] shadow-lg">
+              <div class="text-bcw-ink-soft text-xs mb-2">题型 · 场景听力</div>
+              <div class="text-sm leading-relaxed">"…they had to <b>abandon</b> the ship."</div>
+              <div class="mt-2 text-[11px] text-bcw-green-deep font-bold">▶ 播放</div>
+            </div>
+          </div>
+          <div class="absolute bottom-6 left-6 text-white/80 text-xs">产品截图占位（待 Jalin 上传）</div>
+        </div>
+
+        <!-- 角落吉祥物侧身 -->
+        <div class="absolute -right-8 -bottom-10 w-[180px] h-[180px] mascot-window bg-white rounded-full border-2 border-bcw-green shadow-[0_4px_0_#46A302]">
+          <img src="/mascot-orig/mascot-side.png" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-5 order-1 md:order-2">
+      <div class="ch-num mb-4">02 / 04</div>
+      <h2 class="text-[52px] font-black leading-[1.1] tracking-tight mb-6">
+        光学不练，<br/>等于白学。
+      </h2>
+      <p class="text-[18px] text-bcw-ink-soft leading-relaxed mb-6">
+        捕词蛙设计了多种<b class="text-bcw-ink">场景化视觉复习题型</b>——完形填空、单词语音、场景听力……让你在语境中把词"用"出来。
+      </p>
+      <div class="grid grid-cols-3 gap-2 mb-6">
+        <div class="rounded-2xl border border-bcw-line bg-white py-3 text-center text-sm font-bold">📝 完形</div>
+        <div class="rounded-2xl border border-bcw-line bg-white py-3 text-center text-sm font-bold">🔊 语音</div>
+        <div class="rounded-2xl border border-bcw-line bg-white py-3 text-center text-sm font-bold">🎧 听力</div>
+      </div>
+      <button class="btn3d btn-green btn-sm">查看全部题型 →</button>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ----- 3.3 AI 驱动（图右文左） ----- -->
+  <div class="max-w-[1280px] mx-auto px-8 py-28 grid grid-cols-12 gap-10 items-center">
+    <div class="col-span-5">
+      <div class="ch-num mb-4">03 / 04</div>
+      <h2 class="text-[52px] font-black leading-[1.1] tracking-tight mb-6">
+        你的<span class="text-bcw-green">专属私教</span>
+      </h2>
+      <p class="text-[18px] text-bcw-ink-soft leading-relaxed mb-6">
+        根据你的水平和目标生成<b class="text-bcw-ink">定制化学习内容</b>，根据你的学习反馈<b class="text-bcw-ink">动态调整难度</b>，让你始终在"有点挑战但跟得上"的节奏里。
+      </p>
+      <ul class="space-y-3 mb-6 text-[16px]">
+        <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-bcw-green flex items-center justify-center text-white text-xs flex-shrink-0">✓</span><span>豆包 Doubao-Seed + Stable Diffusion 多模态引擎</span></li>
+        <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-bcw-green flex items-center justify-center text-white text-xs flex-shrink-0">✓</span><span>自适应难度曲线，错题驱动出题</span></li>
+        <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-bcw-green flex items-center justify-center text-white text-xs flex-shrink-0">✓</span><span>个性化学习画像，越用越懂你</span></li>
+      </ul>
+      <button class="btn3d btn-green btn-sm">查看 AI 自适应原理 →</button>
+    </div>
+
+    <div class="col-span-7">
+      <div class="relative">
+        <div class="rounded-card ph-green h-[440px] relative overflow-hidden border-2 border-bcw-green-deep shadow-[0_8px_0_#46A302]">
+          <div class="absolute top-6 left-6 text-white/90 text-xs uppercase tracking-widest font-bold">Adaptive Curve</div>
+          <!-- 简易难度曲线占位 -->
+          <svg viewBox="0 0 600 280" class="absolute inset-x-8 top-1/2 -translate-y-1/2 w-[calc(100%-64px)]">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#fff" stop-opacity=".7"/>
+                <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <!-- 网格 -->
+            <g stroke="rgba(255,255,255,.25)" stroke-dasharray="4 6">
+              <line x1="0" y1="60"  x2="600" y2="60"/>
+              <line x1="0" y1="140" x2="600" y2="140"/>
+              <line x1="0" y1="220" x2="600" y2="220"/>
+            </g>
+            <!-- 曲线 -->
+            <path d="M0,220 C 80,210 130,180 180,150 S 300,80 380,90 S 520,40 600,30"
+                  fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+            <path d="M0,220 C 80,210 130,180 180,150 S 300,80 380,90 S 520,40 600,30 L600,280 L0,280 Z"
+                  fill="url(#g1)" opacity=".5"/>
+            <!-- 节点 -->
+            <g fill="#FFB800" stroke="#fff" stroke-width="3">
+              <circle cx="80"  cy="208" r="7"/>
+              <circle cx="200" cy="146" r="7"/>
+              <circle cx="380" cy="92"  r="7"/>
+              <circle cx="540" cy="38"  r="7"/>
+            </g>
+            <text x="60"  y="248" fill="#fff" font-size="14" font-weight="700">Day 1</text>
+            <text x="180" y="248" fill="#fff" font-size="14" font-weight="700">Day 7</text>
+            <text x="360" y="248" fill="#fff" font-size="14" font-weight="700">Day 14</text>
+            <text x="520" y="248" fill="#fff" font-size="14" font-weight="700">Day 30</text>
+          </svg>
+          <div class="absolute bottom-6 left-6 text-white/80 text-xs">产品截图占位（待 Jalin 上传）</div>
+          <div class="absolute top-6 right-6 bg-white/95 rounded-2xl px-3 py-2 shadow">
+            <div class="text-[11px] text-bcw-ink-soft">当前难度</div>
+            <div class="text-bcw-green-deep font-black">Lv. 7 ★</div>
+          </div>
+        </div>
+
+        <!-- 角落吉祥物侧后 -->
+        <div class="absolute -left-8 -bottom-10 w-[180px] h-[180px] mascot-window bg-white rounded-full border-2 border-bcw-green shadow-[0_4px_0_#46A302]">
+          <img src="/mascot-orig/mascot-back.png" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ----- 3.4 更多功能（三张小卡平铺） ----- -->
+  <div class="max-w-[1280px] mx-auto px-8 py-28">
+    <div class="text-center mb-14">
+      <div class="ch-num mb-3">04 / 04</div>
+      <h2 class="text-[44px] font-black tracking-tight">不止背单词</h2>
+    </div>
+    <div class="grid grid-cols-3 gap-6">
+      <div class="card-3d p-8">
+        <div class="w-14 h-14 rounded-2xl bg-bcw-green-soft flex items-center justify-center text-3xl mb-5">🎧</div>
+        <h3 class="text-2xl font-black mb-2">随身听</h3>
+        <p class="text-bcw-ink-soft leading-relaxed">通勤、跑步、睡前——把词典塞进耳朵，被动浸泡也能高效学。</p>
+      </div>
+      <div class="card-3d p-8">
+        <div class="w-14 h-14 rounded-2xl bg-bcw-green-soft flex items-center justify-center text-3xl mb-5">🔁</div>
+        <h3 class="text-2xl font-black mb-2">智能复习</h3>
+        <p class="text-bcw-ink-soft leading-relaxed">基于遗忘曲线 + 错题历史，每天 10 分钟，把该复习的词推到你面前。</p>
+      </div>
+      <div class="card-3d p-8">
+        <div class="w-14 h-14 rounded-2xl bg-bcw-green-soft flex items-center justify-center text-3xl mb-5">📈</div>
+        <h3 class="text-2xl font-black mb-2">学习数据曲线</h3>
+        <p class="text-bcw-ink-soft leading-relaxed">每一次进步都被量化记录，让坚持看得见。</p>
+      </div>
+    </div>
+    <div class="mt-10 text-center">
+      <a href="#" class="text-bcw-green-deep font-bold text-lg hover:underline">更多功能欢迎体验 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4：视频演示区
+============================================================ -->
+<section id="demo-video" class="bg-white border-y border-bcw-line">
+  <div class="max-w-[1280px] mx-auto px-8 py-24">
+    <div class="text-center mb-14">
+      <div class="ch-num mb-3" style="color:var(--bcw-green-deep);">DEMO VIDEO</div>
+      <h2 class="text-[44px] font-black tracking-tight">30 秒看懂捕词蛙</h2>
+      <p class="text-bcw-ink-soft mt-3">B 站嵌入 · 后续支持后台上传</p>
+    </div>
+
+    <!-- 主视频 + 3 备选 -->
+    <div class="grid grid-cols-12 gap-6">
+      <!-- 主视频 -->
+      <div class="col-span-8">
+        <div class="rounded-card overflow-hidden border-2 border-bcw-green-deep shadow-[0_8px_0_#46A302] aspect-[16/9] ph-green relative cursor-pointer group">
+          <div class="absolute inset-0 bg-black/20"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-24 h-24 rounded-full bg-white/95 flex items-center justify-center shadow-2xl group-hover:scale-110 transition">
+              <div class="w-0 h-0 border-l-[28px] border-l-bcw-green-deep border-y-[18px] border-y-transparent ml-2"></div>
+            </div>
+          </div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <div class="text-xs uppercase tracking-widest opacity-80 mb-1">主视频</div>
+            <div class="font-black text-2xl">捕词蛙是什么 · 60 秒</div>
+            <div class="text-xs opacity-80 mt-1">B 站视频占位（待 Jalin 上传）</div>
+          </div>
+          <div class="absolute top-6 right-6 px-3 py-1 rounded-full bg-black/50 text-white text-xs font-bold">01:00</div>
+        </div>
+      </div>
+
+      <!-- 3 个备选 -->
+      <div class="col-span-4 flex flex-col gap-4">
+        <div class="card-3d p-3 flex gap-3 items-center cursor-pointer hover:translate-y-[-2px] transition">
+          <div class="w-28 h-20 rounded-2xl ph-green flex items-center justify-center text-white text-xl flex-shrink-0">▶</div>
+          <div class="min-w-0">
+            <div class="text-xs text-bcw-green-deep font-bold mb-1">功能演示</div>
+            <div class="font-bold text-sm leading-snug truncate">视觉化记忆 · 一组词成画</div>
+            <div class="text-xs text-bcw-ink-soft mt-1">02:14</div>
+          </div>
+        </div>
+        <div class="card-3d p-3 flex gap-3 items-center cursor-pointer hover:translate-y-[-2px] transition">
+          <div class="w-28 h-20 rounded-2xl ph-green flex items-center justify-center text-white text-xl flex-shrink-0">▶</div>
+          <div class="min-w-0">
+            <div class="text-xs text-bcw-green-deep font-bold mb-1">真实学员</div>
+            <div class="font-bold text-sm leading-snug truncate">考研党的 14 天</div>
+            <div class="text-xs text-bcw-ink-soft mt-1">03:42</div>
+          </div>
+        </div>
+        <div class="card-3d p-3 flex gap-3 items-center cursor-pointer hover:translate-y-[-2px] transition">
+          <div class="w-28 h-20 rounded-2xl ph-green flex items-center justify-center text-white text-xl flex-shrink-0">▶</div>
+          <div class="min-w-0">
+            <div class="text-xs text-bcw-green-deep font-bold mb-1">创始人 1 分钟</div>
+            <div class="font-bold text-sm leading-snug truncate">为什么做捕词蛙</div>
+            <div class="text-xs text-bcw-ink-soft mt-1">01:08</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5：内测核心数据卡（紫绿交错）
+============================================================ -->
+<section id="data" class="purple-band">
+  <div class="max-w-[1280px] mx-auto px-8 py-24">
+    <div class="text-center mb-14">
+      <div class="ch-num mb-3">REAL DATA</div>
+      <h2 class="text-[44px] font-black tracking-tight">不画饼，直接看 <span class="text-bcw-purple">63 人</span>内测真实数据</h2>
+      <p class="text-bcw-ink-soft mt-3">5 月 12 日开启首轮内测，5 月 27 日两周时点收官</p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6">
+      <!-- 1 绿 63 -->
+      <div class="card-3d-green p-8 relative overflow-hidden">
+        <div class="text-bcw-green-deep text-xs font-bold uppercase tracking-widest mb-2">USERS</div>
+        <div class="font-num font-extrabold text-[88px] leading-none text-bcw-green-deep">63</div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">内测参与用户</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">两周内累计内测人数</div>
+        <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-green-soft"></div>
+      </div>
+      <!-- 2 紫 107 -->
+      <div class="card-3d-purple p-8 relative overflow-hidden">
+        <div class="text-bcw-purple-deep text-xs font-bold uppercase tracking-widest mb-2">FEEDBACK</div>
+        <div class="font-num font-extrabold text-[88px] leading-none text-bcw-purple-deep">107</div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">反馈意见</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">每位用户平均反馈 1.7 条</div>
+        <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-purple-soft"></div>
+      </div>
+      <!-- 3 绿（高亮）48.72% -->
+      <div class="card-3d-green p-8 relative overflow-hidden bg-bcw-green-soft">
+        <div class="absolute top-4 right-4 px-2 py-1 rounded-full bg-bcw-yellow text-bcw-ink text-[10px] font-black tracking-widest">⭐ HIGHLIGHT</div>
+        <div class="text-bcw-green-deep text-xs font-bold uppercase tracking-widest mb-2">DAY-10 RETENTION</div>
+        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-green-deep">48.72<span class="text-5xl">%</span></div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">10 日留存</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">同类基准 5–15% · 是行业 3–10 倍</div>
+      </div>
+      <!-- 4 紫 90.9% -->
+      <div class="card-3d-purple p-8 relative overflow-hidden">
+        <div class="text-bcw-purple-deep text-xs font-bold uppercase tracking-widest mb-2">POSITIVE RATE</div>
+        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-purple-deep">90.9<span class="text-5xl">%</span></div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">用户好评率</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">4 星及以上占比</div>
+        <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-purple-soft"></div>
+      </div>
+      <!-- 5 绿 50% -->
+      <div class="card-3d-green p-8 relative overflow-hidden">
+        <div class="text-bcw-green-deep text-xs font-bold uppercase tracking-widest mb-2">5-STAR</div>
+        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-green-deep">50<span class="text-5xl">%</span></div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">五星好评</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">两个用户里就有一个给满分</div>
+        <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-green-soft"></div>
+      </div>
+      <!-- 6 紫 86.4% -->
+      <div class="card-3d-purple p-8 relative overflow-hidden">
+        <div class="text-bcw-purple-deep text-xs font-bold uppercase tracking-widest mb-2">VS COMPETITORS</div>
+        <div class="font-num font-extrabold text-[80px] leading-none text-bcw-purple-deep">86.4<span class="text-5xl">%</span></div>
+        <div class="mt-3 text-bcw-ink font-bold text-lg">认为优于同类产品</div>
+        <div class="text-bcw-ink-soft text-sm mt-1">对比墨墨、不背、扇贝等</div>
+        <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-purple-soft"></div>
+      </div>
+    </div>
+
+    <div class="text-center mt-10 text-bcw-ink-soft text-sm">
+      已完成 <b class="text-bcw-purple">12 处</b>细节优化 · 仍在持续迭代
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 6：用户反馈展示区四件套
+============================================================ -->
+<section id="feedback-show" class="bg-bcw-purple-soft relative">
+  <div class="max-w-[1280px] mx-auto px-8 py-24">
+    <!-- 区块顶部 -->
+    <div class="text-center mb-16 relative">
+      <div class="ch-num mb-3">FEEDBACK SHOWCASE</div>
+      <h2 class="text-[48px] font-black tracking-tight">我们与 <span class="text-bcw-purple">63 位</span>共创伙伴</h2>
+      <p class="text-bcw-ink-soft mt-3 text-lg">完全对应公众号 5/27 致谢推文 · "4 个我们"</p>
+
+      <!-- 角落吉祥物正面装饰 -->
+      <div class="absolute -top-4 right-0 w-[120px] h-[120px] mascot-window">
+        <img src="/mascot-orig/mascot-coffee.png" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
+      </div>
+    </div>
+
+    <!-- ===== 01 我们收集了很多反馈（瀑布流） ===== -->
+    <div class="mb-20">
+      <div class="flex items-end justify-between mb-8">
+        <div>
+          <div class="ch-num mb-2">01</div>
+          <h3 class="text-[32px] font-black">我们收集了很多反馈</h3>
+          <p class="text-bcw-ink-soft mt-1">107 条反馈 · 精选 6 条原话展示</p>
+        </div>
+        <a href="#" class="text-bcw-purple-deep font-bold text-sm hover:underline">查看完整 107 条 →</a>
+      </div>
+
+      <div class="grid grid-cols-3 gap-5">
+        <!-- 6 条精选反馈 -->
+        <div class="card-3d p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="avatar" style="background:#A98BE0;">L</div>
+            <div>
+              <div class="font-bold text-sm">L 同学</div>
+              <div class="text-xs text-bcw-ink-soft">学生 · 考研党</div>
+            </div>
+            <div class="ml-auto stars text-sm">★★★★★</div>
+          </div>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"原来以为又是个普通背单词软件，画面感太强了，背完一组词就像看了段动画。"</p>
+        </div>
+
+        <div class="card-3d p-6 -translate-y-3">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="avatar" style="background:#58CC02;">W</div>
+            <div>
+              <div class="font-bold text-sm">W 同学</div>
+              <div class="text-xs text-bcw-ink-soft">学生 · 四六级</div>
+            </div>
+            <div class="ml-auto stars text-sm">★★★★★</div>
+          </div>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"用了一周朋友圈打卡的人都来问我用的什么 App。"</p>
+        </div>
+
+        <div class="card-3d p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="avatar" style="background:#7C5BC9;">Z</div>
+            <div>
+              <div class="font-bold text-sm">Z 同学</div>
+              <div class="text-xs text-bcw-ink-soft">学生 · 高三</div>
+            </div>
+            <div class="ml-auto stars text-sm">★★★★★</div>
+          </div>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"AI 出题真的会根据我做错的地方调整，不是固定题库感。"</p>
+        </div>
+
+        <div class="card-3d p-6 -translate-y-3">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="avatar" style="background:#46A302;">M</div>
+            <div>
+              <div class="font-bold text-sm">M 老师</div>
+              <div class="text-xs text-bcw-ink-soft">老师 · 英语</div>
+            </div>
+            <div class="ml-auto stars text-sm">★★★★★</div>
+          </div>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"把单词记成画面这件事我以前从没想过。"</p>
+        </div>
+
+        <div class="card-3d p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="avatar" style="background:#A98BE0;">Y</div>
+            <div>
+              <div class="font-bold text-sm">Y 同学</div>
+              <div class="text-xs text-bcw-ink-soft">学生 · 大一</div>
+            </div>
+            <div class="ml-auto stars text-sm">★★★★☆</div>
+          </div>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"abandon 终于不再是我能想起来的唯一一个单词了哈哈。"</p>
+        </div>
+
+        <div class="card-3d p-6 -translate-y-3">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="avatar" style="background:#58CC02;">H</div>
+            <div>
+              <div class="font-bold text-sm">H 同学</div>
+              <div class="text-xs text-bcw-ink-soft">学生 · 考研党</div>
+            </div>
+            <div class="ml-auto stars text-sm">★★★★★</div>
+          </div>
+          <p class="text-[15px] leading-relaxed text-bcw-ink">"界面可爱不会让人有学习压力。"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 02 我们得到了很多帮助 ===== -->
+    <div class="mb-20">
+      <div class="mb-8">
+        <div class="ch-num mb-2">02</div>
+        <h3 class="text-[32px] font-black">我们得到了很多帮助</h3>
+        <p class="text-bcw-ink-soft mt-1">12 处用户驱动的细节优化 + 63 位共创伙伴</p>
+      </div>
+
+      <!-- 12 处优化（before/after 占位） -->
+      <div class="grid grid-cols-3 gap-5 mb-12">
+        
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#01</span>
+            <span class="text-sm font-bold">首屏加载速度优化</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#02</span>
+            <span class="text-sm font-bold">题型切换交互重设</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#03</span>
+            <span class="text-sm font-bold">复习卡片视觉层级</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#04</span>
+            <span class="text-sm font-bold">AI 出题难度梯度</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#05</span>
+            <span class="text-sm font-bold">随身听音频码率</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#06</span>
+            <span class="text-sm font-bold">学习数据曲线交互</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#07</span>
+            <span class="text-sm font-bold">夜间模式色彩调校</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#08</span>
+            <span class="text-sm font-bold">新手引导流程精简</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#09</span>
+            <span class="text-sm font-bold">错题本结构重构</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#10</span>
+            <span class="text-sm font-bold">通知节奏改进</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#11</span>
+            <span class="text-sm font-bold">图像生成清晰度</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+
+        <div class="card-3d p-5 bg-white">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-num font-extrabold text-bcw-purple">#12</span>
+            <span class="text-sm font-bold">导出分享样式</span>
+          </div>
+          <div class="ba-row mb-2">
+            <div class="ba-bar bg-bcw-line flex items-center justify-center text-[10px] text-bcw-ink-soft font-bold">BEFORE</div>
+            <div class="text-bcw-purple font-black">→</div>
+            <div class="ba-bar bg-bcw-purple-soft flex items-center justify-center text-[10px] text-bcw-purple-deep font-bold border-2 border-bcw-purple/30">AFTER</div>
+          </div>
+          <div class="text-[11px] text-bcw-ink-soft">截图占位 · 待 Jalin 上传</div>
+        </div>
+      </div>
+
+      <!-- 共创伙伴墙 -->
+      <div class="card-3d p-8 bg-white">
+        <div class="flex items-end justify-between mb-5">
+          <h4 class="text-xl font-black">63 位共创伙伴墙</h4>
+          <span class="text-xs text-bcw-ink-soft">脱敏头像 · 仅展示昵称首字母</span>
+        </div>
+        <div class="grid grid-cols-12 gap-3">
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">U</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">A</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">H</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">E</div>
+          <div class="avatar" style="background:#46A302; width:40px; height:40px; font-size:14px;">V</div>
+          <div class="avatar" style="background:#46A302; width:40px; height:40px; font-size:14px;">C</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">N</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">A</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">G</div>
+          <div class="avatar" style="background:#46A302; width:40px; height:40px; font-size:14px;">Q</div>
+          <div class="avatar" style="background:#46A302; width:40px; height:40px; font-size:14px;">A</div>
+          <div class="avatar" style="background:#46A302; width:40px; height:40px; font-size:14px;">G</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">N</div>
+          <div class="avatar" style="background:#46A302; width:40px; height:40px; font-size:14px;">O</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">I</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">Y</div>
+          <div class="avatar" style="background:#58CC02; width:40px; height:40px; font-size:14px;">W</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">K</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">E</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">Y</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">D</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">M</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">L</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">T</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">Z</div>
+          <div class="avatar" style="background:#58CC02; width:40px; height:40px; font-size:14px;">X</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">R</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">M</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">R</div>
+          <div class="avatar" style="background:#46A302; width:40px; height:40px; font-size:14px;">U</div>
+          <div class="avatar" style="background:#46A302; width:40px; height:40px; font-size:14px;">L</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">G</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">B</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">Y</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">C</div>
+          <div class="avatar" style="background:#58CC02; width:40px; height:40px; font-size:14px;">D</div>
+          <div class="avatar" style="background:#58CC02; width:40px; height:40px; font-size:14px;">I</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">U</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">F</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">L</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">V</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">W</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">T</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">R</div>
+          <div class="avatar" style="background:#58CC02; width:40px; height:40px; font-size:14px;">F</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">M</div>
+          <div class="avatar" style="background:#46A302; width:40px; height:40px; font-size:14px;">U</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">H</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">Y</div>
+          <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">H</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">Z</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">M</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">C</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">S</div>
+          <div class="avatar" style="background:#58CC02; width:40px; height:40px; font-size:14px;">G</div>
+          <div class="avatar" style="background:#58CC02; width:40px; height:40px; font-size:14px;">M</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">E</div>
+          <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">E</div>
+          <div class="avatar" style="background:#46A302; width:40px; height:40px; font-size:14px;">X</div>
+          <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">R</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 03 我们收获了很多好评 ===== -->
+    <div class="mb-20">
+      <div class="mb-8">
+        <div class="ch-num mb-2">03</div>
+        <h3 class="text-[32px] font-black">我们收获了很多好评</h3>
+        <p class="text-bcw-ink-soft mt-1">五星评分分布 + 圆环数据可视化 + 截图轮播</p>
+      </div>
+
+      <div class="grid grid-cols-12 gap-6">
+        <!-- 评分柱状图 -->
+        <div class="col-span-5 card-3d p-7 bg-white">
+          <div class="text-bcw-ink-soft text-xs uppercase tracking-widest mb-4 font-bold">RATING DISTRIBUTION</div>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="w-14 text-sm font-bold stars">★★★★★</span>
+              <div class="bar flex-1"><div style="width:50%"></div></div>
+              <span class="w-14 text-right text-sm font-num font-bold">50%</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-14 text-sm font-bold stars">★★★★</span>
+              <div class="bar flex-1"><div style="width:40.9%"></div></div>
+              <span class="w-14 text-right text-sm font-num font-bold">40.9%</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-14 text-sm font-bold stars">★★★</span>
+              <div class="bar flex-1"><div style="width:6.8%"></div></div>
+              <span class="w-14 text-right text-sm font-num font-bold">6.8%</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-14 text-sm font-bold stars">★★</span>
+              <div class="bar flex-1"><div style="width:2.3%"></div></div>
+              <span class="w-14 text-right text-sm font-num font-bold">2.3%</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-14 text-sm font-bold stars">★</span>
+              <div class="bar flex-1"><div style="width:0%"></div></div>
+              <span class="w-14 text-right text-sm font-num font-bold">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 圆环数据 -->
+        <div class="col-span-3 card-3d p-7 bg-white flex flex-col items-center justify-center">
+          <svg class="ring-svg" width="160" height="160" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="64" stroke="#F4EEFC" stroke-width="16" fill="none"/>
+            <circle cx="80" cy="80" r="64" stroke="#A98BE0" stroke-width="16" fill="none"
+                    stroke-dasharray="402" stroke-dashoffset="36.6" stroke-linecap="round"/>
+          </svg>
+          <div class="-mt-[105px] text-center">
+            <div class="font-num font-extrabold text-3xl text-bcw-purple-deep">90.9%</div>
+            <div class="text-xs text-bcw-ink-soft">用户好评率</div>
+          </div>
+          <div class="mt-[60px] text-center">
+            <div class="text-bcw-ink font-bold text-sm">4 星及以上</div>
+          </div>
+        </div>
+
+        <div class="col-span-4 card-3d p-7 bg-white flex flex-col items-center justify-center">
+          <svg class="ring-svg" width="160" height="160" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="64" stroke="#E5F8D5" stroke-width="16" fill="none"/>
+            <circle cx="80" cy="80" r="64" stroke="#58CC02" stroke-width="16" fill="none"
+                    stroke-dasharray="402" stroke-dashoffset="54.7" stroke-linecap="round"/>
+          </svg>
+          <div class="-mt-[105px] text-center">
+            <div class="font-num font-extrabold text-3xl text-bcw-green-deep">86.4%</div>
+            <div class="text-xs text-bcw-ink-soft">优于同类</div>
+          </div>
+          <div class="mt-[60px] text-center">
+            <div class="text-bcw-ink font-bold text-sm">对比墨墨/不背/扇贝</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 朋友圈截图轮播占位 -->
+      <div class="mt-6 grid grid-cols-4 gap-5">
+        
+        <div class="card-3d p-3 bg-white">
+          <div class="aspect-[3/4] rounded-xl bg-bcw-cream flex flex-col p-3 gap-2">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-7 h-7 rounded-full bg-bcw-purple/30"></div>
+              <div class="h-2 bg-bcw-line rounded flex-1"></div>
+            </div>
+            <div class="h-2 bg-bcw-line rounded w-5/6"></div>
+            <div class="h-2 bg-bcw-line rounded w-3/4"></div>
+            <div class="h-2 bg-bcw-line rounded w-4/5"></div>
+            <div class="h-2 bg-bcw-line rounded w-2/3"></div>
+            <div class="h-12 bg-bcw-purple-soft rounded mt-1"></div>
+            <div class="mt-auto text-[10px] text-bcw-ink-soft text-center">用户截图占位</div>
+          </div>
+          <div class="mt-2 text-xs text-center text-bcw-ink-soft">朋友圈截图 · 占位</div>
+        </div>
+        <div class="card-3d p-3 bg-white">
+          <div class="aspect-[3/4] rounded-xl bg-bcw-cream flex flex-col p-3 gap-2">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-7 h-7 rounded-full bg-bcw-purple/30"></div>
+              <div class="h-2 bg-bcw-line rounded flex-1"></div>
+            </div>
+            <div class="h-2 bg-bcw-line rounded w-5/6"></div>
+            <div class="h-2 bg-bcw-line rounded w-3/4"></div>
+            <div class="h-2 bg-bcw-line rounded w-4/5"></div>
+            <div class="h-2 bg-bcw-line rounded w-2/3"></div>
+            <div class="h-12 bg-bcw-purple-soft rounded mt-1"></div>
+            <div class="mt-auto text-[10px] text-bcw-ink-soft text-center">用户截图占位</div>
+          </div>
+          <div class="mt-2 text-xs text-center text-bcw-ink-soft">群聊截图 · 占位</div>
+        </div>
+        <div class="card-3d p-3 bg-white">
+          <div class="aspect-[3/4] rounded-xl bg-bcw-cream flex flex-col p-3 gap-2">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-7 h-7 rounded-full bg-bcw-purple/30"></div>
+              <div class="h-2 bg-bcw-line rounded flex-1"></div>
+            </div>
+            <div class="h-2 bg-bcw-line rounded w-5/6"></div>
+            <div class="h-2 bg-bcw-line rounded w-3/4"></div>
+            <div class="h-2 bg-bcw-line rounded w-4/5"></div>
+            <div class="h-2 bg-bcw-line rounded w-2/3"></div>
+            <div class="h-12 bg-bcw-purple-soft rounded mt-1"></div>
+            <div class="mt-auto text-[10px] text-bcw-ink-soft text-center">用户截图占位</div>
+          </div>
+          <div class="mt-2 text-xs text-center text-bcw-ink-soft">朋友圈截图 · 占位</div>
+        </div>
+        <div class="card-3d p-3 bg-white">
+          <div class="aspect-[3/4] rounded-xl bg-bcw-cream flex flex-col p-3 gap-2">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-7 h-7 rounded-full bg-bcw-purple/30"></div>
+              <div class="h-2 bg-bcw-line rounded flex-1"></div>
+            </div>
+            <div class="h-2 bg-bcw-line rounded w-5/6"></div>
+            <div class="h-2 bg-bcw-line rounded w-3/4"></div>
+            <div class="h-2 bg-bcw-line rounded w-4/5"></div>
+            <div class="h-2 bg-bcw-line rounded w-2/3"></div>
+            <div class="h-12 bg-bcw-purple-soft rounded mt-1"></div>
+            <div class="mt-auto text-[10px] text-bcw-ink-soft text-center">用户截图占位</div>
+          </div>
+          <div class="mt-2 text-xs text-center text-bcw-ink-soft">群聊截图 · 占位</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 04 我们交到了很多朋友 ===== -->
+    <div class="mb-8">
+      <div class="mb-8">
+        <div class="ch-num mb-2">04</div>
+        <h3 class="text-[32px] font-black">我们交到了很多朋友</h3>
+        <p class="text-bcw-ink-soft mt-1">内测群成员 · 学员合影 · 一段感谢词</p>
+      </div>
+
+      <div class="grid grid-cols-12 gap-6">
+        <!-- 群成员墙 -->
+        <div class="col-span-7 card-3d p-7 bg-white">
+          <div class="flex items-end justify-between mb-4">
+            <h4 class="text-lg font-black">捕词蛙 · 内测群成员墙</h4>
+            <span class="text-xs text-bcw-ink-soft">脱敏头像</span>
+          </div>
+          <div class="grid grid-cols-10 gap-2">
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">X</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">N</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">M</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">H</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">Q</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">C</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">D</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">U</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">Z</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">T</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">M</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">T</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">Q</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">R</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">V</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">V</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">Y</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">Y</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">D</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">N</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">O</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">X</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">Q</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">Q</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">U</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">U</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">T</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">E</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">Y</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">R</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">A</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">K</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">A</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">L</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">H</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">H</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">C</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">X</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">C</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">Y</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">E</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">R</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">I</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">T</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">G</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">Y</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">W</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">M</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">O</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">O</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">H</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">C</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">A</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">R</div>
+            <div class="avatar" style="background:#7C5BC9; width:36px; height:36px; font-size:13px;">S</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">A</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">W</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">H</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">B</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">C</div>
+            <div class="avatar" style="background:#C0A8EC; width:36px; height:36px; font-size:13px;">H</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">V</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">G</div>
+            <div class="avatar" style="background:#46A302; width:36px; height:36px; font-size:13px;">E</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">S</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">H</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">Z</div>
+            <div class="avatar" style="background:#A98BE0; width:36px; height:36px; font-size:13px;">G</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">D</div>
+            <div class="avatar" style="background:#58CC02; width:36px; height:36px; font-size:13px;">L</div>
+          </div>
+        </div>
+
+        <!-- 合影 + 感谢词 -->
+        <div class="col-span-5 flex flex-col gap-5">
+          <div class="card-3d-purple p-6 bg-bcw-purple-soft flex-1 relative overflow-hidden">
+            <div class="text-7xl absolute -top-4 left-4 text-bcw-purple/30 font-black leading-none">"</div>
+            <p class="text-[18px] leading-relaxed text-bcw-ink pl-8 mt-2 font-medium">
+              感谢各位内测伙伴，<br/>
+              和捕词蛙一起，<br/>
+              迈出了它最重要的<b class="text-bcw-purple">第一步</b>。
+            </p>
+            <div class="text-right text-sm text-bcw-ink-soft mt-4">—— 捕词蛙团队 · 2026.05.27</div>
+          </div>
+          <div class="rounded-card ph-purple h-[160px] relative overflow-hidden">
+            <div class="absolute inset-0 flex items-center justify-center text-white">
+              <div class="text-center">
+                <div class="text-3xl mb-1">📸</div>
+                <div class="text-sm font-bold">学员合影 / 内测群截图占位</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7：背书
+============================================================ -->
+<section id="endorsement" class="bg-white border-y border-bcw-line">
+  <div class="max-w-[1280px] mx-auto px-8 py-20">
+    <div class="text-center mb-12">
+      <div class="ch-num mb-3" style="color:var(--bcw-green-deep);">ENDORSEMENT</div>
+      <h2 class="text-[36px] font-black tracking-tight">出版社 · 学术 · 技术栈</h2>
+    </div>
+
+    <!-- logo 横向墙 -->
+    <div class="grid grid-cols-5 gap-4 mb-10">
+      <div class="card-3d py-7 flex items-center justify-center text-center px-3">
+        <div>
+          <div class="text-2xl mb-1">📚</div>
+          <div class="text-xs font-bold text-bcw-ink-soft">中国水利水电出版社</div>
+        </div>
+      </div>
+      <div class="card-3d py-7 flex items-center justify-center text-center px-3">
+        <div>
+          <div class="text-2xl mb-1">🏛️</div>
+          <div class="text-xs font-bold text-bcw-ink-soft">清华大学</div>
+        </div>
+      </div>
+      <div class="card-3d py-7 flex items-center justify-center text-center px-3">
+        <div>
+          <div class="text-2xl mb-1">🤖</div>
+          <div class="text-xs font-bold text-bcw-ink-soft">豆包 Doubao-Seed</div>
+        </div>
+      </div>
+      <div class="card-3d py-7 flex items-center justify-center text-center px-3">
+        <div>
+          <div class="text-2xl mb-1">🎨</div>
+          <div class="text-xs font-bold text-bcw-ink-soft">Stable Diffusion</div>
+        </div>
+      </div>
+      <div class="card-3d py-7 flex items-center justify-center text-center px-3">
+        <div>
+          <div class="text-2xl mb-1">⚡</div>
+          <div class="text-xs font-bold text-bcw-ink-soft">Supabase</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 引语 -->
+    <div class="max-w-[760px] mx-auto card-3d-green bg-bcw-green-soft p-8 text-center">
+      <p class="text-[18px] leading-relaxed text-bcw-ink">
+        首本视觉化考研词书已由<b class="text-bcw-green-deep">中国水利水电出版社</b>签约免费出版，<br/>预计 <b>2026 Q3</b> 上市。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 8：CTA（投资 / 合作 / 内测）
+============================================================ -->
+<section id="cta" class="bg-bcw-cream">
+  <div class="max-w-[1280px] mx-auto px-8 py-24">
+    <div class="text-center mb-14">
+      <h2 class="text-[44px] font-black tracking-tight">想和我们聊聊？</h2>
+      <p class="text-bcw-ink-soft mt-3 text-lg">三个入口 · 任你选</p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6">
+      <!-- 紫 · 投资 / 媒体 -->
+      <div class="card-3d-purple p-8 bg-white relative overflow-hidden">
+        <div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-bcw-purple-soft"></div>
+        <div class="text-3xl mb-4">💼</div>
+        <h3 class="text-2xl font-black mb-2">投资 / 媒体咨询</h3>
+        <p class="text-bcw-ink-soft mb-6 leading-relaxed">奇绩、早期投资人、媒体记者欢迎邮件联系，我们会在 24h 内回复。</p>
+        <button class="btn3d btn-purple w-full">📧 邮件联系</button>
+        <div class="mt-3 text-center text-xs text-bcw-ink-soft">bd@buciwa.com</div>
+      </div>
+
+      <!-- 绿 · 商务合作 -->
+      <div class="card-3d-green p-8 bg-white relative overflow-hidden">
+        <div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-bcw-green-soft"></div>
+        <div class="text-3xl mb-4">🤝</div>
+        <h3 class="text-2xl font-black mb-2">商务合作</h3>
+        <p class="text-bcw-ink-soft mb-6 leading-relaxed">出版社 / 教育机构 / K12 / 高校合作渠道，欢迎填写表单。</p>
+        <button class="btn3d btn-green w-full">📋 填写合作表单</button>
+        <div class="mt-3 text-center text-xs text-bcw-ink-soft">partnership@buciwa.com</div>
+      </div>
+
+      <!-- 紫浅 · 内测申请 -->
+      <div class="card-3d p-8 relative overflow-hidden border-2 border-bcw-purple-soft" style="box-shadow:0 6px 0 #C9B6E8;">
+        <div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-bcw-purple-soft/60"></div>
+        <div class="text-3xl mb-4">🐸</div>
+        <h3 class="text-2xl font-black mb-2">内测申请 / 反馈</h3>
+        <p class="text-bcw-ink-soft mb-6 leading-relaxed">扫码进入内测群，或留下你的邮箱，我们会第一时间发邀请码。</p>
+        <button class="btn3d btn-white w-full">📱 扫码进群 / 留邮箱</button>
+        <div class="mt-3 text-center text-xs text-bcw-ink-soft">feedback@buciwa.com</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 9：Footer
+============================================================ -->
+<footer class="bg-white border-t-2 border-bcw-line">
+  <div class="max-w-[1280px] mx-auto px-8 py-16">
+    <div class="grid grid-cols-12 gap-10">
+      <!-- 左：品牌 -->
+      <div class="col-span-4">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-10 h-10 rounded-2xl bg-bcw-green flex items-center justify-center shadow-[0_3px_0_#46A302]">
+            <span class="text-white text-xl">🐸</span>
+          </div>
+          <span class="font-black text-2xl tracking-tight">捕词蛙</span>
+        </div>
+        <p class="text-[18px] font-bold text-bcw-ink mb-2">从看懂英语，到看见世界</p>
+        <p class="text-sm text-bcw-ink-soft leading-relaxed">
+          一款由清华团队打造，用 AI 把单词变成图像，从 0 帮你构建记忆的英语学习软件。
+        </p>
+      </div>
+
+      <!-- 4 列链接 -->
+      <div class="col-span-2">
+        <h4 class="text-bcw-ink font-bold mb-4 text-sm uppercase tracking-widest">产品</h4>
+        <ul class="space-y-2 text-sm text-bcw-ink-soft">
+          <li><a class="hover:text-bcw-ink" href="#features">4 大功能</a></li>
+          <li><a class="hover:text-bcw-ink" href="#demo-video">视频演示</a></li>
+          <li><a class="hover:text-bcw-ink" href="#cta">内测申请</a></li>
+          <li><a class="hover:text-bcw-ink" href="#">价格 (即将)</a></li>
+        </ul>
+      </div>
+      <div class="col-span-2">
+        <h4 class="text-bcw-ink font-bold mb-4 text-sm uppercase tracking-widest">公司</h4>
+        <ul class="space-y-2 text-sm text-bcw-ink-soft">
+          <li><a class="hover:text-bcw-ink" href="#">关于我们</a></li>
+          <li><a class="hover:text-bcw-ink" href="#">团队</a></li>
+          <li><a class="hover:text-bcw-ink" href="#">加入我们</a></li>
+          <li><a class="hover:text-bcw-ink" href="#endorsement">背书与媒体</a></li>
+        </ul>
+      </div>
+      <div class="col-span-2">
+        <h4 class="text-bcw-ink font-bold mb-4 text-sm uppercase tracking-widest">资源</h4>
+        <ul class="space-y-2 text-sm text-bcw-ink-soft">
+          <li><a class="hover:text-bcw-ink" href="#feedback-show">用户反馈</a></li>
+          <li><a class="hover:text-bcw-ink" href="#">博客 (即将)</a></li>
+          <li><a class="hover:text-bcw-ink" href="#">帮助中心</a></li>
+          <li><a class="hover:text-bcw-ink" href="#cta">媒体咨询</a></li>
+        </ul>
+      </div>
+
+      <!-- 右：二维码 -->
+      <div class="col-span-2">
+        <h4 class="text-bcw-ink font-bold mb-4 text-sm uppercase tracking-widest">关注我们</h4>
+        <div class="flex gap-3">
+          <div class="w-24 h-24 rounded-2xl border-2 border-bcw-line bg-bcw-cream flex items-center justify-center text-bcw-ink-soft text-xs text-center leading-tight">
+            公众号<br/>二维码<br/>占位
+          </div>
+          <div class="w-24 h-24 rounded-2xl border-2 border-bcw-line bg-bcw-cream flex items-center justify-center text-bcw-ink-soft text-xs text-center leading-tight">
+            微信群<br/>二维码<br/>占位
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 法律 / 备案 -->
+    <div class="mt-12 pt-8 border-t border-bcw-line flex items-center justify-between text-xs text-bcw-ink-soft">
+      <div>
+        © 2026 言启教育科技（东莞）有限责任公司 · <a href="#" class="hover:text-bcw-ink">粤 ICP 备 xxxx 号</a>
+      </div>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-bcw-ink">隐私政策</a>
+        <a href="#" class="hover:text-bcw-ink">服务条款</a>
+        <a href="#" class="hover:text-bcw-ink">Cookie</a>
+        <a href="https://www.buciwa.com" class="hover:text-bcw-ink font-bold">www.buciwa.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
