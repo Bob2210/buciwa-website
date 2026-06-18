@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useState, useRef } from "react"
+import { upload } from "@vercel/blob/client"
 import AdminNav from "../_components/AdminNav"
 
 interface Blob {
@@ -20,6 +21,11 @@ interface UploadItem {
 
 const IMG_RE = /\.(png|jpg|jpeg|webp|gif|svg)$/i
 const VID_RE = /\.(mp4|webm|mov)$/i
+
+const IMG_TYPES = ["image/png", "image/jpeg", "image/webp", "image/gif", "image/svg+xml"]
+const VID_TYPES = ["video/mp4", "video/webm", "video/quicktime"]
+const IMG_MAX = 10 * 1024 * 1024
+const VID_MAX = 150 * 1024 * 1024
 
 function fmtSize(b: number): string {
   if (b < 1024) return b + " B"
@@ -60,31 +66,40 @@ export default function MediaPage() {
     refresh()
   }, [])
 
-  // 单文件上传，返回 Promise<{ url }>，期间通过 onProgress 推进度
-  function uploadOne(
+  // 单文件直传，使用 @vercel/blob/client.upload，绕开 4.5MB Serverless body 限制
+  async function uploadOne(
     file: File,
     onProgress: (p: number) => void
   ): Promise<{ url: string }> {
-    return new Promise((resolve, reject) => {
-      const fd = new FormData()
-      fd.append("file", file)
-      const xhr = new XMLHttpRequest()
-      xhr.open("POST", "/api/admin/upload")
-      xhr.upload.onprogress = (e) => {
-        if (e.lengthComputable) onProgress(Math.round((e.loaded / e.total) * 100))
-      }
-      xhr.onload = () => {
-        try {
-          const r = JSON.parse(xhr.responseText)
-          if (xhr.status >= 200 && xhr.status < 300) resolve(r)
-          else reject(new Error(r.error || "上传失败"))
-        } catch {
-          reject(new Error("响应解析失败"))
-        }
-      }
-      xhr.onerror = () => reject(new Error("网络错误"))
-      xhr.send(fd)
+    const isImg = IMG_TYPES.includes(file.type)
+    const isVid = VID_TYPES.includes(file.type)
+    if (!isImg && !isVid) {
+      throw new Error(`不支持的文件类型: ${file.type || "未知"}`)
+    }
+    if (isImg && file.size > IMG_MAX) {
+      throw new Error(
+        `图片不能超过 ${IMG_MAX / 1024 / 1024}MB（当前 ${(file.size / 1024 / 1024).toFixed(2)}MB）`
+      )
+    }
+    if (isVid && file.size > VID_MAX) {
+      throw new Error(
+        `视频不能超过 ${VID_MAX / 1024 / 1024}MB（当前 ${(file.size / 1024 / 1024).toFixed(2)}MB）`
+      )
+    }
+    const ts = Date.now()
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_")
+    const folder = isImg ? "images" : "videos"
+    const pathname = `${folder}/${ts}_${safeName}`
+    const blob = await upload(pathname, file, {
+      access: "public",
+      handleUploadUrl: "/api/admin/upload",
+      contentType: file.type,
+      clientPayload: JSON.stringify({ type: file.type, size: file.size }),
+      onUploadProgress: (e) => {
+        onProgress(Math.round(e.percentage))
+      },
     })
+    return { url: blob.url }
   }
 
   async function handleFiles(files: FileList | File[]) {
@@ -126,7 +141,7 @@ export default function MediaPage() {
         setQueue((q) =>
           q.map((it) =>
             it.id === item.id
-              ? { ...it, status: "err", error: e.message || "失败" }
+              ? { ...it, status: "err", error: e?.message || "失败" }
               : it
           )
         )
@@ -191,7 +206,7 @@ export default function MediaPage() {
           <div>
             <h1 className="text-2xl font-bold">媒体管理</h1>
             <p className="text-sm text-gray-500 mt-1">
-              上传到 Vercel Blob CDN。图片 ≤10MB，视频 ≤150MB。支持一次选多张文件。
+              上传到 Vercel Blob CDN（客户端直传，绕过 4.5MB 网关限制）。图片 ≤10MB，视频 ≤150MB。支持一次选多张文件。
               复制 URL 后到「文本编辑」粘贴到对应字段
             </p>
           </div>
