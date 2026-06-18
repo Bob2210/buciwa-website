@@ -19,6 +19,36 @@ function fmtSize(b: number): string {
   return (b / 1024 / 1024).toFixed(2) + " MB"
 }
 
+// 用 HTMLVideoElement 读取视频时长（秒）。失败时 reject，调用方用 try/catch 处理
+function getVideoDuration(file: File): Promise<number> {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file)
+    const video = document.createElement("video")
+    video.preload = "metadata"
+    video.muted = true
+    const cleanup = () => {
+      URL.revokeObjectURL(url)
+      video.src = ""
+      video.remove()
+    }
+    video.onloadedmetadata = () => {
+      const d = video.duration
+      cleanup()
+      if (!isFinite(d) || d <= 0) {
+        reject(new Error("无法读取视频时长"))
+      } else {
+        resolve(d)
+      }
+    }
+    video.onerror = () => {
+      cleanup()
+      reject(new Error("视频文件解析失败"))
+    }
+    video.src = url
+  })
+}
+
+
 export default function MediaPage() {
   const [blobs, setBlobs] = useState<Blob[]>([])
   const [loading, setLoading] = useState(true)
@@ -78,6 +108,22 @@ export default function MediaPage() {
         throw new Error(
           `视频不能超过 ${VID_MAX / 1024 / 1024}MB（当前 ${(file.size / 1024 / 1024).toFixed(2)}MB）`
         )
+      }
+
+      // 视频时长上限：3 分钟（180 秒）
+      const VID_MAX_DURATION = 180
+      if (isVid) {
+        let duration = 0
+        try {
+          duration = await getVideoDuration(file)
+        } catch (err: any) {
+          throw new Error(`视频解析失败：${err?.message || "未知错误"}，请确认文件格式或尝试转码后再上传`)
+        }
+        if (duration > VID_MAX_DURATION) {
+          throw new Error(
+            `视频时长不能超过 ${VID_MAX_DURATION / 60} 分钟（当前 ${duration.toFixed(1)} 秒）`
+          )
+        }
       }
 
       // 2. 构造 pathname：images/ 或 videos/ + 时间戳 + 安全文件名
