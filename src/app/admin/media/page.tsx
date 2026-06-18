@@ -37,6 +37,9 @@ function uid() {
   return Math.random().toString(36).slice(2, 10)
 }
 
+// Vercel 自动注入的 commit short sha；本地开发为 "dev"
+const BUILD_SHA = (process.env.NEXT_PUBLIC_BUILD_SHA || "dev").slice(0, 7)
+
 export default function MediaPage() {
   const [blobs, setBlobs] = useState<Blob[]>([])
   const [loading, setLoading] = useState(true)
@@ -138,11 +141,15 @@ export default function MediaPage() {
         )
         okCount++
       } catch (e: any) {
+        // 把详细错误吐出来：类型 + message + 简化 stack 头一行
+        const errName = e?.name || "Error"
+        const errMsg = e?.message || String(e) || "失败"
+        const detail = `${errName}: ${errMsg}`
+        // eslint-disable-next-line no-console
+        console.error("[upload failed]", item.file.name, e)
         setQueue((q) =>
           q.map((it) =>
-            it.id === item.id
-              ? { ...it, status: "err", error: e?.message || "失败" }
-              : it
+            it.id === item.id ? { ...it, status: "err", error: detail } : it
           )
         )
         errCount++
@@ -204,7 +211,12 @@ export default function MediaPage() {
       <div className="max-w-6xl mx-auto px-6 py-8">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
           <div>
-            <h1 className="text-2xl font-bold">媒体管理</h1>
+            <h1 className="text-2xl font-bold">
+              媒体管理
+              <span className="ml-2 text-[10px] font-mono text-gray-400 align-middle">
+                build {BUILD_SHA}
+              </span>
+            </h1>
             <p className="text-sm text-gray-500 mt-1">
               上传到 Vercel Blob CDN（客户端直传，绕过 4.5MB 网关限制）。图片 ≤10MB，视频 ≤150MB。支持一次选多张文件。
               复制 URL 后到「文本编辑」粘贴到对应字段
