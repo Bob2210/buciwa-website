@@ -1,6 +1,5 @@
 "use client"
 import { useEffect, useState, useRef } from "react"
-import { upload } from "@vercel/blob/client"
 import AdminNav from "../_components/AdminNav"
 
 interface Blob {
@@ -8,6 +7,15 @@ interface Blob {
   pathname: string
   size: number
   uploadedAt: string
+}
+
+interface UploadItem {
+  id: string
+  file: File
+  status: "pending" | "uploading" | "ok" | "err"
+  progress: number
+  url?: string
+  error?: string
 }
 
 const IMG_RE = /\.(png|jpg|jpeg|webp|gif|svg)$/i
@@ -19,41 +27,15 @@ function fmtSize(b: number): string {
   return (b / 1024 / 1024).toFixed(2) + " MB"
 }
 
-// 用 HTMLVideoElement 读取视频时长（秒）。失败时 reject，调用方用 try/catch 处理
-function getVideoDuration(file: File): Promise<number> {
-  return new Promise((resolve, reject) => {
-    const url = URL.createObjectURL(file)
-    const video = document.createElement("video")
-    video.preload = "metadata"
-    video.muted = true
-    const cleanup = () => {
-      URL.revokeObjectURL(url)
-      video.src = ""
-      video.remove()
-    }
-    video.onloadedmetadata = () => {
-      const d = video.duration
-      cleanup()
-      if (!isFinite(d) || d <= 0) {
-        reject(new Error("无法读取视频时长"))
-      } else {
-        resolve(d)
-      }
-    }
-    video.onerror = () => {
-      cleanup()
-      reject(new Error("视频文件解析失败"))
-    }
-    video.src = url
-  })
+function uid() {
+  return Math.random().toString(36).slice(2, 10)
 }
-
 
 export default function MediaPage() {
   const [blobs, setBlobs] = useState<Blob[]>([])
   const [loading, setLoading] = useState(true)
+  const [queue, setQueue] = useState<UploadItem[]>([])
   const [uploading, setUploading] = useState(false)
-  const [progress, setProgress] = useState(0)
   const [msg, setMsg] = useState<{ type: "ok" | "err"; text: string } | null>(
     null
   )
@@ -78,84 +60,94 @@ export default function MediaPage() {
     refresh()
   }, [])
 
-  async function handleUpload(file: File) {
-    setUploading(true)
-    setProgress(0)
-    setMsg(null)
-    try {
-      // 1. 前端先做大小/类型校验，避免无谓的请求
-      const IMG_TYPES = [
-        "image/png",
-        "image/jpeg",
-        "image/webp",
-        "image/gif",
-        "image/svg+xml",
-      ]
-      const VID_TYPES = ["video/mp4", "video/webm", "video/quicktime"]
-      const isImg = IMG_TYPES.includes(file.type)
-      const isVid = VID_TYPES.includes(file.type)
-      if (!isImg && !isVid) {
-        throw new Error(`不支持的文件类型: ${file.type || "未知"}`)
+  // 单文件上传，返回 Promise<{ url }>，期间通过 onProgress 推进度
+  function uploadOne(
+    file: File,
+    onProgress: (p: number) => void
+  ): Promise<{ url: string }> {
+    return new Promise((resolve, reject) => {
+      const fd = new FormData()
+      fd.append("file", file)
+      const xhr = new XMLHttpRequest()
+      xhr.open("POST", "/api/admin/upload")
+      xhr.upload.onprogress = (e) => {
+        if (e.lengthComputable) onProgress(Math.round((e.loaded / e.total) * 100))
       }
-      const IMG_MAX = 10 * 1024 * 1024
-      const VID_MAX = 150 * 1024 * 1024
-      if (isImg && file.size > IMG_MAX) {
-        throw new Error(
-          `图片不能超过 ${IMG_MAX / 1024 / 1024}MB（当前 ${(file.size / 1024 / 1024).toFixed(2)}MB）`
-        )
-      }
-      if (isVid && file.size > VID_MAX) {
-        throw new Error(
-          `视频不能超过 ${VID_MAX / 1024 / 1024}MB（当前 ${(file.size / 1024 / 1024).toFixed(2)}MB）`
-        )
-      }
-
-      // 视频时长上限：3 分钟（180 秒）
-      const VID_MAX_DURATION = 180
-      if (isVid) {
-        let duration = 0
+      xhr.onload = () => {
         try {
-          duration = await getVideoDuration(file)
-        } catch (err: any) {
-          throw new Error(`视频解析失败：${err?.message || "未知错误"}，请确认文件格式或尝试转码后再上传`)
-        }
-        if (duration > VID_MAX_DURATION) {
-          throw new Error(
-            `视频时长不能超过 ${VID_MAX_DURATION / 60} 分钟（当前 ${duration.toFixed(1)} 秒）`
-          )
+          const r = JSON.parse(xhr.responseText)
+          if (xhr.status >= 200 && xhr.status < 300) resolve(r)
+          else reject(new Error(r.error || "上传失败"))
+        } catch {
+          reject(new Error("响应解析失败"))
         }
       }
+      xhr.onerror = () => reject(new Error("网络错误"))
+      xhr.send(fd)
+    })
+  }
 
-      // 2. 构造 pathname：images/ 或 videos/ + 时间戳 + 安全文件名
-      const ts = Date.now()
-      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_")
-      const folder = isImg ? "images" : "videos"
-      const pathname = `${folder}/${ts}_${safeName}`
+  async function handleFiles(files: FileList | File[]) {
+    const arr = Array.from(files)
+    if (arr.length === 0) return
+    setMsg(null)
+    const items: UploadItem[] = arr.map((f) => ({
+      id: uid(),
+      file: f,
+      status: "pending",
+      progress: 0,
+    }))
+    setQueue((q) => [...q, ...items])
+    setUploading(true)
 
-      // 3. 用 @vercel/blob/client 直传到 Blob CDN，绕过 Vercel Serverless 4.5MB 请求体限制
-      //    onUploadProgress 提供真实上传进度
-      const blob = await upload(pathname, file, {
-        access: "public",
-        handleUploadUrl: "/api/admin/upload",
-        contentType: file.type,
-        clientPayload: JSON.stringify({ type: file.type, size: file.size }),
-        onUploadProgress: (e) => {
-          setProgress(Math.round(e.percentage))
-        },
-      })
+    let okCount = 0
+    let errCount = 0
 
-      setMsg({
-        type: "ok",
-        text: `✅ 上传成功！URL：${blob.url}`,
-      })
-      await refresh()
-    } catch (e: any) {
-      setMsg({ type: "err", text: e?.message || "上传失败" })
-    } finally {
-      setUploading(false)
-      setProgress(0)
-      if (fileInput.current) fileInput.current.value = ""
+    // 顺序上传，避免并发把后端冲爆
+    for (const item of items) {
+      setQueue((q) =>
+        q.map((it) => (it.id === item.id ? { ...it, status: "uploading" } : it))
+      )
+      try {
+        const result = await uploadOne(item.file, (p) => {
+          setQueue((q) =>
+            q.map((it) => (it.id === item.id ? { ...it, progress: p } : it))
+          )
+        })
+        setQueue((q) =>
+          q.map((it) =>
+            it.id === item.id
+              ? { ...it, status: "ok", progress: 100, url: result.url }
+              : it
+          )
+        )
+        okCount++
+      } catch (e: any) {
+        setQueue((q) =>
+          q.map((it) =>
+            it.id === item.id
+              ? { ...it, status: "err", error: e.message || "失败" }
+              : it
+          )
+        )
+        errCount++
+      }
     }
+
+    setUploading(false)
+    setMsg({
+      type: errCount === 0 ? "ok" : "err",
+      text:
+        errCount === 0
+          ? `✅ ${okCount} 个文件全部上传成功`
+          : `⚠️ 完成：成功 ${okCount} · 失败 ${errCount}`,
+    })
+    await refresh()
+    if (fileInput.current) fileInput.current.value = ""
+  }
+
+  function clearQueue() {
+    setQueue([])
   }
 
   async function handleDelete(url: string) {
@@ -188,16 +180,19 @@ export default function MediaPage() {
     return true
   })
 
+  const queueDoneCount = queue.filter((q) => q.status === "ok" || q.status === "err").length
+  const queueTotal = queue.length
+
   return (
     <>
       <AdminNav />
       <div className="max-w-6xl mx-auto px-6 py-8">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
           <div>
             <h1 className="text-2xl font-bold">媒体管理</h1>
             <p className="text-sm text-gray-500 mt-1">
-              上传到 Vercel Blob CDN。图片 ≤10MB，视频 ≤150MB。复制 URL
-              后到「文本编辑」粘贴到对应字段
+              上传到 Vercel Blob CDN。图片 ≤10MB，视频 ≤150MB。支持一次选多张文件。
+              复制 URL 后到「文本编辑」粘贴到对应字段
             </p>
           </div>
           <button
@@ -205,30 +200,89 @@ export default function MediaPage() {
             disabled={uploading}
             className="px-6 py-3 bg-green-600 hover:bg-green-700 disabled:bg-gray-300 text-white font-bold rounded-xl transition"
           >
-            {uploading ? `上传中 ${progress}%` : "📤 上传新文件"}
+            {uploading
+              ? `上传中 ${queueDoneCount}/${queueTotal}`
+              : "📤 上传文件（可多选）"}
           </button>
           <input
             ref={fileInput}
             type="file"
+            multiple
             hidden
             accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml,video/mp4,video/webm,video/quicktime"
             onChange={(e) => {
-              const f = e.target.files?.[0]
-              if (f) handleUpload(f)
+              const f = e.target.files
+              if (f && f.length > 0) handleFiles(f)
             }}
           />
         </div>
 
-        {uploading && (
-          <div className="mb-4 bg-white rounded-lg p-4 border border-green-200">
-            <div className="text-sm text-gray-600 mb-2">
-              正在上传… {progress}%
+        {/* 上传队列 */}
+        {queue.length > 0 && (
+          <div className="mb-4 bg-white rounded-xl p-4 border border-gray-200">
+            <div className="flex items-center justify-between mb-3">
+              <div className="text-sm font-semibold text-gray-700">
+                上传队列：{queueDoneCount}/{queueTotal}
+                {uploading && <span className="text-gray-400 ml-2">（顺序上传中…）</span>}
+              </div>
+              {!uploading && (
+                <button
+                  onClick={clearQueue}
+                  className="text-xs text-gray-500 hover:text-gray-700"
+                >
+                  清空记录
+                </button>
+              )}
             </div>
-            <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-green-500 transition-all"
-                style={{ width: `${progress}%` }}
-              />
+            <div className="space-y-2 max-h-72 overflow-y-auto">
+              {queue.map((it) => (
+                <div
+                  key={it.id}
+                  className="flex items-center gap-3 text-xs border-b border-gray-100 pb-2 last:border-b-0"
+                >
+                  <div className="w-6 text-center">
+                    {it.status === "pending" && <span className="text-gray-300">⌛</span>}
+                    {it.status === "uploading" && <span className="text-blue-500">⏳</span>}
+                    {it.status === "ok" && <span className="text-green-600">✅</span>}
+                    {it.status === "err" && <span className="text-red-500">❌</span>}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono truncate text-gray-700">
+                        {it.file.name}
+                      </span>
+                      <span className="text-gray-400 shrink-0">
+                        {fmtSize(it.file.size)}
+                      </span>
+                    </div>
+                    {it.status === "uploading" && (
+                      <div className="h-1 bg-gray-200 rounded-full overflow-hidden mt-1">
+                        <div
+                          className="h-full bg-green-500 transition-all"
+                          style={{ width: `${it.progress}%` }}
+                        />
+                      </div>
+                    )}
+                    {it.status === "err" && (
+                      <div className="text-red-500 mt-0.5">{it.error}</div>
+                    )}
+                    {it.status === "ok" && it.url && (
+                      <div className="flex items-center gap-2 mt-0.5">
+                        <span className="text-gray-400 truncate">{it.url}</span>
+                        <button
+                          onClick={() => copyUrl(it.url!)}
+                          className="text-blue-600 hover:underline shrink-0"
+                        >
+                          复制
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                  <div className="text-gray-400 shrink-0 w-10 text-right">
+                    {it.status === "uploading" ? `${it.progress}%` : ""}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
@@ -268,7 +322,7 @@ export default function MediaPage() {
           <div className="text-gray-500">加载中…</div>
         ) : filtered.length === 0 ? (
           <div className="bg-white rounded-xl p-12 text-center text-gray-400 border-2 border-dashed border-gray-200">
-            还没有文件。点上方「上传新文件」试试 👆
+            还没有文件。点上方「上传文件」试试 👆
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
