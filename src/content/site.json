@@ -1,6 +1,6 @@
 {
   "hero": {
-    "badge": "清华团队 · 用 AI 把单词变成图像",
+    "badge": "",
     "titleLine1": "从看懂英语，",
     "titleLine2Prefix": "到看见",
     "titleHighlight": "世界",
@@ -33,7 +33,7 @@
     "sectionTitle1": "不画饼，直接看 ",
     "sectionTitleHighlight": "63 人",
     "sectionTitle2": "内测真实数据",
-    "sectionDesc": "5 月 12 日开启首轮内测，5 月 27 日两周时点收官",
+    "sectionDesc": "",
     "card1Number": "63",
     "card1Label": "内测参与用户",
     "card1Sub": "两周内累计内测人数",
@@ -60,7 +60,7 @@
     "sectionTitle1": "我们与 ",
     "sectionTitleHighlight": "63 位",
     "sectionTitle2": "共创伙伴",
-    "sectionDesc": "完全对应公众号 5/27 致谢推文 · \"4 个我们\"",
+    "sectionDesc": "",
     "block1Title": "我们收集了很多反馈",
     "block1Desc": "107 条反馈 · 精选 6 条原话展示",
     "f1Name": "L 同学",
