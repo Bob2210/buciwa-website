@@ -40,6 +40,13 @@ function uid() {
 // Vercel 自动注入的 commit short sha；本地开发为 "dev"
 const BUILD_SHA = (process.env.NEXT_PUBLIC_BUILD_SHA || "dev").slice(0, 7)
 
+// VPN 用户优化：localStorage 记忆 24h 内直传失败的设备，下次直接走备用通道，避免每次吃直传失败等待税
+const SKIP_DIRECT_KEY = "bcw_upload_skip_direct_until"
+const SKIP_DIRECT_TTL_MS = 24 * 60 * 60 * 1000
+const DIRECT_TIMEOUT_MS = 5000 // 直传 5 秒超时（绝大多数图片应能在 5s 内开始上行）
+// Vercel Serverless body 上限 4.5MB——超过这个的图片只能走直传，无法 fallback
+const FALLBACK_MAX = 4.5 * 1024 * 1024
+
 export default function MediaPage() {
   const [blobs, setBlobs] = useState<Blob[]>([])
   const [loading, setLoading] = useState(true)
@@ -69,7 +76,8 @@ export default function MediaPage() {
     refresh()
   }, [])
 
-  // 单文件直传，使用 @vercel/blob/client.upload，绕开 4.5MB Serverless body 限制
+  // 单文件上传：优先「@vercel/blob/client.upload」直传，失败/超时 fallback 走 multipart POST
+  // 失败原因主要是 VPN 客户端拦截了 *.blob.vercel-storage.com 的跨域 PUT
   async function uploadOne(
     file: File,
     onProgress: (p: number) => void
@@ -93,16 +101,81 @@ export default function MediaPage() {
     const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_")
     const folder = isImg ? "images" : "videos"
     const pathname = `${folder}/${ts}_${safeName}`
-    const blob = await upload(pathname, file, {
-      access: "public",
-      handleUploadUrl: "/api/admin/upload",
-      contentType: file.type,
-      clientPayload: JSON.stringify({ type: file.type, size: file.size }),
-      onUploadProgress: (e) => {
-        onProgress(Math.round(e.percentage))
-      },
-    })
-    return { url: blob.url }
+
+    // 检查"近期直传失败过"标记（VPN 设备记忆，避免每次吃失败等待税）
+    let skipDirect = false
+    try {
+      const until = Number(localStorage.getItem(SKIP_DIRECT_KEY) || "0")
+      if (until && Date.now() < until) skipDirect = true
+    } catch {}
+
+    // —— 通道 A：客户端直传 Vercel Blob（带 5s 超时）——
+    if (!skipDirect) {
+      try {
+        const directResult = await Promise.race<{ url: string }>([
+          (async () => {
+            const blob = await upload(pathname, file, {
+              access: "public",
+              handleUploadUrl: "/api/admin/upload",
+              contentType: file.type,
+              clientPayload: JSON.stringify({ type: file.type, size: file.size }),
+              onUploadProgress: (e) => {
+                onProgress(Math.round(e.percentage))
+              },
+            })
+            return { url: blob.url }
+          })(),
+          new Promise<{ url: string }>((_, reject) =>
+            setTimeout(
+              () => reject(new Error(`直传超时 ${DIRECT_TIMEOUT_MS}ms（可能 VPN/网络拦截）`)),
+              DIRECT_TIMEOUT_MS
+            )
+          ),
+        ])
+        // 直传成功，清除"跳过直传"记忆（用户可能后来切换了网络）
+        try { localStorage.removeItem(SKIP_DIRECT_KEY) } catch {}
+        return directResult
+      } catch (directErr: any) {
+        // 标记此设备 24h 内跳过直传
+        try {
+          localStorage.setItem(
+            SKIP_DIRECT_KEY,
+            String(Date.now() + SKIP_DIRECT_TTL_MS)
+          )
+        } catch {}
+        // eslint-disable-next-line no-console
+        console.warn("[uploadOne] 直传失败，尝试备用通道:", directErr?.message)
+        // 视频或大图无法 fallback（>4.5MB），直接抛错
+        if (isVid) {
+          throw new Error(
+            `直传失败：${directErr?.message || ""}。VPN 下视频上传不稳定，请关闭 VPN 后重试。`
+          )
+        }
+        if (file.size > FALLBACK_MAX) {
+          throw new Error(
+            `直传失败：${directErr?.message || ""}。图片大于 4.5MB 无法走备用通道，请关闭 VPN 后重试或先压缩图片。`
+          )
+        }
+        // 落到下方通道 B
+      }
+    }
+
+    // —— 通道 B：multipart POST（≤4.5MB，VPN 兼容）——
+    onProgress(0)
+    const fd = new FormData()
+    fd.append("file", file)
+    const res = await fetch("/api/admin/upload", { method: "POST", body: fd })
+    const ct = res.headers.get("content-type") || ""
+    if (!ct.includes("application/json")) {
+      const txt = await res.text().catch(() => "")
+      throw new Error(`备用通道非 JSON：${res.status} ${txt.slice(0, 80)}`)
+    }
+    const json = await res.json()
+    if (!res.ok || !json?.url) {
+      throw new Error(json?.error || `备用通道失败 HTTP ${res.status}`)
+    }
+    onProgress(100)
+    return { url: json.url }
   }
 
   async function handleFiles(files: FileList | File[]) {
