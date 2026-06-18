@@ -16,14 +16,14 @@
   "product": {
     "title": "产品介绍",
     "intro": "捕词蛙是一款由 AI 多模态记忆引擎驱动的英语学习软件。\n我们把每一个生词，串成可以「看见」的画面、故事和声音，让你从「识形」走向「识义」，真正记住、不再遗忘。",
-    "img1Title": "AI 视觉化生成",
-    "img1Desc": "豆包 Doubao-Seed + Stable Diffusion 双模型协作，把抽象单词转成可视化画面。",
-    "img2Title": "结构化学习路径",
-    "img2Desc": "按词根、词族、场景三维组织，单词不再是孤岛，而是连成网。",
-    "img3Title": "自适应复习引擎",
-    "img3Desc": "V-Cog 自研间隔算法 + VLE 题型引擎，根据每个人的遗忘曲线动态出题。",
-    "img4Title": "随身听沉浸输入",
-    "img4Desc": "通勤、运动、睡前的碎片时间，把单词变成可以听的故事。"
+    "f1Title": "AI 视觉化生成",
+    "f1Desc": "豆包 Doubao-Seed + Stable Diffusion 双模型协作，把抽象单词转成可视化画面。",
+    "f2Title": "结构化学习路径",
+    "f2Desc": "按词根、词族、场景三维组织，单词不再是孤岛，而是连成网。",
+    "f3Title": "自适应复习引擎",
+    "f3Desc": "V-Cog 自研间隔算法 + VLE 题型引擎，根据每个人的遗忘曲线动态出题。",
+    "f4Title": "随身听沉浸输入",
+    "f4Desc": "通勤、运动、睡前的碎片时间，把单词变成可以听的故事。"
   },
   "overview": {
     "title": "60 秒看懂捕词蛙",
@@ -107,14 +107,18 @@
   "media": {
     "logo": "/buciwa-logo.png",
     "heroImage": "/mascot-orig/hero-battle.png",
-    "productImg1": "",
-    "productImg2": "",
-    "productImg3": "",
-    "productImg4": "",
     "overviewVideo": "",
     "featureVideo1": "",
     "featureVideo2": "",
     "featureVideo3": "",
-    "featureVideo4": ""
+    "featureVideo4": "",
+    "productImg1a": "",
+    "productImg1b": "",
+    "productImg2a": "",
+    "productImg2b": "",
+    "productImg3a": "",
+    "productImg3b": "",
+    "productImg4a": "",
+    "productImg4b": ""
   }
 }
