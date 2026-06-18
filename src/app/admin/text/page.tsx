@@ -129,12 +129,373 @@ const MEDIA_INFO: Record<string, MediaInfo> = {
     anchor: "/#feature-videos",
     group: "🎬 视频",
   },
+  coCreator1: {
+    label: "共创伙伴 #01",
+    location: "内测板块 → 共创伙伴墙 → 第 1 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator2: {
+    label: "共创伙伴 #02",
+    location: "内测板块 → 共创伙伴墙 → 第 2 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator3: {
+    label: "共创伙伴 #03",
+    location: "内测板块 → 共创伙伴墙 → 第 3 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator4: {
+    label: "共创伙伴 #04",
+    location: "内测板块 → 共创伙伴墙 → 第 4 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator5: {
+    label: "共创伙伴 #05",
+    location: "内测板块 → 共创伙伴墙 → 第 5 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator6: {
+    label: "共创伙伴 #06",
+    location: "内测板块 → 共创伙伴墙 → 第 6 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator7: {
+    label: "共创伙伴 #07",
+    location: "内测板块 → 共创伙伴墙 → 第 7 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator8: {
+    label: "共创伙伴 #08",
+    location: "内测板块 → 共创伙伴墙 → 第 8 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator9: {
+    label: "共创伙伴 #09",
+    location: "内测板块 → 共创伙伴墙 → 第 9 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator10: {
+    label: "共创伙伴 #10",
+    location: "内测板块 → 共创伙伴墙 → 第 10 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator11: {
+    label: "共创伙伴 #11",
+    location: "内测板块 → 共创伙伴墙 → 第 11 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator12: {
+    label: "共创伙伴 #12",
+    location: "内测板块 → 共创伙伴墙 → 第 12 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator13: {
+    label: "共创伙伴 #13",
+    location: "内测板块 → 共创伙伴墙 → 第 13 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator14: {
+    label: "共创伙伴 #14",
+    location: "内测板块 → 共创伙伴墙 → 第 14 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator15: {
+    label: "共创伙伴 #15",
+    location: "内测板块 → 共创伙伴墙 → 第 15 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator16: {
+    label: "共创伙伴 #16",
+    location: "内测板块 → 共创伙伴墙 → 第 16 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator17: {
+    label: "共创伙伴 #17",
+    location: "内测板块 → 共创伙伴墙 → 第 17 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator18: {
+    label: "共创伙伴 #18",
+    location: "内测板块 → 共创伙伴墙 → 第 18 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator19: {
+    label: "共创伙伴 #19",
+    location: "内测板块 → 共创伙伴墙 → 第 19 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator20: {
+    label: "共创伙伴 #20",
+    location: "内测板块 → 共创伙伴墙 → 第 20 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator21: {
+    label: "共创伙伴 #21",
+    location: "内测板块 → 共创伙伴墙 → 第 21 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator22: {
+    label: "共创伙伴 #22",
+    location: "内测板块 → 共创伙伴墙 → 第 22 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator23: {
+    label: "共创伙伴 #23",
+    location: "内测板块 → 共创伙伴墙 → 第 23 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator24: {
+    label: "共创伙伴 #24",
+    location: "内测板块 → 共创伙伴墙 → 第 24 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator25: {
+    label: "共创伙伴 #25",
+    location: "内测板块 → 共创伙伴墙 → 第 25 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator26: {
+    label: "共创伙伴 #26",
+    location: "内测板块 → 共创伙伴墙 → 第 26 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator27: {
+    label: "共创伙伴 #27",
+    location: "内测板块 → 共创伙伴墙 → 第 27 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator28: {
+    label: "共创伙伴 #28",
+    location: "内测板块 → 共创伙伴墙 → 第 28 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator29: {
+    label: "共创伙伴 #29",
+    location: "内测板块 → 共创伙伴墙 → 第 29 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator30: {
+    label: "共创伙伴 #30",
+    location: "内测板块 → 共创伙伴墙 → 第 30 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator31: {
+    label: "共创伙伴 #31",
+    location: "内测板块 → 共创伙伴墙 → 第 31 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator32: {
+    label: "共创伙伴 #32",
+    location: "内测板块 → 共创伙伴墙 → 第 32 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator33: {
+    label: "共创伙伴 #33",
+    location: "内测板块 → 共创伙伴墙 → 第 33 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator34: {
+    label: "共创伙伴 #34",
+    location: "内测板块 → 共创伙伴墙 → 第 34 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator35: {
+    label: "共创伙伴 #35",
+    location: "内测板块 → 共创伙伴墙 → 第 35 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator36: {
+    label: "共创伙伴 #36",
+    location: "内测板块 → 共创伙伴墙 → 第 36 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator37: {
+    label: "共创伙伴 #37",
+    location: "内测板块 → 共创伙伴墙 → 第 37 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator38: {
+    label: "共创伙伴 #38",
+    location: "内测板块 → 共创伙伴墙 → 第 38 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator39: {
+    label: "共创伙伴 #39",
+    location: "内测板块 → 共创伙伴墙 → 第 39 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator40: {
+    label: "共创伙伴 #40",
+    location: "内测板块 → 共创伙伴墙 → 第 40 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator41: {
+    label: "共创伙伴 #41",
+    location: "内测板块 → 共创伙伴墙 → 第 41 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator42: {
+    label: "共创伙伴 #42",
+    location: "内测板块 → 共创伙伴墙 → 第 42 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator43: {
+    label: "共创伙伴 #43",
+    location: "内测板块 → 共创伙伴墙 → 第 43 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator44: {
+    label: "共创伙伴 #44",
+    location: "内测板块 → 共创伙伴墙 → 第 44 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator45: {
+    label: "共创伙伴 #45",
+    location: "内测板块 → 共创伙伴墙 → 第 45 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator46: {
+    label: "共创伙伴 #46",
+    location: "内测板块 → 共创伙伴墙 → 第 46 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator47: {
+    label: "共创伙伴 #47",
+    location: "内测板块 → 共创伙伴墙 → 第 47 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator48: {
+    label: "共创伙伴 #48",
+    location: "内测板块 → 共创伙伴墙 → 第 48 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator49: {
+    label: "共创伙伴 #49",
+    location: "内测板块 → 共创伙伴墙 → 第 49 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator50: {
+    label: "共创伙伴 #50",
+    location: "内测板块 → 共创伙伴墙 → 第 50 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator51: {
+    label: "共创伙伴 #51",
+    location: "内测板块 → 共创伙伴墙 → 第 51 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator52: {
+    label: "共创伙伴 #52",
+    location: "内测板块 → 共创伙伴墙 → 第 52 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator53: {
+    label: "共创伙伴 #53",
+    location: "内测板块 → 共创伙伴墙 → 第 53 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator54: {
+    label: "共创伙伴 #54",
+    location: "内测板块 → 共创伙伴墙 → 第 54 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator55: {
+    label: "共创伙伴 #55",
+    location: "内测板块 → 共创伙伴墙 → 第 55 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator56: {
+    label: "共创伙伴 #56",
+    location: "内测板块 → 共创伙伴墙 → 第 56 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator57: {
+    label: "共创伙伴 #57",
+    location: "内测板块 → 共创伙伴墙 → 第 57 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator58: {
+    label: "共创伙伴 #58",
+    location: "内测板块 → 共创伙伴墙 → 第 58 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator59: {
+    label: "共创伙伴 #59",
+    location: "内测板块 → 共创伙伴墙 → 第 59 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
+  coCreator60: {
+    label: "共创伙伴 #60",
+    location: "内测板块 → 共创伙伴墙 → 第 60 个头像（留空显示彩色字母占位）",
+    anchor: "/#feedback-show",
+    group: "👥 共创伙伴墙（60 张头像）",
+  },
 }
 
 const MEDIA_GROUP_ORDER = [
   "🏷️ 品牌 & 首屏",
   "📱 产品介绍区（8 张手机截图）",
   "🎬 视频",
+  "👥 共创伙伴墙（60 张头像）",
 ]
 
 const IMG_RE = /\.(png|jpg|jpeg|webp|gif|svg)$/i
@@ -369,6 +730,55 @@ export default function TextEditPage() {
                             renderMediaField(k, sectionData[k] || "")
                           )}
                         </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            )
+          }
+          // 共创伙伴墙：60 张头像，紧凑网格布局
+          if (groupName.includes("共创伙伴墙")) {
+            return (
+              <div key={groupName}>
+                <div className="text-sm font-bold text-gray-700 mb-1 flex items-center gap-2">
+                  {groupName}
+                  <span className="text-xs font-normal text-gray-400">
+                    ({keys.length} 张)
+                  </span>
+                </div>
+                <p className="text-xs text-gray-500 mb-3">
+                  📍 内测板块 → 共创伙伴墙。先到「媒体管理」上传头像图片，复制 URL 粘贴到下方对应槽位。留空则显示彩色字母占位。
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                  {keys.map((k, idx) => {
+                    const v = sectionData[k] || ""
+                    const isImg = v && IMG_RE.test(v)
+                    return (
+                      <div
+                        key={k}
+                        className="bg-white rounded-lg border border-gray-200 p-2 hover:border-green-400 transition"
+                      >
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <div className="w-9 h-9 flex-shrink-0 rounded-full bg-gray-100 border border-gray-200 overflow-hidden flex items-center justify-center">
+                            {isImg ? (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img src={v} alt="" className="w-full h-full object-cover" />
+                            ) : (
+                              <span className="text-[10px] text-gray-400">空</span>
+                            )}
+                          </div>
+                          <div className="text-[11px] font-semibold text-gray-700">
+                            #{idx + 1}
+                          </div>
+                        </div>
+                        <input
+                          type="text"
+                          value={v}
+                          onChange={(e) => update("media", k, e.target.value)}
+                          placeholder="粘贴 URL"
+                          className="w-full px-2 py-1 border border-gray-200 rounded text-[11px] font-mono focus:border-green-500 focus:outline-none"
+                        />
                       </div>
                     )
                   })}
