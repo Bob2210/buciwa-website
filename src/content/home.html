@@ -9,14 +9,14 @@
       <span class="text-bcw-ink-soft text-sm font-medium ml-1">BUCIWA</span>
     </a>
     <nav class="flex items-center gap-7 text-[15px] font-medium text-bcw-ink-soft">
-      <a class="hover:text-bcw-ink" href="#features">产品</a>
-      <a class="hover:text-bcw-ink" href="#demo-video">视频演示</a>
-      <a class="hover:text-bcw-ink" href="#data">内测数据</a>
-      <a class="hover:text-bcw-ink" href="#feedback-show">用户反馈</a>
-      <a class="hover:text-bcw-ink" href="#endorsement">背书</a>
+      <a class="hover:text-bcw-ink" href="#product">产品</a>
+      <a class="hover:text-bcw-ink" href="#overview-video">视频</a>
+      <a class="hover:text-bcw-ink" href="#feature-videos">功能</a>
+      <a class="hover:text-bcw-ink" href="#beta">内测</a>
+      <a class="hover:text-bcw-ink" href="#cta">联系我们</a>
     </nav>
     <div class="flex items-center gap-3">
-      <a href="#feedback-show" class="btn3d btn-white btn-sm">查看反馈</a>
+      <a href="#beta" class="btn3d btn-white btn-sm">内测数据</a>
       <a href="#cta" class="btn3d btn-green btn-sm">投资咨询</a>
     </div>
   </div>
@@ -46,8 +46,8 @@
         <span class="flex items-center gap-2">{{hero.trust3Prefix}}<b class="text-bcw-green-deep">{{hero.trust3Number}}</b></span>
       </div>
       <div class="flex items-center gap-4">
-        <a href="#demo-video" class="btn3d btn-green">{{hero.primaryCtaText}}</a>
-        <a href="#feedback-show" class="btn3d btn-white">{{hero.secondaryCtaText}}</a>
+        <a href="#overview-video" class="btn3d btn-green">{{hero.primaryCtaText}}</a>
+        <a href="#beta" class="btn3d btn-white">{{hero.secondaryCtaText}}</a>
       </div>
     </div>
 
@@ -80,266 +80,206 @@
 </section>
 
 <!-- ============================================================
-     SECTION 3：4 大功能（每个一整屏 / 左右交错）
+     SECTION 2：产品介绍
 ============================================================ -->
-<section id="features" class="relative">
-
-  <!-- ----- 3.1 语义网络 & 视觉化（图右文左） ----- -->
-  <div class="max-w-[1280px] mx-auto px-8 py-28 grid grid-cols-12 gap-10 items-center">
-    <div class="col-span-5">
-      <div class="ch-num mb-4">01 / 04</div>
-      <h2 class="text-[52px] font-black leading-[1.1] tracking-tight mb-6">
-        数个词，一个故事，<br/>一张图。
-      </h2>
-      <p class="text-[18px] text-bcw-ink-soft leading-relaxed mb-6">
-        把单词串联在有故事的画面中，让单词在大脑里不再是散落的孤岛，而是绑在一起的<b class="text-bcw-ink">一张网</b>。下次随便触发其中一个词，整张画面、整组单词都会被激活。
-      </p>
-      <div class="inline-flex items-center gap-2 bg-bcw-yellow/15 border border-bcw-yellow/50 rounded-full px-4 py-2 text-sm font-bold text-bcw-ink mb-6">
-        <span>🆕</span><span>预习功能 · 真正从 0 开始构建记忆</span>
-      </div>
-      <div>
-        <a href="#features" class="btn3d btn-green btn-sm">了解视觉化原理 →</a>
-      </div>
-    </div>
-
-    <div class="col-span-7">
-      <div class="relative">
-        <!-- 主截图占位（绿色） -->
-        <div class="rounded-card ph-green h-[440px] relative overflow-hidden border-2 border-bcw-green-deep shadow-[0_8px_0_#46A302]">
-          <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,.18),transparent_60%)]"></div>
-          <div class="absolute top-6 left-6 text-white/90 text-xs uppercase tracking-widest font-bold">Visual Network</div>
-          <div class="absolute bottom-8 left-8 right-8">
-            <div class="text-white/80 text-xs mb-2">产品截图占位（待 Jalin 上传）</div>
-            <div class="bg-white/95 rounded-2xl p-4 shadow-lg">
-              <div class="text-bcw-ink-soft text-xs uppercase tracking-widest mb-2">画面记忆</div>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-lg bg-bcw-green-soft text-bcw-green-deep text-sm font-bold">abandon</span>
-                <span class="px-3 py-1 rounded-lg bg-bcw-green-soft text-bcw-green-deep text-sm font-bold">desert</span>
-                <span class="px-3 py-1 rounded-lg bg-bcw-green-soft text-bcw-green-deep text-sm font-bold">forsake</span>
-                <span class="px-3 py-1 rounded-lg bg-bcw-green-soft text-bcw-green-deep text-sm font-bold">relinquish</span>
-                <span class="px-3 py-1 rounded-lg bg-bcw-green-soft text-bcw-green-deep text-sm font-bold">depart</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 角落吉祥物正面 -->
-        <div class="absolute -left-8 -bottom-10 w-[180px] h-[180px] mascot-window bg-white rounded-full border-2 border-bcw-green shadow-[0_4px_0_#46A302]">
-          <img src="{{media.feature1Image}}" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-divider"></div>
-
-  <!-- ----- 3.2 场景化（图左文右） ----- -->
-  <div class="max-w-[1280px] mx-auto px-8 py-28 grid grid-cols-12 gap-10 items-center">
-    <div class="col-span-7 order-2 md:order-1">
-      <div class="relative">
-        <div class="rounded-card ph-green h-[440px] relative overflow-hidden border-2 border-bcw-green-deep shadow-[0_8px_0_#46A302]">
-          <div class="absolute top-6 left-6 text-white/90 text-xs uppercase tracking-widest font-bold">Scenario Quiz</div>
-          <div class="absolute inset-0 flex items-center justify-center px-12 gap-4">
-            <div class="bg-white/95 rounded-2xl p-4 w-[180px] shadow-lg">
-              <div class="text-bcw-ink-soft text-xs mb-2">题型 · 完形填空</div>
-              <div class="text-bcw-ink text-sm leading-relaxed">She decided to <span class="bg-bcw-yellow/40 rounded px-1">___</span> her old job.</div>
-              <div class="mt-2 text-[11px] text-bcw-green-deep font-bold">A. abandon &nbsp; B. depart</div>
-            </div>
-            <div class="bg-white/95 rounded-2xl p-4 w-[180px] shadow-lg -translate-y-4">
-              <div class="text-bcw-ink-soft text-xs mb-2">题型 · 单词语音</div>
-              <div class="flex items-center gap-2 text-sm">🔊 <b>abandon</b></div>
-              <div class="mt-2 text-[11px] text-bcw-green-deep font-bold">/əˈbændən/</div>
-            </div>
-            <div class="bg-white/95 rounded-2xl p-4 w-[180px] shadow-lg">
-              <div class="text-bcw-ink-soft text-xs mb-2">题型 · 场景听力</div>
-              <div class="text-sm leading-relaxed">"…they had to <b>abandon</b> the ship."</div>
-              <div class="mt-2 text-[11px] text-bcw-green-deep font-bold">▶ 播放</div>
-            </div>
-          </div>
-          <div class="absolute bottom-6 left-6 text-white/80 text-xs">产品截图占位（待 Jalin 上传）</div>
-        </div>
-
-        <!-- 角落吉祥物侧身 -->
-        <div class="absolute -right-8 -bottom-10 w-[180px] h-[180px] mascot-window bg-white rounded-full border-2 border-bcw-green shadow-[0_4px_0_#46A302]">
-          <img src="{{media.feature2Image}}" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
-        </div>
-      </div>
-    </div>
-
-    <div class="col-span-5 order-1 md:order-2">
-      <div class="ch-num mb-4">02 / 04</div>
-      <h2 class="text-[52px] font-black leading-[1.1] tracking-tight mb-6">
-        光学不练，<br/>等于白学。
-      </h2>
-      <p class="text-[18px] text-bcw-ink-soft leading-relaxed mb-6">
-        捕词蛙设计了多种<b class="text-bcw-ink">场景化视觉复习题型</b>——完形填空、单词语音、场景听力……让你在语境中把词"用"出来。
-      </p>
-      <div class="grid grid-cols-3 gap-2 mb-6">
-        <div class="rounded-2xl border border-bcw-line bg-white py-3 text-center text-sm font-bold">📝 完形</div>
-        <div class="rounded-2xl border border-bcw-line bg-white py-3 text-center text-sm font-bold">🔊 语音</div>
-        <div class="rounded-2xl border border-bcw-line bg-white py-3 text-center text-sm font-bold">🎧 听力</div>
-      </div>
-      <a href="#features" class="btn3d btn-green btn-sm">查看全部题型 →</a>
-    </div>
-  </div>
-
-  <div class="section-divider"></div>
-
-  <!-- ----- 3.3 AI 驱动（图右文左） ----- -->
-  <div class="max-w-[1280px] mx-auto px-8 py-28 grid grid-cols-12 gap-10 items-center">
-    <div class="col-span-5">
-      <div class="ch-num mb-4">03 / 04</div>
-      <h2 class="text-[52px] font-black leading-[1.1] tracking-tight mb-6">
-        你的<span class="text-bcw-green">专属私教</span>
-      </h2>
-      <p class="text-[18px] text-bcw-ink-soft leading-relaxed mb-6">
-        根据你的水平和目标生成<b class="text-bcw-ink">定制化学习内容</b>，根据你的学习反馈<b class="text-bcw-ink">动态调整难度</b>，让你始终在"有点挑战但跟得上"的节奏里。
-      </p>
-      <ul class="space-y-3 mb-6 text-[16px]">
-        <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-bcw-green flex items-center justify-center text-white text-xs flex-shrink-0">✓</span><span>豆包 Doubao-Seed + Stable Diffusion 多模态引擎</span></li>
-        <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-bcw-green flex items-center justify-center text-white text-xs flex-shrink-0">✓</span><span>自适应难度曲线，错题驱动出题</span></li>
-        <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-bcw-green flex items-center justify-center text-white text-xs flex-shrink-0">✓</span><span>个性化学习画像，越用越懂你</span></li>
-      </ul>
-      <a href="#features" class="btn3d btn-green btn-sm">查看 AI 自适应原理 →</a>
-    </div>
-
-    <div class="col-span-7">
-      <div class="relative">
-        <div class="rounded-card ph-green h-[440px] relative overflow-hidden border-2 border-bcw-green-deep shadow-[0_8px_0_#46A302]">
-          <div class="absolute top-6 left-6 text-white/90 text-xs uppercase tracking-widest font-bold">Adaptive Curve</div>
-          <!-- 简易难度曲线占位 -->
-          <svg viewBox="0 0 600 280" class="absolute inset-x-8 top-1/2 -translate-y-1/2 w-[calc(100%-64px)]">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stop-color="#fff" stop-opacity=".7"/>
-                <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <!-- 网格 -->
-            <g stroke="rgba(255,255,255,.25)" stroke-dasharray="4 6">
-              <line x1="0" y1="60"  x2="600" y2="60"/>
-              <line x1="0" y1="140" x2="600" y2="140"/>
-              <line x1="0" y1="220" x2="600" y2="220"/>
-            </g>
-            <!-- 曲线 -->
-            <path d="M0,220 C 80,210 130,180 180,150 S 300,80 380,90 S 520,40 600,30"
-                  fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-            <path d="M0,220 C 80,210 130,180 180,150 S 300,80 380,90 S 520,40 600,30 L600,280 L0,280 Z"
-                  fill="url(#g1)" opacity=".5"/>
-            <!-- 节点 -->
-            <g fill="#FFB800" stroke="#fff" stroke-width="3">
-              <circle cx="80"  cy="208" r="7"/>
-              <circle cx="200" cy="146" r="7"/>
-              <circle cx="380" cy="92"  r="7"/>
-              <circle cx="540" cy="38"  r="7"/>
-            </g>
-            <text x="60"  y="248" fill="#fff" font-size="14" font-weight="700">Day 1</text>
-            <text x="180" y="248" fill="#fff" font-size="14" font-weight="700">Day 7</text>
-            <text x="360" y="248" fill="#fff" font-size="14" font-weight="700">Day 14</text>
-            <text x="520" y="248" fill="#fff" font-size="14" font-weight="700">Day 30</text>
-          </svg>
-          <div class="absolute bottom-6 left-6 text-white/80 text-xs">产品截图占位（待 Jalin 上传）</div>
-          <div class="absolute top-6 right-6 bg-white/95 rounded-2xl px-3 py-2 shadow">
-            <div class="text-[11px] text-bcw-ink-soft">当前难度</div>
-            <div class="text-bcw-green-deep font-black">Lv. 7 ★</div>
-          </div>
-        </div>
-
-        <!-- 角落吉祥物侧后 -->
-        <div class="absolute -left-8 -bottom-10 w-[180px] h-[180px] mascot-window bg-white rounded-full border-2 border-bcw-green shadow-[0_4px_0_#46A302]">
-          <img src="{{media.feature3Image}}" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-divider"></div>
-
-  <!-- ----- 3.4 更多功能（三张小卡平铺） ----- -->
-  <div class="max-w-[1280px] mx-auto px-8 py-28">
+<section id="product" class="bg-white border-y border-bcw-line">
+  <div class="max-w-[1280px] mx-auto px-8 py-24">
     <div class="text-center mb-14">
-      <div class="ch-num mb-3">04 / 04</div>
-      <h2 class="text-[44px] font-black tracking-tight">不止背单词</h2>
+      <div class="ch-num mb-3" style="color:var(--bcw-green-deep);">PRODUCT</div>
+      <h2 class="text-[44px] font-black tracking-tight">{{product.title}}</h2>
+      <p class="text-bcw-ink-soft mt-4 max-w-[760px] mx-auto text-lg leading-relaxed whitespace-pre-line">{{product.intro}}</p>
     </div>
-    <div class="grid grid-cols-3 gap-6">
-      <div class="card-3d p-8">
-        <div class="w-14 h-14 rounded-2xl bg-bcw-green-soft flex items-center justify-center text-3xl mb-5">🎧</div>
-        <h3 class="text-2xl font-black mb-2">随身听</h3>
-        <p class="text-bcw-ink-soft leading-relaxed">通勤、跑步、睡前——把词典塞进耳朵，被动浸泡也能高效学。</p>
+
+    <div class="grid grid-cols-2 gap-6">
+      <!-- 1 -->
+      <div class="card-3d overflow-hidden">
+        <div class="aspect-[4/3] ph-green flex items-center justify-center relative">
+          <img src="{{media.productImg1}}" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+          <div class="text-white text-center p-4 relative">
+            <div class="text-5xl mb-3">🎨</div>
+            <div class="font-bold text-lg">{{product.img1Title}}</div>
+            <div class="text-white/80 text-xs mt-1">产品截图待上传</div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="font-black text-base">{{product.img1Title}}</div>
+          <div class="text-bcw-ink-soft text-sm mt-1 leading-relaxed">{{product.img1Desc}}</div>
+        </div>
       </div>
-      <div class="card-3d p-8">
-        <div class="w-14 h-14 rounded-2xl bg-bcw-green-soft flex items-center justify-center text-3xl mb-5">🔁</div>
-        <h3 class="text-2xl font-black mb-2">智能复习</h3>
-        <p class="text-bcw-ink-soft leading-relaxed">基于遗忘曲线 + 错题历史，每天 10 分钟，把该复习的词推到你面前。</p>
+      <!-- 2 -->
+      <div class="card-3d overflow-hidden">
+        <div class="aspect-[4/3] ph-purple flex items-center justify-center relative">
+          <img src="{{media.productImg2}}" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+          <div class="text-white text-center p-4 relative">
+            <div class="text-5xl mb-3">📚</div>
+            <div class="font-bold text-lg">{{product.img2Title}}</div>
+            <div class="text-white/80 text-xs mt-1">产品截图待上传</div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="font-black text-base">{{product.img2Title}}</div>
+          <div class="text-bcw-ink-soft text-sm mt-1 leading-relaxed">{{product.img2Desc}}</div>
+        </div>
       </div>
-      <div class="card-3d p-8">
-        <div class="w-14 h-14 rounded-2xl bg-bcw-green-soft flex items-center justify-center text-3xl mb-5">📈</div>
-        <h3 class="text-2xl font-black mb-2">学习数据曲线</h3>
-        <p class="text-bcw-ink-soft leading-relaxed">每一次进步都被量化记录，让坚持看得见。</p>
+      <!-- 3 -->
+      <div class="card-3d overflow-hidden">
+        <div class="aspect-[4/3] ph-purple flex items-center justify-center relative">
+          <img src="{{media.productImg3}}" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+          <div class="text-white text-center p-4 relative">
+            <div class="text-5xl mb-3">🔄</div>
+            <div class="font-bold text-lg">{{product.img3Title}}</div>
+            <div class="text-white/80 text-xs mt-1">产品截图待上传</div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="font-black text-base">{{product.img3Title}}</div>
+          <div class="text-bcw-ink-soft text-sm mt-1 leading-relaxed">{{product.img3Desc}}</div>
+        </div>
       </div>
-    </div>
-    <div class="mt-10 text-center">
-      <a href="#cta" class="text-bcw-green-deep font-bold text-lg hover:underline">更多功能欢迎体验 →</a>
+      <!-- 4 -->
+      <div class="card-3d overflow-hidden">
+        <div class="aspect-[4/3] ph-green flex items-center justify-center relative">
+          <img src="{{media.productImg4}}" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+          <div class="text-white text-center p-4 relative">
+            <div class="text-5xl mb-3">🎧</div>
+            <div class="font-bold text-lg">{{product.img4Title}}</div>
+            <div class="text-white/80 text-xs mt-1">产品截图待上传</div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="font-black text-base">{{product.img4Title}}</div>
+          <div class="text-bcw-ink-soft text-sm mt-1 leading-relaxed">{{product.img4Desc}}</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 4：视频演示区
+     SECTION 3：产品总览视频
 ============================================================ -->
-<section id="demo-video" class="bg-white border-y border-bcw-line">
+<section id="overview-video" class="bg-bcw-cream">
   <div class="max-w-[1280px] mx-auto px-8 py-24">
     <div class="text-center mb-14">
-      <div class="ch-num mb-3" style="color:var(--bcw-green-deep);">DEMO VIDEO</div>
-      <h2 class="text-[44px] font-black tracking-tight">{{demoVideo.sectionTitle}}</h2>
-      <p class="text-bcw-ink-soft mt-3">{{demoVideo.sectionDesc}}</p>
+      <div class="ch-num mb-3" style="color:var(--bcw-green-deep);">OVERVIEW</div>
+      <h2 class="text-[44px] font-black tracking-tight">{{overview.title}}</h2>
+      <p class="text-bcw-ink-soft mt-3 text-lg">{{overview.desc}}</p>
     </div>
-
-    <!-- 主视频 + 3 备选 -->
-    <div class="grid grid-cols-12 gap-6">
-      <!-- 主视频 -->
-      <div class="col-span-8">
-        <div class="rounded-card overflow-hidden border-2 border-bcw-green-deep shadow-[0_8px_0_#46A302] aspect-[16/9] ph-green relative cursor-pointer group">
-          <div class="absolute inset-0 bg-black/20"></div>
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-24 h-24 rounded-full bg-white/95 flex items-center justify-center shadow-2xl group-hover:scale-110 transition">
+    <div class="max-w-[960px] mx-auto">
+      <div class="rounded-card overflow-hidden border-2 border-bcw-green-deep shadow-[0_8px_0_#46A302] aspect-[16/9] relative" style="background:linear-gradient(135deg,#1a1a2e,#16213e);">
+        <video src="{{media.overviewVideo}}" class="w-full h-full object-contain absolute inset-0" controls playsinline onerror="this.style.display='none'"></video>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="text-center">
+            <div class="w-24 h-24 rounded-full bg-white/95 flex items-center justify-center shadow-2xl mx-auto mb-6">
               <div class="w-0 h-0 border-l-[28px] border-l-bcw-green-deep border-y-[18px] border-y-transparent ml-2"></div>
             </div>
+            <div class="text-white font-black text-2xl">{{overview.mainTitle}}</div>
+            <div class="text-white/70 text-sm mt-2">{{overview.mainNote}}</div>
           </div>
-          <div class="absolute bottom-6 left-6 text-white">
-            <div class="text-xs uppercase tracking-widest opacity-80 mb-1">主视频</div>
-            <div class="font-black text-2xl">{{demoVideo.mainTitle}}</div>
-            <div class="text-xs opacity-80 mt-1">{{demoVideo.mainNote}}</div>
-          </div>
-          <div class="absolute top-6 right-6 px-3 py-1 rounded-full bg-black/50 text-white text-xs font-bold">{{demoVideo.mainDuration}}</div>
         </div>
       </div>
+      <div class="text-center mt-6 text-bcw-ink-soft text-sm">{{overview.footnote}}</div>
+    </div>
+  </div>
+</section>
 
-      <!-- 3 个备选 -->
-      <div class="col-span-4 flex flex-col gap-4">
-        <div class="card-3d p-3 flex gap-3 items-center cursor-pointer hover:translate-y-[-2px] transition">
-          <div class="w-28 h-20 rounded-2xl ph-green flex items-center justify-center text-white text-xl flex-shrink-0">▶</div>
-          <div class="min-w-0">
-            <div class="text-xs text-bcw-green-deep font-bold mb-1">{{demoVideo.alt1Tag}}</div>
-            <div class="font-bold text-sm leading-snug truncate">{{demoVideo.alt1Title}}</div>
-            <div class="text-xs text-bcw-ink-soft mt-1">{{demoVideo.alt1Duration}}</div>
+<!-- ============================================================
+     SECTION 4：分功能介绍视频
+============================================================ -->
+<section id="feature-videos" class="bg-white border-y border-bcw-line">
+  <div class="max-w-[1280px] mx-auto px-8 py-24">
+    <div class="text-center mb-14">
+      <div class="ch-num mb-3" style="color:var(--bcw-purple-deep);">FEATURES</div>
+      <h2 class="text-[44px] font-black tracking-tight">{{featureVideos.title}}</h2>
+      <p class="text-bcw-ink-soft mt-3 text-lg">{{featureVideos.desc}}</p>
+    </div>
+    <div class="grid grid-cols-2 gap-6">
+      <!-- 1 AI 生成 -->
+      <div class="card-3d overflow-hidden">
+        <div class="aspect-[16/9] relative" style="background:linear-gradient(135deg,#58CC0233,#1a1a2e);">
+          <video src="{{media.featureVideo1}}" class="w-full h-full object-contain absolute inset-0" controls playsinline onerror="this.style.display='none'"></video>
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-white/95 flex items-center justify-center shadow-xl mx-auto mb-3">
+                <div class="w-0 h-0 border-l-[18px] border-l-bcw-green-deep border-y-[12px] border-y-transparent ml-1.5"></div>
+              </div>
+              <div class="text-white font-bold text-base">{{featureVideos.f1Title}}</div>
+              <div class="text-white/60 text-xs mt-1">视频待上传</div>
+            </div>
           </div>
         </div>
-        <div class="card-3d p-3 flex gap-3 items-center cursor-pointer hover:translate-y-[-2px] transition">
-          <div class="w-28 h-20 rounded-2xl ph-green flex items-center justify-center text-white text-xl flex-shrink-0">▶</div>
-          <div class="min-w-0">
-            <div class="text-xs text-bcw-green-deep font-bold mb-1">{{demoVideo.alt2Tag}}</div>
-            <div class="font-bold text-sm leading-snug truncate">{{demoVideo.alt2Title}}</div>
-            <div class="text-xs text-bcw-ink-soft mt-1">{{demoVideo.alt2Duration}}</div>
+        <div class="p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">🎨</span>
+            <div class="font-black text-xl">{{featureVideos.f1Title}}</div>
+          </div>
+          <p class="text-bcw-ink-soft leading-relaxed">{{featureVideos.f1Desc}}</p>
+        </div>
+      </div>
+      <!-- 2 学习 -->
+      <div class="card-3d overflow-hidden">
+        <div class="aspect-[16/9] relative" style="background:linear-gradient(135deg,#A98BE033,#1a1a2e);">
+          <video src="{{media.featureVideo2}}" class="w-full h-full object-contain absolute inset-0" controls playsinline onerror="this.style.display='none'"></video>
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-white/95 flex items-center justify-center shadow-xl mx-auto mb-3">
+                <div class="w-0 h-0 border-l-[18px] border-l-bcw-purple border-y-[12px] border-y-transparent ml-1.5"></div>
+              </div>
+              <div class="text-white font-bold text-base">{{featureVideos.f2Title}}</div>
+              <div class="text-white/60 text-xs mt-1">视频待上传</div>
+            </div>
           </div>
         </div>
-        <div class="card-3d p-3 flex gap-3 items-center cursor-pointer hover:translate-y-[-2px] transition">
-          <div class="w-28 h-20 rounded-2xl ph-green flex items-center justify-center text-white text-xl flex-shrink-0">▶</div>
-          <div class="min-w-0">
-            <div class="text-xs text-bcw-green-deep font-bold mb-1">{{demoVideo.alt3Tag}}</div>
-            <div class="font-bold text-sm leading-snug truncate">{{demoVideo.alt3Title}}</div>
-            <div class="text-xs text-bcw-ink-soft mt-1">{{demoVideo.alt3Duration}}</div>
+        <div class="p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">📚</span>
+            <div class="font-black text-xl">{{featureVideos.f2Title}}</div>
           </div>
+          <p class="text-bcw-ink-soft leading-relaxed">{{featureVideos.f2Desc}}</p>
+        </div>
+      </div>
+      <!-- 3 复习 -->
+      <div class="card-3d overflow-hidden">
+        <div class="aspect-[16/9] relative" style="background:linear-gradient(135deg,#A98BE033,#1a1a2e);">
+          <video src="{{media.featureVideo3}}" class="w-full h-full object-contain absolute inset-0" controls playsinline onerror="this.style.display='none'"></video>
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-white/95 flex items-center justify-center shadow-xl mx-auto mb-3">
+                <div class="w-0 h-0 border-l-[18px] border-l-bcw-purple border-y-[12px] border-y-transparent ml-1.5"></div>
+              </div>
+              <div class="text-white font-bold text-base">{{featureVideos.f3Title}}</div>
+              <div class="text-white/60 text-xs mt-1">视频待上传</div>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">🔄</span>
+            <div class="font-black text-xl">{{featureVideos.f3Title}}</div>
+          </div>
+          <p class="text-bcw-ink-soft leading-relaxed">{{featureVideos.f3Desc}}</p>
+        </div>
+      </div>
+      <!-- 4 随身听 -->
+      <div class="card-3d overflow-hidden">
+        <div class="aspect-[16/9] relative" style="background:linear-gradient(135deg,#58CC0233,#1a1a2e);">
+          <video src="{{media.featureVideo4}}" class="w-full h-full object-contain absolute inset-0" controls playsinline onerror="this.style.display='none'"></video>
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-white/95 flex items-center justify-center shadow-xl mx-auto mb-3">
+                <div class="w-0 h-0 border-l-[18px] border-l-bcw-green-deep border-y-[12px] border-y-transparent ml-1.5"></div>
+              </div>
+              <div class="text-white font-bold text-base">{{featureVideos.f4Title}}</div>
+              <div class="text-white/60 text-xs mt-1">视频待上传</div>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">🎧</span>
+            <div class="font-black text-xl">{{featureVideos.f4Title}}</div>
+          </div>
+          <p class="text-bcw-ink-soft leading-relaxed">{{featureVideos.f4Desc}}</p>
         </div>
       </div>
     </div>
@@ -347,17 +287,17 @@
 </section>
 
 <!-- ============================================================
-     SECTION 5：内测核心数据卡（紫绿交错）
+     SECTION 5：内测（数据 + 共创伙伴墙 + 媒体背书）
 ============================================================ -->
-<section id="data" class="purple-band">
+<section id="beta" class="purple-band">
   <div class="max-w-[1280px] mx-auto px-8 py-24">
     <div class="text-center mb-14">
-      <div class="ch-num mb-3">REAL DATA</div>
+      <div class="ch-num mb-3">BETA DATA</div>
       <h2 class="text-[44px] font-black tracking-tight">{{metrics.sectionTitle1}}<span class="text-bcw-purple">{{metrics.sectionTitleHighlight}}</span>{{metrics.sectionTitle2}}</h2>
     </div>
 
+    <!-- 6 张数据卡 -->
     <div class="grid grid-cols-3 gap-6">
-      <!-- 1 绿 63 -->
       <div class="card-3d-green p-8 relative overflow-hidden">
         <div class="text-bcw-green-deep text-xs font-bold uppercase tracking-widest mb-2">USERS</div>
         <div class="font-num font-extrabold text-[88px] leading-none text-bcw-green-deep">{{metrics.card1Number}}</div>
@@ -365,7 +305,6 @@
         <div class="text-bcw-ink-soft text-sm mt-1">{{metrics.card1Sub}}</div>
         <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-green-soft"></div>
       </div>
-      <!-- 2 紫 107 -->
       <div class="card-3d-purple p-8 relative overflow-hidden">
         <div class="text-bcw-purple-deep text-xs font-bold uppercase tracking-widest mb-2">FEEDBACK</div>
         <div class="font-num font-extrabold text-[88px] leading-none text-bcw-purple-deep">{{metrics.card2Number}}</div>
@@ -373,7 +312,6 @@
         <div class="text-bcw-ink-soft text-sm mt-1">{{metrics.card2Sub}}</div>
         <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-purple-soft"></div>
       </div>
-      <!-- 3 绿（高亮）48.72% -->
       <div class="card-3d-green p-8 relative overflow-hidden bg-bcw-green-soft">
         <div class="absolute top-4 right-4 px-2 py-1 rounded-full bg-bcw-yellow text-bcw-ink text-[10px] font-black tracking-widest">⭐ HIGHLIGHT</div>
         <div class="text-bcw-green-deep text-xs font-bold uppercase tracking-widest mb-2">DAY-10 RETENTION</div>
@@ -381,7 +319,6 @@
         <div class="mt-3 text-bcw-ink font-bold text-lg">{{metrics.card3Label}}</div>
         <div class="text-bcw-ink-soft text-sm mt-1">{{metrics.card3Sub}}</div>
       </div>
-      <!-- 4 紫 90.9% -->
       <div class="card-3d-purple p-8 relative overflow-hidden">
         <div class="text-bcw-purple-deep text-xs font-bold uppercase tracking-widest mb-2">POSITIVE RATE</div>
         <div class="font-num font-extrabold text-[80px] leading-none text-bcw-purple-deep">{{metrics.card4Number}}<span class="text-5xl">%</span></div>
@@ -389,7 +326,6 @@
         <div class="text-bcw-ink-soft text-sm mt-1">{{metrics.card4Sub}}</div>
         <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-purple-soft"></div>
       </div>
-      <!-- 5 绿 50% -->
       <div class="card-3d-green p-8 relative overflow-hidden">
         <div class="text-bcw-green-deep text-xs font-bold uppercase tracking-widest mb-2">5-STAR</div>
         <div class="font-num font-extrabold text-[80px] leading-none text-bcw-green-deep">{{metrics.card5Number}}<span class="text-5xl">%</span></div>
@@ -397,7 +333,6 @@
         <div class="text-bcw-ink-soft text-sm mt-1">{{metrics.card5Sub}}</div>
         <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-bcw-green-soft"></div>
       </div>
-      <!-- 6 紫 86.4% -->
       <div class="card-3d-purple p-8 relative overflow-hidden">
         <div class="text-bcw-purple-deep text-xs font-bold uppercase tracking-widest mb-2">VS COMPETITORS</div>
         <div class="font-num font-extrabold text-[80px] leading-none text-bcw-purple-deep">{{metrics.card6Number}}<span class="text-5xl">%</span></div>
@@ -410,122 +345,16 @@
     <div class="text-center mt-10 text-bcw-ink-soft text-sm">
       {{metrics.footnote1}}<b class="text-bcw-purple">{{metrics.footnoteOptCount}}</b>{{metrics.footnote2}}
     </div>
-  </div>
-</section>
 
-<!-- ============================================================
-     SECTION 6：用户反馈展示区四件套
-============================================================ -->
-<section id="feedback-show" class="bg-bcw-purple-soft relative">
-  <div class="max-w-[1280px] mx-auto px-8 py-24">
-    <!-- 区块顶部 -->
-    <div class="text-center mb-16 relative">
-      <div class="ch-num mb-3">FEEDBACK SHOWCASE</div>
-      <h2 class="text-[48px] font-black tracking-tight">{{feedbacks.sectionTitle1}}<span class="text-bcw-purple">{{feedbacks.sectionTitleHighlight}}</span>{{feedbacks.sectionTitle2}}</h2>
-
-      <!-- 角落吉祥物正面装饰 -->
-      <div class="absolute -top-4 right-0 w-[120px] h-[120px] mascot-window">
-        <img src="{{media.ctaImage}}" style="width:100%; height:100%; object-fit:contain; object-position:center;" />
-      </div>
-    </div>
-
-    <!-- ===== 01 我们收集了很多反馈（瀑布流） ===== -->
-    <div class="mb-20">
-      <div class="flex items-end justify-between mb-8">
-        <div>
-          <div class="ch-num mb-2">01</div>
-          <h3 class="text-[32px] font-black">{{feedbacks.block1Title}}</h3>
-          <p class="text-bcw-ink-soft mt-1">{{feedbacks.block1Desc}}</p>
-        </div>
-        <a href="#feedback-show" class="text-bcw-purple-deep font-bold text-sm hover:underline">查看更多反馈 →</a>
-      </div>
-
-      <div class="grid grid-cols-3 gap-5">
-        <!-- 6 条精选反馈 -->
-        <div class="card-3d p-6">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="avatar" style="background:#A98BE0;">L</div>
-            <div>
-              <div class="font-bold text-sm">{{feedbacks.f1Name}}</div>
-              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f1Role}}</div>
-            </div>
-            <div class="ml-auto stars text-sm">{{feedbacks.f1Stars}}</div>
-          </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f1Content}}"</p>
-        </div>
-
-        <div class="card-3d p-6 -translate-y-3">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="avatar" style="background:#58CC02;">W</div>
-            <div>
-              <div class="font-bold text-sm">{{feedbacks.f2Name}}</div>
-              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f2Role}}</div>
-            </div>
-            <div class="ml-auto stars text-sm">{{feedbacks.f2Stars}}</div>
-          </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f2Content}}"</p>
-        </div>
-
-        <div class="card-3d p-6">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="avatar" style="background:#7C5BC9;">Z</div>
-            <div>
-              <div class="font-bold text-sm">{{feedbacks.f3Name}}</div>
-              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f3Role}}</div>
-            </div>
-            <div class="ml-auto stars text-sm">{{feedbacks.f3Stars}}</div>
-          </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f3Content}}"</p>
-        </div>
-
-        <div class="card-3d p-6 -translate-y-3">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="avatar" style="background:#46A302;">M</div>
-            <div>
-              <div class="font-bold text-sm">{{feedbacks.f4Name}}</div>
-              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f4Role}}</div>
-            </div>
-            <div class="ml-auto stars text-sm">{{feedbacks.f4Stars}}</div>
-          </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f4Content}}"</p>
-        </div>
-
-        <div class="card-3d p-6">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="avatar" style="background:#A98BE0;">Y</div>
-            <div>
-              <div class="font-bold text-sm">{{feedbacks.f5Name}}</div>
-              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f5Role}}</div>
-            </div>
-            <div class="ml-auto stars text-sm">{{feedbacks.f5Stars}}</div>
-          </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f5Content}}"</p>
-        </div>
-
-        <div class="card-3d p-6 -translate-y-3">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="avatar" style="background:#58CC02;">H</div>
-            <div>
-              <div class="font-bold text-sm">{{feedbacks.f6Name}}</div>
-              <div class="text-xs text-bcw-ink-soft">{{feedbacks.f6Role}}</div>
-            </div>
-            <div class="ml-auto stars text-sm">{{feedbacks.f6Stars}}</div>
-          </div>
-          <p class="text-[15px] leading-relaxed text-bcw-ink">"{{feedbacks.f6Content}}"</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== 02 我们得到了很多帮助 ===== -->
-    <div class="mb-20">
+    <!-- 共创伙伴墙 -->
+    <div class="mt-20">
       <div class="mb-8">
-        <div class="ch-num mb-2">02</div>
+        <div class="ch-num mb-2">CO-CREATORS</div>
         <h3 class="text-[32px] font-black">63 位共创伙伴墙</h3>
       </div>
-
-      <!-- 共创伙伴墙 -->
       <div class="card-3d p-8 bg-white">
         <div class="grid grid-cols-12 gap-3">
+
           <div class="avatar" style="background:#A98BE0; width:40px; height:40px; font-size:14px;">U</div>
           <div class="avatar" style="background:#C0A8EC; width:40px; height:40px; font-size:14px;">A</div>
           <div class="avatar" style="background:#7C5BC9; width:40px; height:40px; font-size:14px;">H</div>
@@ -590,89 +419,13 @@
       </div>
     </div>
 
-    <!-- ===== 03 我们收获了很多好评 ===== -->
-    <div class="mb-20">
+    <!-- 媒体 / 背书 -->
+    <div class="mt-20">
       <div class="mb-8">
-        <div class="ch-num mb-2">03</div>
-        <h3 class="text-[32px] font-black">我们收获了很多好评</h3>
-        <p class="text-bcw-ink-soft mt-1">五星评分分布 + 圆环数据可视化 + 截图轮播</p>
+        <div class="ch-num mb-2">ENDORSEMENT</div>
+        <h3 class="text-[32px] font-black">{{endorsement.sectionTitle}}</h3>
       </div>
-
-      <div class="grid grid-cols-12 gap-6">
-        <!-- 评分柱状图 -->
-        <div class="col-span-5 card-3d p-7 bg-white">
-          <div class="text-bcw-ink-soft text-xs uppercase tracking-widest mb-4 font-bold">RATING DISTRIBUTION</div>
-          <div class="space-y-4">
-            <div class="flex items-center gap-3">
-              <span class="w-14 text-sm font-bold stars">★★★★★</span>
-              <div class="bar flex-1"><div style="width:50%"></div></div>
-              <span class="w-14 text-right text-sm font-num font-bold">50%</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-14 text-sm font-bold stars">★★★★</span>
-              <div class="bar flex-1"><div style="width:40.9%"></div></div>
-              <span class="w-14 text-right text-sm font-num font-bold">40.9%</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-14 text-sm font-bold stars">★★★</span>
-              <div class="bar flex-1"><div style="width:6.8%"></div></div>
-              <span class="w-14 text-right text-sm font-num font-bold">6.8%</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-14 text-sm font-bold stars">★★</span>
-              <div class="bar flex-1"><div style="width:2.3%"></div></div>
-              <span class="w-14 text-right text-sm font-num font-bold">2.3%</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-14 text-sm font-bold stars">★</span>
-              <div class="bar flex-1"><div style="width:0%"></div></div>
-              <span class="w-14 text-right text-sm font-num font-bold">0%</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 圆环数据 -->
-        <div class="col-span-3 card-3d p-7 bg-white flex flex-col items-center justify-center">
-          <svg class="ring-svg" width="160" height="160" viewBox="0 0 160 160">
-            <circle cx="80" cy="80" r="64" stroke="#F4EEFC" stroke-width="16" fill="none"/>
-            <circle cx="80" cy="80" r="64" stroke="#A98BE0" stroke-width="16" fill="none"
-                    stroke-dasharray="402" stroke-dashoffset="36.6" stroke-linecap="round"/>
-          </svg>
-          <div class="-mt-[105px] text-center">
-            <div class="font-num font-extrabold text-3xl text-bcw-purple-deep">90.9%</div>
-            <div class="text-xs text-bcw-ink-soft">用户好评率</div>
-          </div>
-          <div class="mt-[60px] text-center">
-            <div class="text-bcw-ink font-bold text-sm">4 星及以上</div>
-          </div>
-        </div>
-
-        <div class="col-span-4 card-3d p-7 bg-white flex flex-col items-center justify-center">
-          <svg class="ring-svg" width="160" height="160" viewBox="0 0 160 160">
-            <circle cx="80" cy="80" r="64" stroke="#E5F8D5" stroke-width="16" fill="none"/>
-            <circle cx="80" cy="80" r="64" stroke="#58CC02" stroke-width="16" fill="none"
-                    stroke-dasharray="402" stroke-dashoffset="54.7" stroke-linecap="round"/>
-          </svg>
-          <div class="-mt-[105px] text-center">
-            <div class="font-num font-extrabold text-3xl text-bcw-green-deep">86.4%</div>
-            <div class="text-xs text-bcw-ink-soft">优于同类</div>
-          </div>
-          <div class="mt-[60px] text-center">
-            <div class="text-bcw-ink font-bold text-sm">对比墨墨/不背/扇贝</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 7：背书
-============================================================ -->
-<section id="endorsement" class="bg-white border-y border-bcw-line">
-  <div class="max-w-[1280px] mx-auto px-8 py-20">
+<div class="max-w-[1280px] mx-auto px-8 py-20">
     <div class="text-center mb-12">
       <div class="ch-num mb-3" style="color:var(--bcw-green-deep);">ENDORSEMENT</div>
       <h2 class="text-[36px] font-black tracking-tight">{{endorsement.sectionTitle}}</h2>
@@ -717,6 +470,8 @@
       <p class="text-[18px] leading-relaxed text-bcw-ink">
         {{endorsement.quote1Prefix}}<b class="text-bcw-green-deep">{{endorsement.quote1Highlight}}</b>{{endorsement.quote1Suffix}}<br/>{{endorsement.quote2Prefix}}<b>{{endorsement.quote2Date}}</b>{{endorsement.quote2Suffix}}
       </p>
+    </div>
+  </div>
     </div>
   </div>
 </section>
@@ -791,8 +546,8 @@
       <div class="col-span-2">
         <h4 class="text-bcw-ink font-bold mb-4 text-sm uppercase tracking-widest">产品</h4>
         <ul class="space-y-2 text-sm text-bcw-ink-soft">
-          <li><a class="hover:text-bcw-ink" href="#features">4 大功能</a></li>
-          <li><a class="hover:text-bcw-ink" href="#demo-video">视频演示</a></li>
+          <li><a class="hover:text-bcw-ink" href="#product">产品介绍</a></li>
+          <li><a class="hover:text-bcw-ink" href="#overview-video">产品视频</a></li>
           <li><a class="hover:text-bcw-ink" href="#cta">内测申请</a></li>
           <li><span class="text-bcw-ink-soft">价格 (即将上线)</span></li>
         </ul>
@@ -803,13 +558,13 @@
           <li><span class="text-bcw-ink-soft">关于我们</span></li>
           <li><span class="text-bcw-ink-soft">团队</span></li>
           <li><span class="text-bcw-ink-soft">加入我们</span></li>
-          <li><a class="hover:text-bcw-ink" href="#endorsement">背书与媒体</a></li>
+          <li><a class="hover:text-bcw-ink" href="#beta">内测与背书</a></li>
         </ul>
       </div>
       <div class="col-span-2">
         <h4 class="text-bcw-ink font-bold mb-4 text-sm uppercase tracking-widest">资源</h4>
         <ul class="space-y-2 text-sm text-bcw-ink-soft">
-          <li><a class="hover:text-bcw-ink" href="#feedback-show">用户反馈</a></li>
+          <li><a class="hover:text-bcw-ink" href="#beta">内测数据</a></li>
           <li><span class="text-bcw-ink-soft">博客 (即将上线)</span></li>
           <li><span class="text-bcw-ink-soft">帮助中心</span></li>
           <li><a class="hover:text-bcw-ink" href="#cta">媒体咨询</a></li>

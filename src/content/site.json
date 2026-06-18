@@ -13,21 +13,36 @@
     "secondaryCtaText": "查看用户反馈 →",
     "rightBadgeText": "用户好评率 90.9%"
   },
-  "demoVideo": {
-    "sectionTitle": "30 秒看懂捕词蛙",
-    "sectionDesc": "",
-    "mainTitle": "捕词蛙是什么 · 60 秒",
-    "mainDuration": "01:00",
-    "mainNote": "B 站视频占位（待 Jalin 上传）",
-    "alt1Tag": "功能演示",
-    "alt1Title": "视觉化记忆 · 一组词成画",
-    "alt1Duration": "02:14",
-    "alt2Tag": "真实学员",
-    "alt2Title": "考研党的 14 天",
-    "alt2Duration": "03:42",
-    "alt3Tag": "创始人 1 分钟",
-    "alt3Title": "为什么做捕词蛙",
-    "alt3Duration": "01:08"
+  "product": {
+    "title": "产品介绍",
+    "intro": "捕词蛙是一款由 AI 多模态记忆引擎驱动的英语学习软件。\n我们把每一个生词，串成可以「看见」的画面、故事和声音，让你从「识形」走向「识义」，真正记住、不再遗忘。",
+    "img1Title": "AI 视觉化生成",
+    "img1Desc": "豆包 Doubao-Seed + Stable Diffusion 双模型协作，把抽象单词转成可视化画面。",
+    "img2Title": "结构化学习路径",
+    "img2Desc": "按词根、词族、场景三维组织，单词不再是孤岛，而是连成网。",
+    "img3Title": "自适应复习引擎",
+    "img3Desc": "V-Cog 自研间隔算法 + VLE 题型引擎，根据每个人的遗忘曲线动态出题。",
+    "img4Title": "随身听沉浸输入",
+    "img4Desc": "通勤、运动、睡前的碎片时间，把单词变成可以听的故事。"
+  },
+  "overview": {
+    "title": "60 秒看懂捕词蛙",
+    "desc": "从单词到画面，从画面到记忆。",
+    "mainTitle": "产品总览 · 60 秒",
+    "mainNote": "视频上传中（待 Jalin 上传）",
+    "footnote": "建议在 WiFi 环境下播放 · 支持手机端"
+  },
+  "featureVideos": {
+    "title": "四大核心功能",
+    "desc": "AI 生成 · 学习 · 复习 · 随身听 — 一条完整的记忆闭环。",
+    "f1Title": "① AI 视觉化生成",
+    "f1Desc": "输入任意单词，AI 在 8 秒内生成可视化画面 + 故事 + 词根拆解，让记忆有「画面感」。",
+    "f2Title": "② 学习模式",
+    "f2Desc": "通过画面、词根、例句多通道输入，配合互动卡片设计，第一次学就记得住。",
+    "f3Title": "③ 复习模式",
+    "f3Desc": "V-Cog 自适应算法 + 多题型 VLE 引擎，按遗忘曲线精准触发，错的多记，会的少考。",
+    "f4Title": "④ 随身听",
+    "f4Desc": "把当日生词打包成英文小故事音频，碎片时间沉浸式输入，通勤路上也能记单词。"
   },
   "metrics": {
     "sectionTitle1": "不画饼，直接看 ",
@@ -55,38 +70,6 @@
     "footnote1": "已完成 ",
     "footnoteOptCount": "12 处",
     "footnote2": "细节优化 · 仍在持续迭代"
-  },
-  "feedbacks": {
-    "sectionTitle1": "我们与 ",
-    "sectionTitleHighlight": "63 位",
-    "sectionTitle2": "共创伙伴",
-    "sectionDesc": "",
-    "block1Title": "我们收集了很多反馈",
-    "block1Desc": "107 条反馈 · 精选 6 条原话展示",
-    "f1Name": "L 同学",
-    "f1Role": "学生 · 考研党",
-    "f1Content": "原来以为又是个普通背单词软件，画面感太强了，背完一组词就像看了段动画。",
-    "f1Stars": "★★★★★",
-    "f2Name": "W 同学",
-    "f2Role": "学生 · 四六级",
-    "f2Content": "用了一周朋友圈打卡的人都来问我用的什么 App。",
-    "f2Stars": "★★★★★",
-    "f3Name": "Z 同学",
-    "f3Role": "学生 · 高三",
-    "f3Content": "AI 出题真的会根据我做错的地方调整，不是固定题库感。",
-    "f3Stars": "★★★★★",
-    "f4Name": "M 老师",
-    "f4Role": "老师 · 英语",
-    "f4Content": "把单词记成画面这件事我以前从没想过。",
-    "f4Stars": "★★★★★",
-    "f5Name": "Y 同学",
-    "f5Role": "学生 · 大一",
-    "f5Content": "abandon 终于不再是我能想起来的唯一一个单词了哈哈。",
-    "f5Stars": "★★★★☆",
-    "f6Name": "H 同学",
-    "f6Role": "学生 · 考研党",
-    "f6Content": "界面可爱不会让人有学习压力。",
-    "f6Stars": "★★★★★"
   },
   "endorsement": {
     "sectionTitle": "出版社 · 学术 · 技术栈",
@@ -124,13 +107,14 @@
   "media": {
     "logo": "/buciwa-logo.png",
     "heroImage": "/mascot-orig/hero-battle.png",
-    "feature1Image": "/mascot-orig/mascot-front.png",
-    "feature2Image": "/mascot-orig/mascot-side.png",
-    "feature3Image": "/mascot-orig/mascot-back.png",
-    "ctaImage": "/mascot-orig/mascot-coffee.png",
-    "demoVideoMain": "",
-    "demoVideoAlt1": "",
-    "demoVideoAlt2": "",
-    "demoVideoAlt3": ""
+    "productImg1": "",
+    "productImg2": "",
+    "productImg3": "",
+    "productImg4": "",
+    "overviewVideo": "",
+    "featureVideo1": "",
+    "featureVideo2": "",
+    "featureVideo3": "",
+    "featureVideo4": ""
   }
 }
