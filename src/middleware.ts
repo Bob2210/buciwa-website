@@ -24,10 +24,14 @@ async function isLoggedIn(token: string | undefined): Promise<boolean> {
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl
 
-  // 登录页 + 登录 API 不守
+  // 白名单：登录页 + 登录 API + Blob 上传端点
+  // /api/admin/upload 由 route.ts 内部按请求类型做鉴权：
+  //   - 浏览器发起的 multipart 或 generate-client-token JSON  → 校验 admin cookie
+  //   - Vercel Blob 平台回调的 upload-completed JSON          → 放行（Vercel 内部已用 token 校验）
   if (
     pathname === "/admin/login" ||
-    pathname === "/api/admin/login"
+    pathname === "/api/admin/login" ||
+    pathname === "/api/admin/upload"
   ) {
     return NextResponse.next()
   }

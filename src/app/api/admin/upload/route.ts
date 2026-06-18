@@ -2,9 +2,15 @@
 // 双协议兼容：
 //   1. multipart/form-data + file 字段 → 走老版 put()，文件大小受限于 Vercel 4.5MB
 //   2. application/json + HandleUploadBody → 走 @vercel/blob/client.handleUpload，前端直传，绕开 4.5MB 限制
+//
+// 鉴权策略（middleware 已把本路由放白名单，由这里内部校验）：
+//   - multipart/form-data       (浏览器发起)        → 必须有 admin cookie
+//   - JSON: blob.generate-client-token (浏览器发起) → 必须有 admin cookie
+//   - JSON: blob.upload-completed      (Vercel 平台回调，无 cookie) → 放行（Vercel 内部已用 token 校验）
 import { NextResponse } from "next/server"
 import { put } from "@vercel/blob"
 import { handleUpload, type HandleUploadBody } from "@vercel/blob/client"
+import { jwtVerify } from "jose"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -17,11 +23,43 @@ const IMG_TYPES = ["image/png", "image/jpeg", "image/webp", "image/gif", "image/
 const VID_TYPES = ["video/mp4", "video/webm", "video/quicktime"]
 const ALL_TYPES = [...IMG_TYPES, ...VID_TYPES]
 
+const COOKIE_NAME = "bcw_admin_token"
+
+function readAdminCookie(req: Request): string | undefined {
+  const cookieHeader = req.headers.get("cookie") || ""
+  for (const part of cookieHeader.split(";")) {
+    const trimmed = part.trim()
+    if (trimmed.startsWith(COOKIE_NAME + "=")) {
+      return trimmed.slice(COOKIE_NAME.length + 1)
+    }
+  }
+  return undefined
+}
+
+async function verifyAdminFromReq(req: Request): Promise<boolean> {
+  const token = readAdminCookie(req)
+  if (!token) return false
+  const secret = process.env.ADMIN_JWT_SECRET
+  if (!secret) return false
+  try {
+    const { payload } = await jwtVerify(
+      token,
+      new TextEncoder().encode(secret)
+    )
+    return payload.role === "admin"
+  } catch {
+    return false
+  }
+}
+
 export async function POST(req: Request) {
   const ct = req.headers.get("content-type") || ""
 
-  // —— 协议 A：multipart/form-data（老前端、单文件、≤4.5MB）——
+  // —— 协议 A：multipart/form-data（浏览器发起，必须 admin）——
   if (ct.includes("multipart/form-data")) {
+    if (!(await verifyAdminFromReq(req))) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    }
     try {
       const form = await req.formData()
       const file = form.get("file") as File | null
@@ -59,9 +97,23 @@ export async function POST(req: Request) {
     }
   }
 
-  // —— 协议 B：application/json（新前端、客户端直传、可上 150MB 视频）——
+  // —— 协议 B：application/json（client.upload 直传 + Vercel 平台回调）——
+  // 先解析 body 看 type
+  let body: HandleUploadBody
   try {
-    const body = (await req.json()) as HandleUploadBody
+    body = (await req.json()) as HandleUploadBody
+  } catch {
+    return NextResponse.json({ error: "invalid json body" }, { status: 400 })
+  }
+
+  // 浏览器侧的"申请 token"必须是已登录 admin；Vercel 平台回调 (upload-completed) 不带 cookie，放行
+  if ((body as any)?.type === "blob.generate-client-token") {
+    if (!(await verifyAdminFromReq(req))) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    }
+  }
+
+  try {
     const jsonResponse = await handleUpload({
       body,
       request: req,
@@ -89,6 +141,7 @@ export async function POST(req: Request) {
         }
       },
       onUploadCompleted: async ({ blob }) => {
+        // 来自 Vercel Blob 平台的回调，不需要 admin cookie
         console.log("upload completed:", blob.url, blob.pathname)
       },
     })
