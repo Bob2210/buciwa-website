@@ -72,16 +72,23 @@ export async function loadSite(opts?: {
  * 写 site.json 到 Blob（覆盖同 path）
  * - addRandomSuffix:false 保证 URL 固定为 .../data/site.json
  * - cacheControlMaxAge:0 让 CDN 不缓存（admin 写完立即可见）
- * - allowOverwrite:true 允许覆盖同 path
+ * - 老版本 @vercel/blob (0.27) 没有 allowOverwrite 字段，重复 put 会失败
+ *   所以先 del 旧 blob（不存在也不会报错），再 put
  */
 export async function saveSite(data: any): Promise<{ sha: string; url: string }> {
   const content = JSON.stringify(data, null, 2) + "\n"
+  const fullUrl = `${BLOB_PUBLIC_BASE}/${BLOB_PATH}`
+  // 兜底：先尝试删除旧 blob，存在/不存在都不影响后续 put
+  try {
+    await del(fullUrl)
+  } catch (e) {
+    // 不存在或其他错误都忽略，put 会处理
+  }
   const blob = await put(BLOB_PATH, content, {
     access: "public",
     contentType: "application/json; charset=utf-8",
     addRandomSuffix: false,
     cacheControlMaxAge: 0,
-    allowOverwrite: true,
   })
   return { sha: hashContent(content), url: blob.url }
 }
