@@ -1,18 +1,16 @@
-// GET  /api/admin/site  - 读 GitHub 上最新 site.json
-// POST /api/admin/site  - body=新 site.json，写回 GitHub 触发部署
+// GET  /api/admin/site  - 读取最新 site.json（优先 Blob）
+// POST /api/admin/site  - 写入 site.json 到 Blob，并 revalidate 主页缓存（不再 git commit / 不再触发 Vercel 部署）
 import { NextResponse } from "next/server"
-import { readFile, writeFile } from "@/lib/github-cms"
+import { revalidatePath } from "next/cache"
+import { loadSite, saveSite } from "@/lib/site-store"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
-const SITE_JSON_PATH = "src/content/site.json"
-
 export async function GET() {
   try {
-    const { content, sha } = await readFile(SITE_JSON_PATH)
-    const data = JSON.parse(content)
-    return NextResponse.json({ data, sha })
+    const { data, sha, source } = await loadSite({ noStore: true })
+    return NextResponse.json({ data, sha, source })
   } catch (e: any) {
     return NextResponse.json(
       { error: e?.message || "read failed" },
@@ -24,27 +22,46 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json()
-    const { data, sha, message } = body as {
+    const { data, sha } = body as {
       data: any
       sha: string
       message?: string
     }
-    if (!data || !sha) {
-      return NextResponse.json(
-        { error: "data 和 sha 必填" },
-        { status: 400 }
-      )
+    if (!data) {
+      return NextResponse.json({ error: "data 必填" }, { status: 400 })
     }
-    const newContent = JSON.stringify(data, null, 2) + "\n"
-    const commitMessage =
-      message || `chore(cms): update site.json via admin`
-    const result = await writeFile(
-      SITE_JSON_PATH,
-      newContent,
-      commitMessage,
-      sha
-    )
-    return NextResponse.json({ ok: true, ...result })
+    // 乐观锁：如果客户端传了 sha，校验是否跟当前一致
+    if (sha) {
+      try {
+        const current = await loadSite({ noStore: true })
+        if (current.source === "blob" && current.sha !== sha) {
+          return NextResponse.json(
+            {
+              error: "site.json 已被其他人修改，请先刷新页面再保存",
+              currentSha: current.sha,
+            },
+            { status: 409 }
+          )
+        }
+      } catch {
+        // 读不到当前快照不阻塞写入
+      }
+    }
+    const result = await saveSite(data)
+    // 关键：写完立即让主页缓存失效，下一次访问主页就拉新数据
+    try {
+      revalidatePath("/")
+    } catch (e) {
+      console.warn("[admin/site] revalidatePath failed", e)
+    }
+    return NextResponse.json({
+      ok: true,
+      sha: result.sha,
+      url: result.url,
+      // 兼容旧客户端字段
+      commitSha: "blob",
+      htmlUrl: result.url,
+    })
   } catch (e: any) {
     return NextResponse.json(
       { error: e?.message || "write failed" },
