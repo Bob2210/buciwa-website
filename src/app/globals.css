@@ -9,7 +9,7 @@
   --bcw-yellow:#FFB800; --bcw-cream:#FFFFFF;
   --bcw-ink:#1A1F1A; --bcw-ink-soft:#5C6360; --bcw-line:#E8EAE7;
 }
-html{ scroll-padding-top:80px; scroll-behavior:smooth; }
+html{ scroll-padding-top:80px; }
 html,body{
   background:var(--bcw-cream);
   color:var(--bcw-ink);

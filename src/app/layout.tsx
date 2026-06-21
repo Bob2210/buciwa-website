@@ -12,36 +12,30 @@ export const metadata: Metadata = {
   },
 }
 
+// 进入页面同步执行：禁用浏览器自动滚动恢复 + 抹掉 URL 残留 hash + 强制回顶部
+// 用原生 <script> 而不是 Next <Script>，确保在浏览器默认 anchor 滚动之前同步执行
+const SCROLL_TO_TOP_JS = `(function(){
+  try {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+    window.scrollTo(0, 0);
+  } catch(e){}
+})();`
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
       <head>
+        {/* 必须放在 <head> 最顶，同步执行，确保比页面任何渲染/滚动都早 */}
+        <script dangerouslySetInnerHTML={{ __html: SCROLL_TO_TOP_JS }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
           rel="stylesheet"
         />
-        {/* 进入页面默认回到顶部（除非 URL 自带 anchor hash），同时禁用浏览器的自动滚动恢复 */}
-        <Script id="scroll-to-top" strategy="beforeInteractive">{`
-          (function(){
-            try {
-              if (typeof history !== 'undefined' && 'scrollRestoration' in history) {
-                history.scrollRestoration = 'manual';
-              }
-              var goTop = function(){
-                if (!window.location.hash) {
-                  window.scrollTo(0, 0);
-                }
-              };
-              goTop();
-              if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', goTop);
-              }
-              window.addEventListener('load', goTop);
-            } catch(e) {}
-          })();
-        `}</Script>
         {/* Tailwind CDN: 兼容原型的任意 utility class（dangerouslySetInnerHTML 渲染） */}
         <Script src="https://cdn.tailwindcss.com" strategy="beforeInteractive" />
         <Script id="tailwind-config" strategy="beforeInteractive">{`
