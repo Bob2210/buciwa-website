@@ -22,6 +22,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
           rel="stylesheet"
         />
+        {/* 进入页面默认回到顶部（除非 URL 自带 anchor hash），同时禁用浏览器的自动滚动恢复 */}
+        <Script id="scroll-to-top" strategy="beforeInteractive">{`
+          (function(){
+            try {
+              if (typeof history !== 'undefined' && 'scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+              }
+              var goTop = function(){
+                if (!window.location.hash) {
+                  window.scrollTo(0, 0);
+                }
+              };
+              goTop();
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', goTop);
+              }
+              window.addEventListener('load', goTop);
+            } catch(e) {}
+          })();
+        `}</Script>
         {/* Tailwind CDN: 兼容原型的任意 utility class（dangerouslySetInnerHTML 渲染） */}
         <Script src="https://cdn.tailwindcss.com" strategy="beforeInteractive" />
         <Script id="tailwind-config" strategy="beforeInteractive">{`
