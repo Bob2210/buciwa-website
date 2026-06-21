@@ -596,7 +596,10 @@
         <h3 class="text-2xl font-black mb-2">{{cta.card3Title}}</h3>
         <p class="text-bcw-ink-soft mb-6 leading-relaxed">{{cta.card3Desc}}</p>
         <div class="flex items-center gap-4 mb-4">
-          <div class="w-28 h-28 rounded-2xl border-2 border-bcw-line bg-bcw-cream flex items-center justify-center text-bcw-ink-soft text-xs text-center">微信群<br/>二维码<br/>占位</div>
+          <div class="w-28 h-28 rounded-2xl border-2 border-bcw-line bg-bcw-cream relative overflow-hidden">
+            <img src="{{media.betaWechatQr}}" alt="内测群二维码" loading="lazy" class="absolute inset-0 w-full h-full object-contain rounded-2xl" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" />
+            <div class="absolute inset-0 flex items-center justify-center text-bcw-ink-soft text-xs text-center leading-tight">微信群<br/>二维码<br/>占位</div>
+          </div>
           <div class="flex-1 text-xs text-bcw-ink-soft leading-relaxed">扫码加入内测群，第一时间获得邀请码和最新功能体验</div>
         </div>
         <a href="mailto:{{cta.card3Email}}?subject=申请内测&body=申请人：%0A联系方式：%0A英语水平%2F学习场景：" class="btn3d btn-white w-full">📧 或留下邮箱获取邀请码</a>
@@ -657,11 +660,13 @@
       <div class="col-span-2">
         <h4 class="text-bcw-ink font-bold mb-4 text-sm uppercase tracking-widest">关注我们</h4>
         <div class="flex gap-3">
-          <div class="w-24 h-24 rounded-2xl border-2 border-bcw-line bg-bcw-cream flex items-center justify-center text-bcw-ink-soft text-xs text-center leading-tight">
-            公众号<br/>二维码<br/>占位
+          <div class="w-24 h-24 rounded-2xl border-2 border-bcw-line bg-bcw-cream relative overflow-hidden">
+            <img src="{{media.wechatOAQr}}" alt="公众号二维码" loading="lazy" class="absolute inset-0 w-full h-full object-contain rounded-2xl" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" />
+            <div class="absolute inset-0 flex items-center justify-center text-bcw-ink-soft text-xs text-center leading-tight">公众号<br/>二维码<br/>占位</div>
           </div>
-          <div class="w-24 h-24 rounded-2xl border-2 border-bcw-line bg-bcw-cream flex items-center justify-center text-bcw-ink-soft text-xs text-center leading-tight">
-            微信群<br/>二维码<br/>占位
+          <div class="w-24 h-24 rounded-2xl border-2 border-bcw-line bg-bcw-cream relative overflow-hidden">
+            <img src="{{media.wechatGroupQr}}" alt="微信群二维码" loading="lazy" class="absolute inset-0 w-full h-full object-contain rounded-2xl" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'" />
+            <div class="absolute inset-0 flex items-center justify-center text-bcw-ink-soft text-xs text-center leading-tight">微信群<br/>二维码<br/>占位</div>
           </div>
         </div>
       </div>

@@ -543,10 +543,29 @@ const MEDIA_INFO: Record<string, MediaInfo> = {
     anchor: "/#reviews",
     group: "💬 真实用户评论（9 张截图）",
   },
+  betaWechatQr: {
+    label: "内测群二维码",
+    location: "底部联系我们 → 内测申请卡 → 左侧 112×112 二维码框",
+    anchor: "/#cta",
+    group: "📲 二维码（公众号 / 微信群）",
+  },
+  wechatOAQr: {
+    label: "公众号二维码",
+    location: "Footer → 关注我们 → 左侧 96×96 二维码",
+    anchor: "/#",
+    group: "📲 二维码（公众号 / 微信群）",
+  },
+  wechatGroupQr: {
+    label: "微信群二维码",
+    location: "Footer → 关注我们 → 右侧 96×96 二维码",
+    anchor: "/#",
+    group: "📲 二维码（公众号 / 微信群）",
+  },
 }
 
 const MEDIA_GROUP_ORDER = [
   "🏷️ 品牌 & 首屏",
+  "📲 二维码（公众号 / 微信群）",
   "📱 产品介绍区（8 张手机截图）",
   "🎬 视频",
   "👥 共创伙伴墙（60 张头像）",
@@ -987,3 +1006,4 @@ export default function TextEditPage() {
     </>
   )
 }
+
